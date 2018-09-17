@@ -5,10 +5,20 @@
  */
 package com.icap.pvvih.view;
 
+import com.icap.pvvih.model.Users;
 import com.icap.pvvih.util.Res;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
+import javax.swing.SwingConstants;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
+import org.jdesktop.swingx.JXHyperlink;
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartPanel;
+import org.jfree.chart.JFreeChart;
+import org.jfree.data.general.DefaultPieDataset;
+import org.jfree.data.general.PieDataset;
 
 /**
  *
@@ -18,19 +28,69 @@ public class PVVIH extends javax.swing.JFrame {
 
     /**
      * Creates new form PVVIH
+     *
+     * @param connectedUser
      */
-    public PVVIH() {
+    public PVVIH(Users connectedUser) {
         doPreConfig();
         initComponents();
-        doDefaultConfig();
+        doDefaultConfig(connectedUser);
     }
 
-    private void doDefaultConfig() {
+    private void doDefaultConfig(Users currentUser) {
         this.setResizable(false);
         this.setLocationRelativeTo(this);
         this.pack();
         this.setExtendedState(PVVIH.MAXIMIZED_BOTH);
+        this.setTitle("PVVIH DC 1.0");
+        lblConnectedUser.setText(currentUser.getPrenom() + " " + currentUser.getNom() + " connected.");
+        tsWelcome.setHorizontalAlignment(SwingConstants.CENTER);
+
+        final JXHyperlink lblHome = new JXHyperlink();
+        lblHome.setText("Home");
+        final JXHyperlink lblDE = new JXHyperlink();
+        lblDE.setText("Data Entry");
+        final JXHyperlink lblSignout = new JXHyperlink();
+        lblSignout.setText("Sign out");
+        final JXHyperlink lblUser = new JXHyperlink();
+        lblUser.setText("User manager");
+
+        taskActions.add(lblHome);
+        taskActions.add(lblDE);
+        taskOthers.add(lblUser);
+        taskOthers.add(lblSignout);
+
+        // Add actions in all Hyperlink
+        lblHome.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
+
+        lblDE.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
+
+        lblUser.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
+
+        lblSignout.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                btnSignoutActionPerformed(e);
+            }
+        });
+
     }
+
     private void doPreConfig() {
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
@@ -49,11 +109,97 @@ public class PVVIH extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jXPanel1 = new org.jdesktop.swingx.JXPanel();
+        lblConnectedUser = new org.jdesktop.swingx.JXLabel();
+        btnSignout = new org.jdesktop.swingx.JXButton();
+        jXTaskPaneContainer1 = new org.jdesktop.swingx.JXTaskPaneContainer();
+        taskActions = new org.jdesktop.swingx.JXTaskPane();
+        taskOthers = new org.jdesktop.swingx.JXTaskPane();
+        panCentral = new org.jdesktop.swingx.JXPanel();
+        tsWelcome = new org.jdesktop.swingx.JXTitledSeparator();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jXPanel1.setBackground(java.awt.Color.white);
+
+        lblConnectedUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/icap/pvvih/res/icons8-customer-24.png"))); // NOI18N
+        lblConnectedUser.setText("jXLabel1");
+
+        btnSignout.setBackground(java.awt.Color.white);
+        btnSignout.setBorder(null);
+        btnSignout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/icap/pvvih/res/icons8-sign-out-24.png"))); // NOI18N
+        btnSignout.setText("Sign out");
+        btnSignout.setFocusable(false);
+        btnSignout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSignoutActionPerformed(evt);
+            }
+        });
+
+        taskActions.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/icap/pvvih/res/icons8-action-24.png"))); // NOI18N
+        taskActions.setTitle("Actions");
+        jXTaskPaneContainer1.add(taskActions);
+
+        taskOthers.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/icap/pvvih/res/icons8-inactive-state-24.png"))); // NOI18N
+        taskOthers.setTitle("Others");
+        jXTaskPaneContainer1.add(taskOthers);
+
+        panCentral.setBackground(java.awt.Color.white);
+        panCentral.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+
+        javax.swing.GroupLayout panCentralLayout = new javax.swing.GroupLayout(panCentral);
+        panCentral.setLayout(panCentralLayout);
+        panCentralLayout.setHorizontalGroup(
+            panCentralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        panCentralLayout.setVerticalGroup(
+            panCentralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        tsWelcome.setTitle("Welcome !");
+
+        javax.swing.GroupLayout jXPanel1Layout = new javax.swing.GroupLayout(jXPanel1);
+        jXPanel1.setLayout(jXPanel1Layout);
+        jXPanel1Layout.setHorizontalGroup(
+            jXPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jXPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jXTaskPaneContainer1, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jXPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jXPanel1Layout.createSequentialGroup()
+                        .addGap(0, 612, Short.MAX_VALUE)
+                        .addComponent(lblConnectedUser, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnSignout, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jXPanel1Layout.createSequentialGroup()
+                        .addGroup(jXPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(panCentral, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(tsWelcome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap())))
+        );
+        jXPanel1Layout.setVerticalGroup(
+            jXPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jXPanel1Layout.createSequentialGroup()
+                .addGroup(jXPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jXPanel1Layout.createSequentialGroup()
+                        .addGroup(jXPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblConnectedUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnSignout, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(21, 21, 21)
+                        .addComponent(tsWelcome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(panCentral, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jXPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jXTaskPaneContainer1, javax.swing.GroupLayout.DEFAULT_SIZE, 752, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
 
         jMenu1.setText("File");
         jMenuBar1.add(jMenu1);
@@ -67,55 +213,33 @@ public class PVVIH extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1242, Short.MAX_VALUE)
+            .addComponent(jXPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 778, Short.MAX_VALUE)
+            .addComponent(jXPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(PVVIH.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(PVVIH.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(PVVIH.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(PVVIH.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new PVVIH().setVisible(true);
-            }
-        });
-    }
+    private void btnSignoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSignoutActionPerformed
+        this.setVisible(false);
+        new Login().setVisible(true);
+    }//GEN-LAST:event_btnSignoutActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private org.jdesktop.swingx.JXButton btnSignout;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
+    private org.jdesktop.swingx.JXPanel jXPanel1;
+    private org.jdesktop.swingx.JXTaskPaneContainer jXTaskPaneContainer1;
+    private org.jdesktop.swingx.JXLabel lblConnectedUser;
+    private org.jdesktop.swingx.JXPanel panCentral;
+    private org.jdesktop.swingx.JXTaskPane taskActions;
+    private org.jdesktop.swingx.JXTaskPane taskOthers;
+    private org.jdesktop.swingx.JXTitledSeparator tsWelcome;
     // End of variables declaration//GEN-END:variables
 
 }
