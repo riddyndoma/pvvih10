@@ -5,7 +5,13 @@
  */
 package com.icap.pvvih.view;
 
+import com.icap.pvvih.model.Users;
+import java.util.List;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 import javax.swing.SwingConstants;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
@@ -24,7 +30,7 @@ public class Login extends javax.swing.JFrame {
         initComponents();
         doDefaultConfig();
     }
-
+    
     private void doPreConfig() {
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
@@ -33,7 +39,7 @@ public class Login extends javax.swing.JFrame {
         ImageIcon image = new ImageIcon(getClass().getResource("/com/icap/pvvih/res/logo.png"));
         this.setIconImage(image.getImage());
     }
-
+    
     private void doDefaultConfig() {
         this.setLocationRelativeTo(this);
         this.setResizable(false);
@@ -73,11 +79,22 @@ public class Login extends javax.swing.JFrame {
 
         jXLabel2.setText("Password");
 
+        txtPassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPasswordActionPerformed(evt);
+            }
+        });
+
         tsSignIn.setTitle("Sign In");
 
         btnLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/icap/pvvih/res/icons8-login-24.png"))); // NOI18N
         btnLogin.setText("Connection");
         btnLogin.setFocusable(false);
+        btnLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLoginActionPerformed(evt);
+            }
+        });
 
         btnCancel.setBackground(java.awt.Color.white);
         btnCancel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/icap/pvvih/res/icons8-cancel-24.png"))); // NOI18N
@@ -193,6 +210,31 @@ public class Login extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_btnCancelActionPerformed
 
+    private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
+        boolean exist = false;
+        String pwd = new String(txtPassword.getPassword());
+        emf = Persistence.createEntityManagerFactory("pvvih10PU");
+        em = emf.createEntityManager();
+        em.getTransaction().begin();
+        List<Users> users = em.createNamedQuery("Users.findAll").getResultList();
+        for (Users user : users) {
+            if (user.getUsername().equals(txtUsername.getText()) && user.getPassword().equals(pwd)
+                    && user.getStatus() == true) {
+                exist = true;
+            }
+        }
+        if (exist) {
+            JOptionPane.showMessageDialog(this, "It works!");
+        } else {
+            JOptionPane.showMessageDialog(this, "Username or password incorrect!");
+        }
+    }//GEN-LAST:event_btnLoginActionPerformed
+
+    private void txtPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPasswordActionPerformed
+        btnLoginActionPerformed(evt);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPasswordActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -241,4 +283,6 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JPasswordField txtPassword;
     private org.jdesktop.swingx.JXTextField txtUsername;
     // End of variables declaration//GEN-END:variables
+EntityManager em;
+    EntityManagerFactory emf;
 }
