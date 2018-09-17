@@ -20,16 +20,19 @@ public class Login extends javax.swing.JFrame {
      * Creates new form Login
      */
     public Login() {
-        try {
-            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-        } catch (ClassNotFoundException | IllegalAccessException | InstantiationException | UnsupportedLookAndFeelException e) {
-        }
-        
+        doPreConfig();
         initComponents();
         doDefaultConfig();
     }
 
-  
+    private void doPreConfig() {
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (ClassNotFoundException | IllegalAccessException | InstantiationException | UnsupportedLookAndFeelException e) {
+        }
+        ImageIcon image = new ImageIcon(getClass().getResource("/com/icap/pvvih/res/logo.png"));
+        this.setIconImage(image.getImage());
+    }
 
     private void doDefaultConfig() {
         this.setLocationRelativeTo(this);
@@ -72,10 +75,14 @@ public class Login extends javax.swing.JFrame {
 
         tsSignIn.setTitle("Sign In");
 
+        btnLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/icap/pvvih/res/icons8-login-24.png"))); // NOI18N
         btnLogin.setText("Connection");
+        btnLogin.setFocusable(false);
 
         btnCancel.setBackground(java.awt.Color.white);
+        btnCancel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/icap/pvvih/res/icons8-cancel-24.png"))); // NOI18N
         btnCancel.setText("Cancel");
+        btnCancel.setFocusable(false);
         btnCancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCancelActionPerformed(evt);
@@ -163,7 +170,7 @@ public class Login extends javax.swing.JFrame {
                     .addGroup(jXPanel1Layout.createSequentialGroup()
                         .addGap(44, 44, 44)
                         .addComponent(jXPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(57, Short.MAX_VALUE))
+                .addContainerGap(49, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
