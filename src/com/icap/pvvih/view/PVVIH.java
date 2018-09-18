@@ -9,6 +9,8 @@ import com.icap.pvvih.model.Users;
 import com.icap.pvvih.util.Res;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
@@ -60,12 +62,14 @@ public class PVVIH extends javax.swing.JFrame {
         taskActions.add(lblDE);
         taskOthers.add(lblUser);
         taskOthers.add(lblSignout);
-
+        if (!"Admin".equals(currentUser.getRole())) {
+             lblUser.setVisible(false); 
+        }
         // Add actions in all Hyperlink
         lblHome.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                
+                scrollManager.setViewportView(createDemoPanel());
             }
         });
         
@@ -79,7 +83,7 @@ public class PVVIH extends javax.swing.JFrame {
         lblUser.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                
+             scrollManager.setViewportView(new UserMan());   
             }
         });
         
@@ -269,5 +273,6 @@ public class PVVIH extends javax.swing.JFrame {
     private org.jdesktop.swingx.JXTaskPane taskOthers;
     private org.jdesktop.swingx.JXTitledSeparator tsWelcome;
     // End of variables declaration//GEN-END:variables
-
+EntityManager em;
+EntityManagerFactory emf;
 }
