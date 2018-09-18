@@ -5,6 +5,11 @@
  */
 package com.icap.pvvih.view;
 
+import com.icap.pvvih.model.Users;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
 /**
  *
  * @author DELL
@@ -16,6 +21,7 @@ public class UserMan extends javax.swing.JPanel {
      */
     public UserMan() {
         initComponents();
+        doBaseConfig();
     }
 
     /**
@@ -33,7 +39,7 @@ public class UserMan extends javax.swing.JPanel {
         jXLabel2 = new org.jdesktop.swingx.JXLabel();
         txtLastName = new org.jdesktop.swingx.JXTextField();
         jXLabel3 = new org.jdesktop.swingx.JXLabel();
-        txtLastName1 = new org.jdesktop.swingx.JXTextField();
+        txtUsername = new org.jdesktop.swingx.JXTextField();
         jXLabel4 = new org.jdesktop.swingx.JXLabel();
         txtPassword = new javax.swing.JPasswordField();
         jXLabel5 = new org.jdesktop.swingx.JXLabel();
@@ -41,9 +47,10 @@ public class UserMan extends javax.swing.JPanel {
         chxStatus = new javax.swing.JCheckBox();
         jXLabel6 = new org.jdesktop.swingx.JXLabel();
         scrllUserManager = new javax.swing.JScrollPane();
-        jXButton4 = new org.jdesktop.swingx.JXButton();
+        btnSave = new org.jdesktop.swingx.JXButton();
         jXButton5 = new org.jdesktop.swingx.JXButton();
         jXButton6 = new org.jdesktop.swingx.JXButton();
+        lblMessage = new org.jdesktop.swingx.JXLabel();
 
         setBackground(java.awt.Color.white);
 
@@ -89,7 +96,7 @@ public class UserMan extends javax.swing.JPanel {
                     .addComponent(jXLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(22, 22, 22)
                 .addGroup(jXPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtLastName1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txtUsername, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(txtPassword, javax.swing.GroupLayout.DEFAULT_SIZE, 279, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addGroup(jXPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -111,7 +118,7 @@ public class UserMan extends javax.swing.JPanel {
                     .addComponent(jXLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jXLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtLastName1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jXLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cbxRole, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -127,14 +134,23 @@ public class UserMan extends javax.swing.JPanel {
 
         scrllUserManager.setBackground(java.awt.Color.white);
 
-        jXButton4.setText("Save");
-        jXButton4.setFocusable(false);
+        btnSave.setText("Save");
+        btnSave.setFocusable(false);
+        btnSave.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSaveActionPerformed(evt);
+            }
+        });
 
         jXButton5.setText("Edit");
         jXButton5.setFocusable(false);
 
         jXButton6.setText("Delete");
         jXButton6.setFocusable(false);
+
+        lblMessage.setForeground(new java.awt.Color(255, 51, 51));
+        lblMessage.setText("Message");
+        lblMessage.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -146,16 +162,17 @@ public class UserMan extends javax.swing.JPanel {
                     .addComponent(jXPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(scrllUserManager)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jXButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnSave, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jXButton5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jXButton6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lblMessage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
-        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jXButton4, jXButton5, jXButton6});
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnSave, jXButton5, jXButton6});
 
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -164,20 +181,68 @@ public class UserMan extends javax.swing.JPanel {
                 .addComponent(jXPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jXButton4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSave, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jXButton5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jXButton6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jXButton6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblMessage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(13, 13, 13)
                 .addComponent(scrllUserManager, javax.swing.GroupLayout.DEFAULT_SIZE, 427, Short.MAX_VALUE)
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
+        if (!txtFirstName.getText().equals("")
+                && !txtLastName.getText().equals("")
+                && !txtUsername.getText().equals("")
+                && !txtPassword.getPassword().equals("")
+                && !cbxRole.getSelectedItem().toString().equals("")
+                ) {
+           doSave(); 
+        }else{
+            lblMessage.setText("No field must be void !"); 
+            lblMessage.setVisible(true);
+        }
+        
+    }//GEN-LAST:event_btnSaveActionPerformed
+
+    private void doBaseConfig() {
+        lblMessage.setVisible(false);
+    }
+
+    private void doSave() {
+        Users user = new Users();
+        boolean status = false;
+        user.setUserid(null); 
+        user.setPrenom(txtFirstName.getText().toUpperCase());
+        user.setNom(txtLastName.getText().toUpperCase());
+        user.setUsername(txtUsername.getText());
+        String pwd = new String(txtPassword.getPassword());
+        user.setPassword(pwd);
+        user.setRole(cbxRole.getSelectedItem().toString());
+        if (chxStatus.isSelected()) {
+            status = true;
+        } else {
+            status = false;
+        }
+        user.setStatus(status);
+        emf = Persistence.createEntityManagerFactory("pvvih10PU");
+        em = emf.createEntityManager();
+        em.getTransaction().begin();
+        if (!em.contains(user)) {
+            em.persist(user);
+            em.flush();
+        }
+        em.getTransaction().commit();
+        em.close();
+        lblMessage.setText("User saved successful!");
+        lblMessage.setVisible(true);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private org.jdesktop.swingx.JXButton btnSave;
     private javax.swing.JComboBox<String> cbxRole;
     private javax.swing.JCheckBox chxStatus;
-    private org.jdesktop.swingx.JXButton jXButton4;
     private org.jdesktop.swingx.JXButton jXButton5;
     private org.jdesktop.swingx.JXButton jXButton6;
     private org.jdesktop.swingx.JXLabel jXLabel1;
@@ -187,10 +252,13 @@ public class UserMan extends javax.swing.JPanel {
     private org.jdesktop.swingx.JXLabel jXLabel5;
     private org.jdesktop.swingx.JXLabel jXLabel6;
     private org.jdesktop.swingx.JXPanel jXPanel1;
+    private org.jdesktop.swingx.JXLabel lblMessage;
     private javax.swing.JScrollPane scrllUserManager;
     private org.jdesktop.swingx.JXTextField txtFirstName;
     private org.jdesktop.swingx.JXTextField txtLastName;
-    private org.jdesktop.swingx.JXTextField txtLastName1;
     private javax.swing.JPasswordField txtPassword;
+    private org.jdesktop.swingx.JXTextField txtUsername;
     // End of variables declaration//GEN-END:variables
+EntityManager em;
+    EntityManagerFactory emf;
 }
