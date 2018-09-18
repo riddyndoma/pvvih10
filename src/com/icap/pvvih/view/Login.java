@@ -6,6 +6,7 @@
 package com.icap.pvvih.view;
 
 import com.icap.pvvih.model.Users;
+import com.icap.pvvih.util.Res;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -30,16 +31,16 @@ public class Login extends javax.swing.JFrame {
         initComponents();
         doDefaultConfig();
     }
-    
+
     private void doPreConfig() {
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         } catch (ClassNotFoundException | IllegalAccessException | InstantiationException | UnsupportedLookAndFeelException e) {
         }
-        ImageIcon image = new ImageIcon(getClass().getResource("/com/icap/pvvih/res/logo.png"));
+        ImageIcon image = new ImageIcon(getClass().getResource(Res.LOGO_APP));
         this.setIconImage(image.getImage());
     }
-    
+
     private void doDefaultConfig() {
         this.setLocationRelativeTo(this);
         this.setResizable(false);
@@ -68,7 +69,7 @@ public class Login extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Sign In - PVVIH 1.0");
+        setTitle("Sign In - PVVIH DC 1.0");
 
         jXPanel1.setBackground(java.awt.Color.white);
 
@@ -160,13 +161,13 @@ public class Login extends javax.swing.JFrame {
         jLabel2.setBackground(java.awt.Color.white);
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("PVVIH Desktop 1.0");
+        jLabel2.setText("PVVIH DATA COLLECT 1.0");
 
         javax.swing.GroupLayout jXPanel1Layout = new javax.swing.GroupLayout(jXPanel1);
         jXPanel1.setLayout(jXPanel1Layout);
         jXPanel1Layout.setHorizontalGroup(
             jXPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jXPanel1Layout.createSequentialGroup()
+            .addGroup(jXPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jXPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -212,6 +213,7 @@ public class Login extends javax.swing.JFrame {
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         boolean exist = false;
+        Users connectedUser = null;
         String pwd = new String(txtPassword.getPassword());
         emf = Persistence.createEntityManagerFactory("pvvih10PU");
         em = emf.createEntityManager();
@@ -221,10 +223,12 @@ public class Login extends javax.swing.JFrame {
             if (user.getUsername().equals(txtUsername.getText()) && user.getPassword().equals(pwd)
                     && user.getStatus() == true) {
                 exist = true;
+                connectedUser=user;
             }
         }
         if (exist) {
-            JOptionPane.showMessageDialog(this, "It works!");
+            this.setVisible(false);
+            new PVVIH(connectedUser).setVisible(true);
         } else {
             JOptionPane.showMessageDialog(this, "Username or password incorrect!");
         }

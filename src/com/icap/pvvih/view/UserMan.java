@@ -201,7 +201,7 @@ public class UserMan extends javax.swing.JPanel {
            doSave(); 
         }else{
             lblMessage.setText("No field must be void !"); 
-            lblMessage.setVisible(true);
+            lblMessage.setVisible(true); 
         }
         
     }//GEN-LAST:event_btnSaveActionPerformed
