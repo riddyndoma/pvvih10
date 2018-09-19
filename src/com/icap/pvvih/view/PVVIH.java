@@ -76,7 +76,7 @@ public class PVVIH extends javax.swing.JFrame {
         lblDE.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                
+              scrollManager.setViewportView(new Survey());  
             }
         });
         

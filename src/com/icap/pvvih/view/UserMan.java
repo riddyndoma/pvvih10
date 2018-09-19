@@ -150,7 +150,7 @@ public class UserMan extends javax.swing.JPanel {
 
         lblMessage.setForeground(new java.awt.Color(255, 51, 51));
         lblMessage.setText("Message");
-        lblMessage.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
+        lblMessage.setFont(new java.awt.Font("Tahoma", 3, 16)); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
