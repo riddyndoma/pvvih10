@@ -145,6 +145,10 @@ public class PVVIH extends javax.swing.JFrame {
             }
         });
 
+        org.jdesktop.swingx.VerticalLayout verticalLayout1 = new org.jdesktop.swingx.VerticalLayout();
+        verticalLayout1.setGap(14);
+        jXTaskPaneContainer1.setLayout(verticalLayout1);
+
         taskActions.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/icap/pvvih/res/icons8-action-24.png"))); // NOI18N
         taskActions.setTitle("Actions");
         jXTaskPaneContainer1.add(taskActions);
@@ -268,7 +272,7 @@ public class PVVIH extends javax.swing.JFrame {
     private org.jdesktop.swingx.JXTaskPaneContainer jXTaskPaneContainer1;
     private org.jdesktop.swingx.JXLabel lblConnectedUser;
     private org.jdesktop.swingx.JXPanel panCentral;
-    private javax.swing.JScrollPane scrollManager;
+    public static javax.swing.JScrollPane scrollManager;
     private org.jdesktop.swingx.JXTaskPane taskActions;
     private org.jdesktop.swingx.JXTaskPane taskOthers;
     private org.jdesktop.swingx.JXTitledSeparator tsWelcome;
