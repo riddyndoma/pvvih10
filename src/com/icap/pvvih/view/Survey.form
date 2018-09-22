@@ -24,12 +24,12 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jXPanel1" alignment="0" max="32767" attributes="0"/>
+          <Component id="jXPanel1" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jXPanel1" alignment="0" max="32767" attributes="0"/>
+          <Component id="jXPanel1" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -44,17 +44,22 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jXPanel2" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="22" max="32767" attributes="0"/>
+              <Group type="102" attributes="0">
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jXPanel2" max="32767" attributes="0"/>
+                      <Component id="jXPanel14" max="32767" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                  <Component id="jXPanel14" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
                   <Component id="jXPanel2" max="32767" attributes="0"/>
                   <EmptySpace min="-2" max="-2" attributes="0"/>
               </Group>
@@ -78,7 +83,7 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -88,7 +93,7 @@
                               <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="1" attributes="0">
                                   <Component id="cbxNomSite" linkSize="1" min="-2" pref="276" max="-2" attributes="0"/>
-                                  <Component id="dpDateEvaluation" linkSize="1" min="-2" pref="276" max="-2" attributes="0"/>
+                                  <Component id="cbxDateEvaluation" linkSize="1" min="-2" pref="276" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
@@ -96,9 +101,9 @@
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="txtNomEnqueteurs" linkSize="1" max="32767" attributes="0"/>
                           </Group>
-                          <Component id="jXPanel3" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jXPanel3" alignment="0" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -108,7 +113,7 @@
                       <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jXLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="dpDateEvaluation" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cbxDateEvaluation" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -133,7 +138,7 @@
                 <Property name="text" type="java.lang.String" value="Date d&apos;&#xe9;valuation"/>
               </Properties>
             </Component>
-            <Component class="org.jdesktop.swingx.JXDatePicker" name="dpDateEvaluation">
+            <Component class="org.jdesktop.swingx.JXDatePicker" name="cbxDateEvaluation">
             </Component>
             <Component class="org.jdesktop.swingx.JXLabel" name="jXLabel2">
               <Properties>
@@ -211,8 +216,8 @@
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="jXPanel4" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="0" pref="16" max="32767" attributes="0"/>
+                          <Component id="jXPanel4" max="32767" attributes="0"/>
+                          <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -308,156 +313,28 @@
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
+                              <EmptySpace min="-2" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="jXLabel42" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="jComboBox16" min="-2" pref="166" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                                              <Group type="102" attributes="0">
-                                                  <Component id="jXLabel15" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace max="32767" attributes="0"/>
-                                                  <Component id="jComboBox1" min="-2" pref="166" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" attributes="0">
-                                                  <Component id="jXLabel16" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="jComboBox2" min="-2" pref="166" max="-2" attributes="0"/>
-                                              </Group>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="jXLabel28" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="jComboBox3" min="-2" pref="166" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" attributes="0">
-                                              <Component id="jXLabel29" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="jComboBox4" min="-2" pref="166" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" attributes="0">
-                                              <Component id="jXLabel30" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="jComboBox5" min="-2" pref="166" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" attributes="0">
-                                              <Component id="jXLabel31" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="jComboBox6" min="-2" pref="166" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" attributes="0">
-                                              <Component id="jXLabel32" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="jComboBox7" min="-2" pref="166" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" attributes="0">
-                                              <Component id="jXLabel33" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="jComboBox8" min="-2" pref="166" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" attributes="0">
-                                              <Component id="jXLabel34" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="jComboBox9" min="-2" pref="166" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" attributes="0">
-                                              <Component id="jXLabel35" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="jComboBox10" min="-2" pref="166" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" attributes="0">
-                                              <Component id="jXLabel36" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="jComboBox11" min="-2" pref="166" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" attributes="0">
-                                              <Component id="jXLabel37" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="jComboBox12" min="-2" pref="166" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                      <EmptySpace max="32767" attributes="0"/>
-                                  </Group>
+                                  <Component id="hyplTop" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jXPanel16" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jXPanel5" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jXPanel6" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jXPanel7" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jXPanel8" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jXPanel9" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jXPanel10" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jXPanel12" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jXPanel13" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jXPanel11" alignment="0" max="32767" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                          <Component id="jXPanel5" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="jXPanel6" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="jXPanel7" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="jXPanel8" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="jXPanel9" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="jXPanel10" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="jXPanel12" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="jXPanel13" alignment="0" max="32767" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Group type="102" attributes="0">
-                                                  <Component id="jXLabel40" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="jComboBox15" min="-2" pref="166" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="jXLabel49" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
-                                                  <Component id="jXTextField3" min="-2" pref="265" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="jXLabel51" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                  <Component id="jXTextField4" min="-2" pref="265" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" attributes="0">
-                                                  <Component id="jXLabel52" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                  <Component id="jXTextField5" min="-2" pref="172" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" attributes="0">
-                                                  <Component id="jXLabel53" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                  <Component id="jXTextField6" min="-2" pref="265" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" attributes="0">
-                                                  <Component id="jXLabel54" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                  <Component id="jXTextField7" min="-2" pref="265" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="jXLabel50" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="jComboBox18" min="-2" pref="166" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="jXLabel55" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                  <Component id="jXTextField8" min="-2" pref="265" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" attributes="0">
-                                                  <Component id="jXLabel56" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                  <Component id="jXTextField9" min="-2" pref="265" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="jXLabel57" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="jComboBox19" min="-2" pref="166" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" attributes="0">
-                                                  <Component id="jXLabel58" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="jComboBox20" min="-2" pref="166" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                                  <Component id="jScrollPane1" alignment="0" max="32767" attributes="0"/>
-                                                  <Component id="jXLabel59" alignment="0" max="32767" attributes="0"/>
-                                              </Group>
-                                          </Group>
-                                          <Component id="jXPanel11" alignment="0" max="32767" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="0" pref="15" max="32767" attributes="0"/>
+                                      <Component id="jXPanel15" max="32767" attributes="0"/>
+                                      <EmptySpace min="5" pref="5" max="-2" attributes="0"/>
                                   </Group>
+                                  <Component id="jXPanel17" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jXPanel18" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="jXPanel19" max="32767" attributes="0"/>
                               </Group>
+                              <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -471,142 +348,30 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="jXPanel7" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jXLabel15" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jComboBox1" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jXLabel16" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jComboBox2" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="jXPanel19" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                               <Component id="jXPanel8" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="jXPanel9" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jXLabel28" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jComboBox3" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jXLabel29" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jComboBox4" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jXLabel30" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jComboBox5" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jXLabel31" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jComboBox6" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jXLabel32" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jComboBox7" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jXLabel33" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jComboBox8" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jXLabel34" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jComboBox9" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jXLabel35" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jComboBox10" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jXLabel36" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jComboBox11" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jXLabel37" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jComboBox12" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="jXPanel15" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                               <Component id="jXPanel10" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jXLabel40" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jComboBox15" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="jXPanel16" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                               <Component id="jXPanel11" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jXLabel42" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jComboBox16" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="jXPanel17" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                               <Component id="jXPanel12" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="jXPanel13" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jXLabel49" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jXTextField3" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jXLabel51" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jXTextField4" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jXLabel52" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jXTextField5" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jXLabel53" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jXTextField6" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jXLabel54" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jXTextField7" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="jXPanel18" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jXLabel50" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jComboBox18" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jXLabel55" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jXTextField8" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jXLabel56" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jXTextField9" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jXLabel57" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jComboBox19" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jXLabel58" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jComboBox20" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jXLabel59" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jScrollPane1" min="-2" pref="252" max="-2" attributes="0"/>
-                              <EmptySpace pref="41" max="32767" attributes="0"/>
+                              <Component id="hyplTop" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -883,7 +648,7 @@
                                           <Component id="chxLabo" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <EmptySpace max="32767" attributes="0"/>
+                                  <EmptySpace pref="118" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -1024,54 +789,52 @@
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
-                                  <EmptySpace max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="jXLabel14" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                      <Group type="103" alignment="0" groupAlignment="1" attributes="0">
                                           <Group type="102" attributes="0">
                                               <Component id="jXLabel19" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="32767" attributes="0"/>
-                                              <Component id="cbxEAQFonctionne2" min="-2" pref="166" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="423" max="-2" attributes="0"/>
+                                              <Component id="cbxPlanActionAQ" max="32767" attributes="0"/>
                                           </Group>
                                           <Group type="102" attributes="0">
                                               <Component id="jXLabel20" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="32767" attributes="0"/>
-                                              <Component id="cbxEAQFonctionne3" min="-2" pref="166" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="435" max="-2" attributes="0"/>
+                                              <Component id="cbxPVReunions" max="32767" attributes="0"/>
                                           </Group>
                                           <Group type="102" attributes="0">
                                               <Component id="jXLabel21" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="32767" attributes="0"/>
-                                              <Component id="cbxEAQFonctionne4" min="-2" pref="166" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" max="-2" attributes="0"/>
+                                              <Component id="cbxDocInitiativeAQ" max="32767" attributes="0"/>
                                           </Group>
                                           <Group type="102" attributes="0">
                                               <Component id="jXLabel22" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="32767" attributes="0"/>
-                                              <Component id="cbxEAQFonctionne5" min="-2" pref="166" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="339" max="-2" attributes="0"/>
+                                              <Component id="cbxImplicationZS" max="32767" attributes="0"/>
                                           </Group>
                                           <Group type="102" attributes="0">
                                               <Component id="jXLabel23" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="32767" attributes="0"/>
-                                              <Component id="cbxEAQFonctionne6" min="-2" pref="166" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="328" max="-2" attributes="0"/>
+                                              <Component id="cbxImplicationFOSA" max="32767" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="1" attributes="0">
                                               <Group type="103" groupAlignment="0" attributes="0">
                                                   <Component id="jXLabel18" alignment="0" min="-2" max="-2" attributes="0"/>
                                                   <Component id="jXLabel17" alignment="0" min="-2" max="-2" attributes="0"/>
                                               </Group>
+                                              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Group type="102" attributes="0">
-                                                      <EmptySpace min="291" max="32767" attributes="0"/>
-                                                      <Component id="cbxEAQFonctionne1" min="-2" pref="166" max="-2" attributes="0"/>
+                                                  <Group type="102" alignment="1" attributes="0">
+                                                      <EmptySpace min="281" pref="281" max="-2" attributes="0"/>
+                                                      <Component id="cbxPlanningReunion" max="32767" attributes="0"/>
                                                   </Group>
-                                                  <Group type="102" attributes="0">
-                                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                      <Component id="cbxEAQFonctionne" max="32767" attributes="0"/>
-                                                  </Group>
+                                                  <Component id="cbxEAQFonctionne" alignment="1" max="32767" attributes="0"/>
                                               </Group>
                                           </Group>
                                       </Group>
                                   </Group>
-                                  <EmptySpace max="32767" attributes="0"/>
+                                  <EmptySpace min="-2" pref="380" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -1101,17 +864,17 @@
                                           <Component id="jXLabel23" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" attributes="0">
-                                          <Component id="cbxEAQFonctionne1" min="-2" max="-2" attributes="0"/>
+                                          <Component id="cbxPlanningReunion" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="cbxEAQFonctionne2" min="-2" max="-2" attributes="0"/>
+                                          <Component id="cbxPlanActionAQ" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="cbxEAQFonctionne3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="cbxPVReunions" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="cbxEAQFonctionne4" min="-2" max="-2" attributes="0"/>
+                                          <Component id="cbxDocInitiativeAQ" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="cbxEAQFonctionne5" min="-2" max="-2" attributes="0"/>
+                                          <Component id="cbxImplicationZS" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="cbxEAQFonctionne6" min="-2" max="-2" attributes="0"/>
+                                          <Component id="cbxImplicationFOSA" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <EmptySpace max="32767" attributes="0"/>
@@ -1139,6 +902,9 @@
                             <Property name="selectedIndex" type="int" value="-1"/>
                             <Property name="focusable" type="boolean" value="false"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbxEAQFonctionneActionPerformed"/>
+                          </Events>
                           <AuxValues>
                             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                           </AuxValues>
@@ -1156,7 +922,7 @@
                             <Property name="text" type="java.lang.String" value="- Planning de r&#xe9;union"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JComboBox" name="cbxEAQFonctionne1">
+                        <Component class="javax.swing.JComboBox" name="cbxPlanningReunion">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                               <StringArray count="2">
@@ -1165,13 +931,14 @@
                               </StringArray>
                             </Property>
                             <Property name="selectedIndex" type="int" value="-1"/>
+                            <Property name="enabled" type="boolean" value="false"/>
                             <Property name="focusable" type="boolean" value="false"/>
                           </Properties>
                           <AuxValues>
                             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                           </AuxValues>
                         </Component>
-                        <Component class="javax.swing.JComboBox" name="cbxEAQFonctionne2">
+                        <Component class="javax.swing.JComboBox" name="cbxPlanActionAQ">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                               <StringArray count="2">
@@ -1180,6 +947,7 @@
                               </StringArray>
                             </Property>
                             <Property name="selectedIndex" type="int" value="-1"/>
+                            <Property name="enabled" type="boolean" value="false"/>
                             <Property name="focusable" type="boolean" value="false"/>
                           </Properties>
                           <AuxValues>
@@ -1196,7 +964,7 @@
                             <Property name="text" type="java.lang.String" value="- PV de r&#xe9;unions"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JComboBox" name="cbxEAQFonctionne3">
+                        <Component class="javax.swing.JComboBox" name="cbxPVReunions">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                               <StringArray count="2">
@@ -1205,6 +973,7 @@
                               </StringArray>
                             </Property>
                             <Property name="selectedIndex" type="int" value="-1"/>
+                            <Property name="enabled" type="boolean" value="false"/>
                             <Property name="focusable" type="boolean" value="false"/>
                           </Properties>
                           <AuxValues>
@@ -1216,7 +985,7 @@
                             <Property name="text" type="java.lang.String" value="- Documentation des initiatives AQ (Graphiques, journal de documentation PIEA et donn&#xe9;es)"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JComboBox" name="cbxEAQFonctionne4">
+                        <Component class="javax.swing.JComboBox" name="cbxDocInitiativeAQ">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                               <StringArray count="2">
@@ -1225,6 +994,7 @@
                               </StringArray>
                             </Property>
                             <Property name="selectedIndex" type="int" value="-1"/>
+                            <Property name="enabled" type="boolean" value="false"/>
                             <Property name="focusable" type="boolean" value="false"/>
                           </Properties>
                           <AuxValues>
@@ -1236,7 +1006,7 @@
                             <Property name="text" type="java.lang.String" value="- Implication de la zone de sante "/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JComboBox" name="cbxEAQFonctionne5">
+                        <Component class="javax.swing.JComboBox" name="cbxImplicationZS">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                               <StringArray count="2">
@@ -1245,13 +1015,14 @@
                               </StringArray>
                             </Property>
                             <Property name="selectedIndex" type="int" value="-1"/>
+                            <Property name="enabled" type="boolean" value="false"/>
                             <Property name="focusable" type="boolean" value="false"/>
                           </Properties>
                           <AuxValues>
                             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                           </AuxValues>
                         </Component>
-                        <Component class="javax.swing.JComboBox" name="cbxEAQFonctionne6">
+                        <Component class="javax.swing.JComboBox" name="cbxImplicationFOSA">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                               <StringArray count="2">
@@ -1260,6 +1031,7 @@
                               </StringArray>
                             </Property>
                             <Property name="selectedIndex" type="int" value="-1"/>
+                            <Property name="enabled" type="boolean" value="false"/>
                             <Property name="focusable" type="boolean" value="false"/>
                           </Properties>
                           <AuxValues>
@@ -1273,52 +1045,6 @@
                         </Component>
                       </SubComponents>
                     </Container>
-                    <Component class="org.jdesktop.swingx.JXLabel" name="jXLabel15">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="3. Existe-t-il une d&#xe9;marche ou un processus qualit&#xe9; ?"/>
-                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Tahoma" size="15" style="1"/>
-                        </Property>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JComboBox" name="jComboBox1">
-                      <Properties>
-                        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                          <StringArray count="2">
-                            <StringItem index="0" value="Oui"/>
-                            <StringItem index="1" value="Non"/>
-                          </StringArray>
-                        </Property>
-                        <Property name="selectedIndex" type="int" value="-1"/>
-                        <Property name="focusable" type="boolean" value="false"/>
-                      </Properties>
-                      <AuxValues>
-                        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-                      </AuxValues>
-                    </Component>
-                    <Component class="org.jdesktop.swingx.JXLabel" name="jXLabel16">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="4. Existe-t-il un point focal responsable des activit&#xe9;s AQ ?"/>
-                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Tahoma" size="15" style="1"/>
-                        </Property>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JComboBox" name="jComboBox2">
-                      <Properties>
-                        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                          <StringArray count="2">
-                            <StringItem index="0" value="Oui"/>
-                            <StringItem index="1" value="Non"/>
-                          </StringArray>
-                        </Property>
-                        <Property name="selectedIndex" type="int" value="-1"/>
-                        <Property name="focusable" type="boolean" value="false"/>
-                      </Properties>
-                      <AuxValues>
-                        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-                      </AuxValues>
-                    </Component>
                     <Container class="org.jdesktop.swingx.JXPanel" name="jXPanel9">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -1337,7 +1063,7 @@
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="jXLabel24" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Group type="102" alignment="0" attributes="0">
@@ -1347,14 +1073,14 @@
                                               <Component id="jXLabel25" alignment="0" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                              <Component id="cbxEAQFonctionne8" alignment="0" pref="165" max="32767" attributes="0"/>
-                                              <Component id="cbxEAQFonctionne7" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="cbxEAQFonctionne9" max="32767" attributes="0"/>
+                                          <Group type="103" groupAlignment="1" attributes="0">
+                                              <Component id="CbxRefPatientFOSACV" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="cbxFOSAChargeVirale" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="cbxCollecterRefEchantFOSACV" max="32767" attributes="0"/>
                                           </Group>
                                       </Group>
                                   </Group>
-                                  <EmptySpace max="32767" attributes="0"/>
+                                  <EmptySpace min="-2" pref="380" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -1364,7 +1090,7 @@
                                   <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jXLabel25" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="cbxEAQFonctionne7" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="cbxFOSAChargeVirale" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="1" attributes="0">
@@ -1376,9 +1102,9 @@
                                           <Component id="jXLabel27" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" attributes="0">
-                                          <Component id="cbxEAQFonctionne8" min="-2" max="-2" attributes="0"/>
+                                          <Component id="CbxRefPatientFOSACV" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="cbxEAQFonctionne9" min="-2" max="-2" attributes="0"/>
+                                          <Component id="cbxCollecterRefEchantFOSACV" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
@@ -1396,7 +1122,7 @@
                             </Property>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JComboBox" name="cbxEAQFonctionne7">
+                        <Component class="javax.swing.JComboBox" name="cbxFOSAChargeVirale">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                               <StringArray count="2">
@@ -1407,6 +1133,9 @@
                             <Property name="selectedIndex" type="int" value="-1"/>
                             <Property name="focusable" type="boolean" value="false"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbxFOSAChargeViraleActionPerformed"/>
+                          </Events>
                           <AuxValues>
                             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                           </AuxValues>
@@ -1424,7 +1153,7 @@
                             <Property name="text" type="java.lang.String" value="- R&#xe9;f&#xe9;rer le patient"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JComboBox" name="cbxEAQFonctionne8">
+                        <Component class="javax.swing.JComboBox" name="CbxRefPatientFOSACV">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                               <StringArray count="2">
@@ -1433,13 +1162,14 @@
                               </StringArray>
                             </Property>
                             <Property name="selectedIndex" type="int" value="-1"/>
+                            <Property name="enabled" type="boolean" value="false"/>
                             <Property name="focusable" type="boolean" value="false"/>
                           </Properties>
                           <AuxValues>
                             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                           </AuxValues>
                         </Component>
-                        <Component class="javax.swing.JComboBox" name="cbxEAQFonctionne9">
+                        <Component class="javax.swing.JComboBox" name="cbxCollecterRefEchantFOSACV">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                               <StringArray count="2">
@@ -1448,6 +1178,7 @@
                               </StringArray>
                             </Property>
                             <Property name="selectedIndex" type="int" value="-1"/>
+                            <Property name="enabled" type="boolean" value="false"/>
                             <Property name="focusable" type="boolean" value="false"/>
                           </Properties>
                           <AuxValues>
@@ -1461,250 +1192,6 @@
                         </Component>
                       </SubComponents>
                     </Container>
-                    <Component class="org.jdesktop.swingx.JXLabel" name="jXLabel28">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="7. La FOSA fonction t&#x2019;elle en collaboration avec un syst&#xe8;me POC (point of care) sous contrat ? (ex. labo Dream, MSF)"/>
-                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Tahoma" size="15" style="1"/>
-                        </Property>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JComboBox" name="jComboBox3">
-                      <Properties>
-                        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                          <StringArray count="2">
-                            <StringItem index="0" value="Oui"/>
-                            <StringItem index="1" value="Non"/>
-                          </StringArray>
-                        </Property>
-                        <Property name="selectedIndex" type="int" value="-1"/>
-                        <Property name="focusable" type="boolean" value="false"/>
-                      </Properties>
-                      <AuxValues>
-                        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-                      </AuxValues>
-                    </Component>
-                    <Component class="org.jdesktop.swingx.JXLabel" name="jXLabel29">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="8. Si la FOSA collecte et r&#xe9;f&#xe8;re les &#xe9;chantillons collect&#xe9;s ; existe-t-il un r&#xe9;frig&#xe9;rateur avec charte de contr&#xf4;le de temp&#xe9;rature pour le stockage des &#xe9;chantillons. "/>
-                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Tahoma" size="15" style="1"/>
-                        </Property>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JComboBox" name="jComboBox4">
-                      <Properties>
-                        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                          <StringArray count="2">
-                            <StringItem index="0" value="Oui"/>
-                            <StringItem index="1" value="Non"/>
-                          </StringArray>
-                        </Property>
-                        <Property name="selectedIndex" type="int" value="-1"/>
-                        <Property name="focusable" type="boolean" value="false"/>
-                      </Properties>
-                      <AuxValues>
-                        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-                      </AuxValues>
-                    </Component>
-                    <Component class="org.jdesktop.swingx.JXLabel" name="jXLabel30">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="9. Si la FOSA collecte et r&#xe9;f&#xe8;re les &#xe9;chantillons collect&#xe9;s ; le syst&#xe8;me de transport des &#xe9;chantillons est-il soutenu par une chaine de froid avec monitoring de temp&#xe9;rature ? "/>
-                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Tahoma" size="15" style="1"/>
-                        </Property>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JComboBox" name="jComboBox5">
-                      <Properties>
-                        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                          <StringArray count="2">
-                            <StringItem index="0" value="Oui"/>
-                            <StringItem index="1" value="Non"/>
-                          </StringArray>
-                        </Property>
-                        <Property name="selectedIndex" type="int" value="-1"/>
-                        <Property name="focusable" type="boolean" value="false"/>
-                      </Properties>
-                      <AuxValues>
-                        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-                      </AuxValues>
-                    </Component>
-                    <Component class="org.jdesktop.swingx.JXLabel" name="jXLabel31">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="10. Existe-il un point focal a l&#x2019;UPEC (Unit&#xe9; ou Cellule de PEC des PVVIH) responsable des activit&#xe9;s relatives &#xe0; la CV ?"/>
-                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Tahoma" size="15" style="1"/>
-                        </Property>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JComboBox" name="jComboBox6">
-                      <Properties>
-                        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                          <StringArray count="2">
-                            <StringItem index="0" value="Oui"/>
-                            <StringItem index="1" value="Non"/>
-                          </StringArray>
-                        </Property>
-                        <Property name="selectedIndex" type="int" value="-1"/>
-                        <Property name="focusable" type="boolean" value="false"/>
-                      </Properties>
-                      <AuxValues>
-                        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-                      </AuxValues>
-                    </Component>
-                    <Component class="org.jdesktop.swingx.JXLabel" name="jXLabel32">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="11. Existe-t-il un processus de triage et de notification des patients sous ARV qui sont &#xe9;ligibles &#xe0; faire un test de CV mensuellement ?"/>
-                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Tahoma" size="15" style="1"/>
-                        </Property>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JComboBox" name="jComboBox7">
-                      <Properties>
-                        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                          <StringArray count="2">
-                            <StringItem index="0" value="Oui"/>
-                            <StringItem index="1" value="Non"/>
-                          </StringArray>
-                        </Property>
-                        <Property name="selectedIndex" type="int" value="-1"/>
-                        <Property name="focusable" type="boolean" value="false"/>
-                      </Properties>
-                      <AuxValues>
-                        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-                      </AuxValues>
-                    </Component>
-                    <Component class="org.jdesktop.swingx.JXLabel" name="jXLabel33">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="Si Oui, est-il document&#xe9; dans un registre ou dossier malade (il faut voir)"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JComboBox" name="jComboBox8">
-                      <Properties>
-                        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                          <StringArray count="2">
-                            <StringItem index="0" value="Oui"/>
-                            <StringItem index="1" value="Non"/>
-                          </StringArray>
-                        </Property>
-                        <Property name="selectedIndex" type="int" value="-1"/>
-                        <Property name="focusable" type="boolean" value="false"/>
-                      </Properties>
-                      <AuxValues>
-                        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-                      </AuxValues>
-                    </Component>
-                    <Component class="org.jdesktop.swingx.JXLabel" name="jXLabel34">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="12. Existe-t-il un registre qui documente la date de pr&#xe9;l&#xe8;vement de la CV faite aux patients ?"/>
-                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Tahoma" size="15" style="1"/>
-                        </Property>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JComboBox" name="jComboBox9">
-                      <Properties>
-                        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                          <StringArray count="2">
-                            <StringItem index="0" value="Oui"/>
-                            <StringItem index="1" value="Non"/>
-                          </StringArray>
-                        </Property>
-                        <Property name="selectedIndex" type="int" value="-1"/>
-                        <Property name="focusable" type="boolean" value="false"/>
-                      </Properties>
-                      <AuxValues>
-                        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-                      </AuxValues>
-                    </Component>
-                    <Component class="org.jdesktop.swingx.JXLabel" name="jXLabel35">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="Si Oui, la date est-elle enregistr&#xe9;e ?"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JComboBox" name="jComboBox10">
-                      <Properties>
-                        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                          <StringArray count="2">
-                            <StringItem index="0" value="Oui"/>
-                            <StringItem index="1" value="Non"/>
-                          </StringArray>
-                        </Property>
-                        <Property name="selectedIndex" type="int" value="-1"/>
-                        <Property name="focusable" type="boolean" value="false"/>
-                      </Properties>
-                      <AuxValues>
-                        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-                      </AuxValues>
-                    </Component>
-                    <Component class="javax.swing.JComboBox" name="jComboBox11">
-                      <Properties>
-                        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                          <StringArray count="2">
-                            <StringItem index="0" value="Oui"/>
-                            <StringItem index="1" value="Non"/>
-                          </StringArray>
-                        </Property>
-                        <Property name="selectedIndex" type="int" value="-1"/>
-                        <Property name="focusable" type="boolean" value="false"/>
-                      </Properties>
-                      <AuxValues>
-                        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-                      </AuxValues>
-                    </Component>
-                    <Component class="org.jdesktop.swingx.JXLabel" name="jXLabel36">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="13. Existe-t-il un registre qui documente les r&#xe9;sultats et la date de retour des CV fait aux patients ?"/>
-                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Tahoma" size="15" style="1"/>
-                        </Property>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JComboBox" name="jComboBox12">
-                      <Properties>
-                        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                          <StringArray count="2">
-                            <StringItem index="0" value="Oui"/>
-                            <StringItem index="1" value="Non"/>
-                          </StringArray>
-                        </Property>
-                        <Property name="selectedIndex" type="int" value="-1"/>
-                        <Property name="focusable" type="boolean" value="false"/>
-                      </Properties>
-                      <AuxValues>
-                        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-                      </AuxValues>
-                    </Component>
-                    <Component class="org.jdesktop.swingx.JXLabel" name="jXLabel37">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="Si Oui, la date est-elle enregistr&#xe9;e ?"/>
-                      </Properties>
-                    </Component>
-                    <Component class="org.jdesktop.swingx.JXLabel" name="jXLabel40">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="15. Existe-t-il un registre qui documente les r&#xe9;sultats de CV &#xe9;lev&#xe9;e &#x2265;1,000 copies/ml ? "/>
-                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Tahoma" size="15" style="1"/>
-                        </Property>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JComboBox" name="jComboBox15">
-                      <Properties>
-                        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                          <StringArray count="2">
-                            <StringItem index="0" value="Oui"/>
-                            <StringItem index="1" value="Non"/>
-                          </StringArray>
-                        </Property>
-                        <Property name="selectedIndex" type="int" value="-1"/>
-                        <Property name="focusable" type="boolean" value="false"/>
-                      </Properties>
-                      <AuxValues>
-                        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-                      </AuxValues>
-                    </Component>
                     <Container class="org.jdesktop.swingx.JXPanel" name="jXPanel10">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -1721,17 +1208,22 @@
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="jXLabel38" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jXLabel39" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
                                           <Component id="jXLabel41" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                          <Component id="jXTextField2" max="32767" attributes="0"/>
+                                          <EmptySpace min="-2" pref="254" max="-2" attributes="0"/>
+                                          <Component id="txtPourcentResuDocumentes" max="32767" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="jXLabel38" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jXLabel39" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <EmptySpace max="32767" attributes="0"/>
+                                  <EmptySpace min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -1743,7 +1235,7 @@
                                   <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jXLabel41" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jXTextField2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="txtPourcentResuDocumentes" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="jXLabel39" min="-2" max="-2" attributes="0"/>
@@ -1774,7 +1266,10 @@
                             <Property name="text" type="java.lang.String" value="Quel pourcentage des r&#xe9;sultats sont document&#xe9;es  dans les dossiers des  malades  ?"/>
                           </Properties>
                         </Component>
-                        <Component class="org.jdesktop.swingx.JXTextField" name="jXTextField2">
+                        <Component class="org.jdesktop.swingx.JXTextField" name="txtPourcentResuDocumentes">
+                          <Properties>
+                            <Property name="enabled" type="boolean" value="false"/>
+                          </Properties>
                         </Component>
                       </SubComponents>
                     </Container>
@@ -1800,13 +1295,13 @@
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="jXLabel46" min="-2" max="-2" attributes="0"/>
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Component id="jCheckBox1" min="-2" max="-2" attributes="0"/>
+                                          <Component id="chxMoinsDe1mois" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="jCheckBox2" min="-2" max="-2" attributes="0"/>
+                                          <Component id="chxDans1Mois" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="jCheckBox3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="chxEntre1A3Mois" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="jCheckBox4" min="-2" max="-2" attributes="0"/>
+                                          <Component id="chxPlusDe3Mois" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <EmptySpace max="32767" attributes="0"/>
@@ -1818,10 +1313,10 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="jCheckBox1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jCheckBox2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jCheckBox3" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jCheckBox4" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="chxMoinsDe1mois" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="chxDans1Mois" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="chxEntre1A3Mois" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="chxPlusDe3Mois" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Component id="jXLabel46" min="-2" max="-2" attributes="0"/>
@@ -1831,7 +1326,7 @@
                         </DimensionLayout>
                       </Layout>
                       <SubComponents>
-                        <Component class="javax.swing.JCheckBox" name="jCheckBox1">
+                        <Component class="javax.swing.JCheckBox" name="chxMoinsDe1mois">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="ff" green="ff" id="white" palette="1" red="ff" type="palette"/>
@@ -1842,7 +1337,7 @@
                             <Property name="text" type="java.lang.String" value="Moins de 1mois"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JCheckBox" name="jCheckBox2">
+                        <Component class="javax.swing.JCheckBox" name="chxDans1Mois">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="ff" green="ff" id="white" palette="1" red="ff" type="palette"/>
@@ -1853,7 +1348,7 @@
                             <Property name="text" type="java.lang.String" value="Dans 1 mois     "/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JCheckBox" name="jCheckBox3">
+                        <Component class="javax.swing.JCheckBox" name="chxEntre1A3Mois">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="ff" green="ff" id="white" palette="1" red="ff" type="palette"/>
@@ -1864,7 +1359,7 @@
                             <Property name="text" type="java.lang.String" value="Entre 1 &#xe0; 3 mois "/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JCheckBox" name="jCheckBox4">
+                        <Component class="javax.swing.JCheckBox" name="chxPlusDe3Mois">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="ff" green="ff" id="white" palette="1" red="ff" type="palette"/>
@@ -1882,29 +1377,6 @@
                         </Component>
                       </SubComponents>
                     </Container>
-                    <Component class="org.jdesktop.swingx.JXLabel" name="jXLabel42">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="17. Existe-t-il un processus de suivi des r&#xe9;sultats au niveau du laboratoire central ?"/>
-                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Tahoma" size="15" style="1"/>
-                        </Property>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JComboBox" name="jComboBox16">
-                      <Properties>
-                        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                          <StringArray count="2">
-                            <StringItem index="0" value="Oui"/>
-                            <StringItem index="1" value="Non"/>
-                          </StringArray>
-                        </Property>
-                        <Property name="selectedIndex" type="int" value="-1"/>
-                        <Property name="focusable" type="boolean" value="false"/>
-                      </Properties>
-                      <AuxValues>
-                        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-                      </AuxValues>
-                    </Component>
                     <Container class="org.jdesktop.swingx.JXPanel" name="jXPanel12">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -1925,15 +1397,15 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jXLabel45" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="jXLabel44" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jXLabel45" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                      <Component id="cbxEAQFonctionne11" alignment="0" pref="165" max="32767" attributes="0"/>
-                                      <Component id="cbxEAQFonctionne10" alignment="0" max="32767" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="cbxProcessRenforCounseling" max="32767" attributes="0"/>
+                                      <Component id="cbxProcessRenforDocumente" max="32767" attributes="0"/>
                                   </Group>
-                                  <EmptySpace max="32767" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -1943,11 +1415,11 @@
                                   <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jXLabel44" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="cbxEAQFonctionne10" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="cbxProcessRenforCounseling" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="cbxEAQFonctionne11" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="cbxProcessRenforDocumente" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="jXLabel45" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="32767" attributes="0"/>
@@ -1956,7 +1428,7 @@
                         </DimensionLayout>
                       </Layout>
                       <SubComponents>
-                        <Component class="javax.swing.JComboBox" name="cbxEAQFonctionne10">
+                        <Component class="javax.swing.JComboBox" name="cbxProcessRenforCounseling">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                               <StringArray count="2">
@@ -1967,6 +1439,9 @@
                             <Property name="selectedIndex" type="int" value="-1"/>
                             <Property name="focusable" type="boolean" value="false"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbxProcessRenforCounselingActionPerformed"/>
+                          </Events>
                           <AuxValues>
                             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                           </AuxValues>
@@ -1984,7 +1459,7 @@
                             <Property name="text" type="java.lang.String" value="Si Oui, est-il document&#xe9; dans le registre ou dossier patient ? (Il faut voir)"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JComboBox" name="cbxEAQFonctionne11">
+                        <Component class="javax.swing.JComboBox" name="cbxProcessRenforDocumente">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                               <StringArray count="2">
@@ -2019,17 +1494,17 @@
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="jXLabel48" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="jXLabel47" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                      <Component id="cbxEAQFonctionne13" alignment="0" pref="165" max="32767" attributes="0"/>
-                                      <Component id="cbxEAQFonctionne12" alignment="0" max="32767" attributes="0"/>
+                                  <EmptySpace min="-2" pref="158" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="cbxSystemeGroupSoutien" max="32767" attributes="0"/>
+                                      <Component id="cbxSystemeGroupSoutienDocumente" max="32767" attributes="0"/>
                                   </Group>
-                                  <EmptySpace max="32767" attributes="0"/>
+                                  <EmptySpace min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -2039,11 +1514,11 @@
                                   <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jXLabel47" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="cbxEAQFonctionne12" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="cbxSystemeGroupSoutien" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="cbxEAQFonctionne13" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="cbxSystemeGroupSoutienDocumente" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="jXLabel48" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="32767" attributes="0"/>
@@ -2052,7 +1527,7 @@
                         </DimensionLayout>
                       </Layout>
                       <SubComponents>
-                        <Component class="javax.swing.JComboBox" name="cbxEAQFonctionne12">
+                        <Component class="javax.swing.JComboBox" name="cbxSystemeGroupSoutien">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                               <StringArray count="2">
@@ -2063,6 +1538,9 @@
                             <Property name="selectedIndex" type="int" value="-1"/>
                             <Property name="focusable" type="boolean" value="false"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbxSystemeGroupSoutienActionPerformed"/>
+                          </Events>
                           <AuxValues>
                             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                           </AuxValues>
@@ -2080,7 +1558,7 @@
                             <Property name="text" type="java.lang.String" value="Si Oui, est-il document&#xe9; dans un rapport (voir m&#xea;me liste de pr&#xe9;sence/sujets d&#xe9;velopp&#xe9;s) ? (Il faut voir)"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JComboBox" name="cbxEAQFonctionne13">
+                        <Component class="javax.swing.JComboBox" name="cbxSystemeGroupSoutienDocumente">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                               <StringArray count="2">
@@ -2097,164 +1575,910 @@
                         </Component>
                       </SubComponents>
                     </Container>
-                    <Component class="org.jdesktop.swingx.JXLabel" name="jXLabel49">
+                    <Component class="org.jdesktop.swingx.JXHyperlink" name="hyplTop">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="20. Combien des patients sont activement sous traitement ARV depuis 1 an ?"/>
-                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Tahoma" size="15" style="1"/>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="ff" green="ff" id="white" palette="1" red="ff" type="palette"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="Retourner vers le haut de page"/>
+                        <Property name="clicked" type="boolean" value="true"/>
+                        <Property name="clickedColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="cc" green="cc" red="cc" type="rgb"/>
                         </Property>
                       </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="hyplTopActionPerformed"/>
+                      </Events>
                     </Component>
-                    <Component class="org.jdesktop.swingx.JXTextField" name="jXTextField3">
-                    </Component>
-                    <Component class="org.jdesktop.swingx.JXLabel" name="jXLabel51">
+                    <Container class="org.jdesktop.swingx.JXPanel" name="jXPanel15">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="21. Combien des patients activement sous traitement ARV depuis 12mois ont effectu&#xe9; au moins 01 pr&#xe9;l&#xe8;vement charge virale ?"/>
-                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Tahoma" size="15" style="1"/>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="ff" green="ff" id="white" palette="1" red="ff" type="palette"/>
+                        </Property>
+                        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                          <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+                            <TitledBorder/>
+                          </Border>
                         </Property>
                       </Properties>
-                    </Component>
-                    <Component class="org.jdesktop.swingx.JXTextField" name="jXTextField4">
-                    </Component>
-                    <Component class="org.jdesktop.swingx.JXLabel" name="jXLabel52">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="22. Combien des patients activement sous traitement ARV depuis 12mois ont effectu&#xe9; au moins 01 pr&#xe9;l&#xe8;vement CV dans 12 mois avec r&#xe9;sultats retourn&#xe9;es et/ou disponibles ?"/>
-                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Tahoma" size="15" style="1"/>
-                        </Property>
-                      </Properties>
-                    </Component>
-                    <Component class="org.jdesktop.swingx.JXTextField" name="jXTextField5">
-                    </Component>
-                    <Component class="org.jdesktop.swingx.JXLabel" name="jXLabel53">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="23. Parmi les patients qui ont un r&#xe9;sultat de CV retourn&#xe9;es, combien des patients ont un CV non d&#xe9;tectable/supprim&#xe9;e ?"/>
-                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Tahoma" size="15" style="1"/>
-                        </Property>
-                      </Properties>
-                    </Component>
-                    <Component class="org.jdesktop.swingx.JXTextField" name="jXTextField6">
-                    </Component>
-                    <Component class="org.jdesktop.swingx.JXLabel" name="jXLabel54">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="24. Quel est le nombre de Personnels s&#x2019;occupant de la PEC des PVVIH au niveau de la structure ?"/>
-                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Tahoma" size="15" style="1"/>
-                        </Property>
-                      </Properties>
-                    </Component>
-                    <Component class="org.jdesktop.swingx.JXTextField" name="jXTextField7">
-                    </Component>
-                    <Component class="org.jdesktop.swingx.JXLabel" name="jXLabel50">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="25. Au cours de 12 derniers mois, les personnels ont-ils &#xe9;t&#xe9; form&#xe9;s sur les techniques d&#x2019;AQ ? "/>
-                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Tahoma" size="15" style="1"/>
-                        </Property>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JComboBox" name="jComboBox18">
-                      <Properties>
-                        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                          <StringArray count="2">
-                            <StringItem index="0" value="Oui"/>
-                            <StringItem index="1" value="Non"/>
-                          </StringArray>
-                        </Property>
-                        <Property name="selectedIndex" type="int" value="-1"/>
-                        <Property name="focusable" type="boolean" value="false"/>
-                      </Properties>
-                      <AuxValues>
-                        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-                      </AuxValues>
-                    </Component>
-                    <Component class="org.jdesktop.swingx.JXLabel" name="jXLabel55">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="26. Quel est le nombre de Personnels form&#xe9;s sur les techniques d&#x2019;AQ ?"/>
-                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Tahoma" size="15" style="1"/>
-                        </Property>
-                      </Properties>
-                    </Component>
-                    <Component class="org.jdesktop.swingx.JXTextField" name="jXTextField8">
-                    </Component>
-                    <Component class="org.jdesktop.swingx.JXLabel" name="jXLabel56">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="27. Quelle est la proportion de Personnels form&#xe9;s sur les techniques d&#x2019;AQ ?"/>
-                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Tahoma" size="15" style="1"/>
-                        </Property>
-                      </Properties>
-                    </Component>
-                    <Component class="org.jdesktop.swingx.JXTextField" name="jXTextField9">
-                    </Component>
-                    <Component class="org.jdesktop.swingx.JXLabel" name="jXLabel57">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="28. Dans une FOSA de collecte et de r&#xe9;f&#xe9;rence de l&#x2019;&#xe9;chantillon ; les personnels sont-ils form&#xe9;s sur les techniques de collecte ?"/>
-                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Tahoma" size="15" style="1"/>
-                        </Property>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JComboBox" name="jComboBox19">
-                      <Properties>
-                        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                          <StringArray count="2">
-                            <StringItem index="0" value="Oui"/>
-                            <StringItem index="1" value="Non"/>
-                          </StringArray>
-                        </Property>
-                        <Property name="selectedIndex" type="int" value="-1"/>
-                        <Property name="focusable" type="boolean" value="false"/>
-                      </Properties>
-                      <AuxValues>
-                        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-                      </AuxValues>
-                    </Component>
-                    <Component class="org.jdesktop.swingx.JXLabel" name="jXLabel58">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="29. Le personnel a-t-il des notions sur l&#x2019;algorithme et les proc&#xe9;dures standards de la CV selon les recommandations du PNLS ?"/>
-                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Tahoma" size="15" style="1"/>
-                        </Property>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JComboBox" name="jComboBox20">
-                      <Properties>
-                        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                          <StringArray count="2">
-                            <StringItem index="0" value="Oui"/>
-                            <StringItem index="1" value="Non"/>
-                          </StringArray>
-                        </Property>
-                        <Property name="selectedIndex" type="int" value="-1"/>
-                        <Property name="focusable" type="boolean" value="false"/>
-                      </Properties>
-                      <AuxValues>
-                        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-                      </AuxValues>
-                    </Component>
-                    <Component class="org.jdesktop.swingx.JXLabel" name="jXLabel59">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="30. Nous souhaitons maximiser les proc&#xe9;dures pour une meilleure PEC de la CV : Selon vous quelles sont les strat&#xe9;gies que l&#x2019;on peut utiliser pour aboutir &#xe0; cela au sein de la FOSA "/>
-                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Tahoma" size="15" style="1"/>
-                        </Property>
-                      </Properties>
-                    </Component>
-                    <Container class="javax.swing.JScrollPane" name="jScrollPane1">
-                      <AuxValues>
-                        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-                      </AuxValues>
 
-                      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                      <Layout>
+                        <DimensionLayout dim="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="jXLabel31" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jXLabel32" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="-2" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="cbxPointFocalUPEC" max="32767" attributes="0"/>
+                                              <Component id="cbxTriageNotifPatientARV" max="32767" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="jXLabel28" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jXLabel29" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="-2" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="cbxRefrigControlTemp" max="32767" attributes="0"/>
+                                              <Component id="cbxSysFOSAPOC" max="32767" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="jXLabel30" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                                          <Component id="cbxTransportEchantFroid" max="32767" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="jXLabel36" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jXLabel37" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jXLabel35" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jXLabel34" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jXLabel33" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="-2" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="cbxTriageDocumenteRegis" max="32767" attributes="0"/>
+                                              <Component id="cbxRegisResuDatePrelev" max="32767" attributes="0"/>
+                                              <Component id="cbxDatePrelevEnregis" max="32767" attributes="0"/>
+                                              <Component id="cbxDateRetourEnregis" max="32767" attributes="0"/>
+                                              <Component id="cbxRegisResuDateRetour" max="32767" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                  </Group>
+                                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                        </DimensionLayout>
+                        <DimensionLayout dim="1">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jXLabel28" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="cbxSysFOSAPOC" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jXLabel29" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="cbxRefrigControlTemp" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jXLabel30" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="cbxTransportEchantFroid" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jXLabel31" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="cbxPointFocalUPEC" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jXLabel32" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="cbxTriageNotifPatientARV" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jXLabel33" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="cbxTriageDocumenteRegis" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jXLabel34" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="cbxRegisResuDatePrelev" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jXLabel35" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="cbxDatePrelevEnregis" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jXLabel36" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="cbxRegisResuDateRetour" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jXLabel37" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="cbxDateRetourEnregis" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                        </DimensionLayout>
+                      </Layout>
                       <SubComponents>
-                        <Component class="org.jdesktop.swingx.JXTextArea" name="jXTextArea1">
+                        <Component class="javax.swing.JComboBox" name="cbxTriageDocumenteRegis">
                           <Properties>
-                            <Property name="columns" type="int" value="20"/>
-                            <Property name="rows" type="int" value="5"/>
+                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                              <StringArray count="2">
+                                <StringItem index="0" value="Oui"/>
+                                <StringItem index="1" value="Non"/>
+                              </StringArray>
+                            </Property>
+                            <Property name="selectedIndex" type="int" value="-1"/>
+                            <Property name="enabled" type="boolean" value="false"/>
+                            <Property name="focusable" type="boolean" value="false"/>
+                          </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                          </AuxValues>
+                        </Component>
+                        <Component class="javax.swing.JComboBox" name="cbxTriageNotifPatientARV">
+                          <Properties>
+                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                              <StringArray count="2">
+                                <StringItem index="0" value="Oui"/>
+                                <StringItem index="1" value="Non"/>
+                              </StringArray>
+                            </Property>
+                            <Property name="selectedIndex" type="int" value="-1"/>
+                            <Property name="focusable" type="boolean" value="false"/>
+                          </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbxTriageNotifPatientARVActionPerformed"/>
+                          </Events>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                          </AuxValues>
+                        </Component>
+                        <Component class="javax.swing.JComboBox" name="cbxPointFocalUPEC">
+                          <Properties>
+                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                              <StringArray count="2">
+                                <StringItem index="0" value="Oui"/>
+                                <StringItem index="1" value="Non"/>
+                              </StringArray>
+                            </Property>
+                            <Property name="selectedIndex" type="int" value="-1"/>
+                            <Property name="focusable" type="boolean" value="false"/>
+                          </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                          </AuxValues>
+                        </Component>
+                        <Component class="org.jdesktop.swingx.JXLabel" name="jXLabel35">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="Si Oui, la date est-elle enregistr&#xe9;e ?"/>
+                          </Properties>
+                        </Component>
+                        <Component class="org.jdesktop.swingx.JXLabel" name="jXLabel33">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="Si Oui, est-il document&#xe9; dans un registre ou dossier malade (il faut voir)"/>
+                          </Properties>
+                        </Component>
+                        <Component class="org.jdesktop.swingx.JXLabel" name="jXLabel34">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="12. Existe-t-il un registre qui documente la date de pr&#xe9;l&#xe8;vement de la CV faite aux patients ?"/>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Tahoma" size="15" style="1"/>
+                            </Property>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JComboBox" name="cbxDatePrelevEnregis">
+                          <Properties>
+                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                              <StringArray count="2">
+                                <StringItem index="0" value="Oui"/>
+                                <StringItem index="1" value="Non"/>
+                              </StringArray>
+                            </Property>
+                            <Property name="selectedIndex" type="int" value="-1"/>
+                            <Property name="enabled" type="boolean" value="false"/>
+                            <Property name="focusable" type="boolean" value="false"/>
+                          </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                          </AuxValues>
+                        </Component>
+                        <Component class="org.jdesktop.swingx.JXLabel" name="jXLabel30">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="&lt;html&gt;9. Si la FOSA collecte et r&#xe9;f&#xe8;re les &#xe9;chantillons collect&#xe9;s ; le syst&#xe8;me de transport des &#xe9;chantillons est-il soutenu&lt;br&gt; par une chaine de froid avec monitoring de temp&#xe9;rature ?&lt;/html&gt;"/>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Tahoma" size="15" style="1"/>
+                            </Property>
+                          </Properties>
+                        </Component>
+                        <Component class="org.jdesktop.swingx.JXLabel" name="jXLabel32">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="&lt;html&gt;11. Existe-t-il un processus de triage et de notification des patients sous ARV qui sont &#xe9;ligibles&lt;br&gt; &#xe0; faire un test de CV mensuellement ?&lt;/html&gt;"/>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Tahoma" size="15" style="1"/>
+                            </Property>
+                          </Properties>
+                        </Component>
+                        <Component class="org.jdesktop.swingx.JXLabel" name="jXLabel36">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="13. Existe-t-il un registre qui documente les r&#xe9;sultats et la date de retour des CV fait aux patients ?"/>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Tahoma" size="15" style="1"/>
+                            </Property>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JComboBox" name="cbxRefrigControlTemp">
+                          <Properties>
+                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                              <StringArray count="2">
+                                <StringItem index="0" value="Oui"/>
+                                <StringItem index="1" value="Non"/>
+                              </StringArray>
+                            </Property>
+                            <Property name="selectedIndex" type="int" value="-1"/>
+                            <Property name="focusable" type="boolean" value="false"/>
+                          </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                          </AuxValues>
+                        </Component>
+                        <Component class="javax.swing.JComboBox" name="cbxDateRetourEnregis">
+                          <Properties>
+                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                              <StringArray count="2">
+                                <StringItem index="0" value="Oui"/>
+                                <StringItem index="1" value="Non"/>
+                              </StringArray>
+                            </Property>
+                            <Property name="selectedIndex" type="int" value="-1"/>
+                            <Property name="enabled" type="boolean" value="false"/>
+                            <Property name="focusable" type="boolean" value="false"/>
+                          </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                          </AuxValues>
+                        </Component>
+                        <Component class="javax.swing.JComboBox" name="cbxRegisResuDatePrelev">
+                          <Properties>
+                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                              <StringArray count="2">
+                                <StringItem index="0" value="Oui"/>
+                                <StringItem index="1" value="Non"/>
+                              </StringArray>
+                            </Property>
+                            <Property name="selectedIndex" type="int" value="-1"/>
+                            <Property name="focusable" type="boolean" value="false"/>
+                          </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbxRegisResuDatePrelevActionPerformed"/>
+                          </Events>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                          </AuxValues>
+                        </Component>
+                        <Component class="org.jdesktop.swingx.JXLabel" name="jXLabel31">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="10. Existe-il un point focal a l&#x2019;UPEC (Unit&#xe9; ou Cellule de PEC des PVVIH) responsable des activit&#xe9;s relatives &#xe0; la CV ?"/>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Tahoma" size="15" style="1"/>
+                            </Property>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JComboBox" name="cbxRegisResuDateRetour">
+                          <Properties>
+                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                              <StringArray count="2">
+                                <StringItem index="0" value="Oui"/>
+                                <StringItem index="1" value="Non"/>
+                              </StringArray>
+                            </Property>
+                            <Property name="selectedIndex" type="int" value="-1"/>
+                            <Property name="focusable" type="boolean" value="false"/>
+                          </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbxRegisResuDateRetourActionPerformed"/>
+                          </Events>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                          </AuxValues>
+                        </Component>
+                        <Component class="javax.swing.JComboBox" name="cbxTransportEchantFroid">
+                          <Properties>
+                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                              <StringArray count="2">
+                                <StringItem index="0" value="Oui"/>
+                                <StringItem index="1" value="Non"/>
+                              </StringArray>
+                            </Property>
+                            <Property name="selectedIndex" type="int" value="-1"/>
+                            <Property name="focusable" type="boolean" value="false"/>
+                          </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                          </AuxValues>
+                        </Component>
+                        <Component class="javax.swing.JComboBox" name="cbxSysFOSAPOC">
+                          <Properties>
+                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                              <StringArray count="2">
+                                <StringItem index="0" value="Oui"/>
+                                <StringItem index="1" value="Non"/>
+                              </StringArray>
+                            </Property>
+                            <Property name="selectedIndex" type="int" value="-1"/>
+                            <Property name="focusable" type="boolean" value="false"/>
+                          </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                          </AuxValues>
+                        </Component>
+                        <Component class="org.jdesktop.swingx.JXLabel" name="jXLabel29">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="&lt;html&gt;8. Si la FOSA collecte et r&#xe9;f&#xe8;re les &#xe9;chantillons collect&#xe9;s ; existe-t-il un r&#xe9;frig&#xe9;rateur avec charte de contr&#xf4;le&lt;br&gt; de temp&#xe9;rature pour le stockage des &#xe9;chantillons.&lt;/html&gt; "/>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Tahoma" size="15" style="1"/>
+                            </Property>
+                          </Properties>
+                        </Component>
+                        <Component class="org.jdesktop.swingx.JXLabel" name="jXLabel28">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="7. La FOSA fonction t&#x2019;elle en collaboration avec un syst&#xe8;me POC (point of care) sous contrat ? (ex. labo Dream, MSF)"/>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Tahoma" size="15" style="1"/>
+                            </Property>
+                          </Properties>
+                        </Component>
+                        <Component class="org.jdesktop.swingx.JXLabel" name="jXLabel37">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="Si Oui, la date est-elle enregistr&#xe9;e ?"/>
+                          </Properties>
+                        </Component>
+                      </SubComponents>
+                    </Container>
+                    <Container class="org.jdesktop.swingx.JXPanel" name="jXPanel16">
+                      <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="ff" green="ff" id="white" palette="1" red="ff" type="palette"/>
+                        </Property>
+                        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                          <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+                            <TitledBorder/>
+                          </Border>
+                        </Property>
+                      </Properties>
+
+                      <Layout>
+                        <DimensionLayout dim="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                                  <Component id="jXLabel40" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
+                                  <Component id="cbxRegisResuCV1000" max="32767" attributes="0"/>
+                                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                        </DimensionLayout>
+                        <DimensionLayout dim="1">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jXLabel40" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="cbxRegisResuCV1000" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                        </DimensionLayout>
+                      </Layout>
+                      <SubComponents>
+                        <Component class="javax.swing.JComboBox" name="cbxRegisResuCV1000">
+                          <Properties>
+                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                              <StringArray count="2">
+                                <StringItem index="0" value="Oui"/>
+                                <StringItem index="1" value="Non"/>
+                              </StringArray>
+                            </Property>
+                            <Property name="selectedIndex" type="int" value="-1"/>
+                            <Property name="focusable" type="boolean" value="false"/>
+                          </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                          </AuxValues>
+                        </Component>
+                        <Component class="org.jdesktop.swingx.JXLabel" name="jXLabel40">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="15. Existe-t-il un registre qui documente les r&#xe9;sultats de CV &#xe9;lev&#xe9;e &#x2265;1,000 copies/ml ? "/>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Tahoma" size="15" style="1"/>
+                            </Property>
+                          </Properties>
+                        </Component>
+                      </SubComponents>
+                    </Container>
+                    <Container class="org.jdesktop.swingx.JXPanel" name="jXPanel17">
+                      <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="ff" green="ff" id="white" palette="1" red="ff" type="palette"/>
+                        </Property>
+                        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                          <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+                            <TitledBorder/>
+                          </Border>
+                        </Property>
+                      </Properties>
+
+                      <Layout>
+                        <DimensionLayout dim="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                                  <Component id="jXLabel42" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="125" max="-2" attributes="0"/>
+                                  <Component id="cbxProcessSuiviResu" max="32767" attributes="0"/>
+                                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                        </DimensionLayout>
+                        <DimensionLayout dim="1">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jXLabel42" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="cbxProcessSuiviResu" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                        </DimensionLayout>
+                      </Layout>
+                      <SubComponents>
+                        <Component class="javax.swing.JComboBox" name="cbxProcessSuiviResu">
+                          <Properties>
+                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                              <StringArray count="2">
+                                <StringItem index="0" value="Oui"/>
+                                <StringItem index="1" value="Non"/>
+                              </StringArray>
+                            </Property>
+                            <Property name="selectedIndex" type="int" value="-1"/>
+                            <Property name="focusable" type="boolean" value="false"/>
+                          </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                          </AuxValues>
+                        </Component>
+                        <Component class="org.jdesktop.swingx.JXLabel" name="jXLabel42">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="17. Existe-t-il un processus de suivi des r&#xe9;sultats au niveau du laboratoire central ?"/>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Tahoma" size="15" style="1"/>
+                            </Property>
+                          </Properties>
+                        </Component>
+                      </SubComponents>
+                    </Container>
+                    <Container class="org.jdesktop.swingx.JXPanel" name="jXPanel18">
+                      <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="ff" green="ff" id="white" palette="1" red="ff" type="palette"/>
+                        </Property>
+                        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                          <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+                            <TitledBorder/>
+                          </Border>
+                        </Property>
+                      </Properties>
+
+                      <Layout>
+                        <DimensionLayout dim="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="jXLabel51" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
+                                          <Component id="txtPatientARV12moisPrelevCV" max="32767" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="jXLabel52" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Component id="txtPatientARV12moisPrelevCV12mois" max="32767" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="jXLabel54" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Component id="txtPersPecPVVIHStructure" max="32767" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="jXLabel50" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jXLabel55" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="txtPersFormeesTechAQ" max="32767" attributes="0"/>
+                                              <Component id="cbxPersFormeesTechAQ" max="32767" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="jXLabel56" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jXLabel57" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="cbxPersFormeesTechCollect" max="32767" attributes="0"/>
+                                              <Component id="txtPropPersFormeesTechAQ" max="32767" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="jXLabel53" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
+                                          <Component id="txtPatientCVNonDetectable" max="32767" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Component id="jXLabel58" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
+                                          <Component id="cbxPersNotionAlgoCVPNLS" max="32767" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="jXLabel49" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="159" max="-2" attributes="0"/>
+                                          <Component id="txtPatientActivARV1An" max="32767" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" attributes="0">
+                                          <Component id="jXLabel59" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                      </Group>
+                                      <Component id="jScrollPane2" max="32767" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                        </DimensionLayout>
+                        <DimensionLayout dim="1">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jXLabel49" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="txtPatientActivARV1An" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jXLabel51" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="txtPatientARV12moisPrelevCV" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jXLabel52" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="txtPatientARV12moisPrelevCV12mois" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jXLabel53" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="txtPatientCVNonDetectable" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jXLabel54" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="txtPersPecPVVIHStructure" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jXLabel50" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="cbxPersFormeesTechAQ" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jXLabel55" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="txtPersFormeesTechAQ" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jXLabel56" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="txtPropPersFormeesTechAQ" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jXLabel57" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="cbxPersFormeesTechCollect" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jXLabel58" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="cbxPersNotionAlgoCVPNLS" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jXLabel59" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jScrollPane2" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                        </DimensionLayout>
+                      </Layout>
+                      <SubComponents>
+                        <Component class="org.jdesktop.swingx.JXTextField" name="txtPatientARV12moisPrelevCV12mois">
+                        </Component>
+                        <Component class="org.jdesktop.swingx.JXLabel" name="jXLabel57">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="&lt;html&gt;28. Dans une FOSA de collecte et de r&#xe9;f&#xe9;rence de l&#x2019;&#xe9;chantillon ; les personnels sont-ils form&#xe9;s&lt;br&gt; sur les techniques de collecte ? &lt;/html&gt;"/>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Tahoma" size="15" style="1"/>
+                            </Property>
+                          </Properties>
+                        </Component>
+                        <Component class="org.jdesktop.swingx.JXTextField" name="txtPatientActivARV1An">
+                        </Component>
+                        <Component class="javax.swing.JComboBox" name="cbxPersFormeesTechCollect">
+                          <Properties>
+                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                              <StringArray count="2">
+                                <StringItem index="0" value="Oui"/>
+                                <StringItem index="1" value="Non"/>
+                              </StringArray>
+                            </Property>
+                            <Property name="selectedIndex" type="int" value="-1"/>
+                            <Property name="focusable" type="boolean" value="false"/>
+                          </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                          </AuxValues>
+                        </Component>
+                        <Component class="org.jdesktop.swingx.JXLabel" name="jXLabel50">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="25. Au cours de 12 derniers mois, les personnels ont-ils &#xe9;t&#xe9; form&#xe9;s sur les techniques d&#x2019;AQ ? "/>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Tahoma" size="15" style="1"/>
+                            </Property>
+                          </Properties>
+                        </Component>
+                        <Component class="org.jdesktop.swingx.JXTextField" name="txtPropPersFormeesTechAQ">
+                        </Component>
+                        <Component class="org.jdesktop.swingx.JXLabel" name="jXLabel59">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="&lt;html&gt;30. Nous souhaitons maximiser les proc&#xe9;dures pour une meilleure PEC de la CV : Selon vous quelles sont les strat&#xe9;gies &lt;br&gt;que l&#x2019;on peut utiliser pour aboutir &#xe0; cela au sein de la FOSA &lt;/html&gt;"/>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Tahoma" size="15" style="1"/>
+                            </Property>
+                          </Properties>
+                        </Component>
+                        <Component class="org.jdesktop.swingx.JXLabel" name="jXLabel54">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="24. Quel est le nombre de Personnels s&#x2019;occupant de la PEC des PVVIH au niveau de la structure ?"/>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Tahoma" size="15" style="1"/>
+                            </Property>
+                          </Properties>
+                        </Component>
+                        <Component class="org.jdesktop.swingx.JXLabel" name="jXLabel49">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="20. Combien des patients sont activement sous traitement ARV depuis 1 an ?"/>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Tahoma" size="15" style="1"/>
+                            </Property>
+                          </Properties>
+                        </Component>
+                        <Component class="org.jdesktop.swingx.JXTextField" name="txtPatientARV12moisPrelevCV">
+                        </Component>
+                        <Component class="org.jdesktop.swingx.JXTextField" name="txtPersFormeesTechAQ">
+                        </Component>
+                        <Component class="org.jdesktop.swingx.JXLabel" name="jXLabel56">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="27. Quelle est la proportion de Personnels form&#xe9;s sur les techniques d&#x2019;AQ ?"/>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Tahoma" size="15" style="1"/>
+                            </Property>
+                          </Properties>
+                        </Component>
+                        <Component class="org.jdesktop.swingx.JXTextField" name="txtPersPecPVVIHStructure">
+                        </Component>
+                        <Component class="javax.swing.JComboBox" name="cbxPersNotionAlgoCVPNLS">
+                          <Properties>
+                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                              <StringArray count="2">
+                                <StringItem index="0" value="Oui"/>
+                                <StringItem index="1" value="Non"/>
+                              </StringArray>
+                            </Property>
+                            <Property name="selectedIndex" type="int" value="-1"/>
+                            <Property name="focusable" type="boolean" value="false"/>
+                          </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                          </AuxValues>
+                        </Component>
+                        <Component class="org.jdesktop.swingx.JXLabel" name="jXLabel51">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="&lt;html&gt;21. Combien des patients activement sous traitement ARV depuis 12mois ont effectu&#xe9; au&lt;br&gt; moins 1 pr&#xe9;l&#xe8;vement charge virale ?&lt;/html&gt;"/>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Tahoma" size="15" style="1"/>
+                            </Property>
+                          </Properties>
+                        </Component>
+                        <Component class="org.jdesktop.swingx.JXLabel" name="jXLabel53">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="&lt;html&gt;23. Parmi les patients qui ont un r&#xe9;sultat de CV retourn&#xe9;es, combien des patients ont un&lt;br&gt; CV non d&#xe9;tectable/supprim&#xe9;e ?&lt;/html&gt;"/>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Tahoma" size="15" style="1"/>
+                            </Property>
+                          </Properties>
+                        </Component>
+                        <Component class="org.jdesktop.swingx.JXLabel" name="jXLabel55">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="26. Quel est le nombre de Personnels form&#xe9;s sur les techniques d&#x2019;AQ ?"/>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Tahoma" size="15" style="1"/>
+                            </Property>
+                          </Properties>
+                        </Component>
+                        <Component class="org.jdesktop.swingx.JXTextField" name="txtPatientCVNonDetectable">
+                        </Component>
+                        <Component class="org.jdesktop.swingx.JXLabel" name="jXLabel52">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="&lt;html&gt;22. Combien des patients activement sous traitement ARV depuis 12mois ont effectu&#xe9; au moins 1 pr&#xe9;l&#xe8;vement&lt;br&gt; CV dans 12 mois avec r&#xe9;sultats retourn&#xe9;es et/ou disponibles ?&lt;/html&gt;"/>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Tahoma" size="15" style="1"/>
+                            </Property>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JComboBox" name="cbxPersFormeesTechAQ">
+                          <Properties>
+                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                              <StringArray count="2">
+                                <StringItem index="0" value="Oui"/>
+                                <StringItem index="1" value="Non"/>
+                              </StringArray>
+                            </Property>
+                            <Property name="selectedIndex" type="int" value="-1"/>
+                            <Property name="focusable" type="boolean" value="false"/>
+                          </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbxPersFormeesTechAQActionPerformed"/>
+                          </Events>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                          </AuxValues>
+                        </Component>
+                        <Component class="org.jdesktop.swingx.JXLabel" name="jXLabel58">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="&lt;html&gt;29. Le personnel a-t-il des notions sur l&#x2019;algorithme et les proc&#xe9;dures standards de la CV&lt;br&gt; selon les recommandations du PNLS ?&lt;/html&gt;"/>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Tahoma" size="15" style="1"/>
+                            </Property>
+                          </Properties>
+                        </Component>
+                        <Container class="javax.swing.JScrollPane" name="jScrollPane2">
+
+                          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                          <SubComponents>
+                            <Component class="org.jdesktop.swingx.JXTextArea" name="txtStrategieFOSA">
+                              <Properties>
+                                <Property name="rows" type="int" value="5"/>
+                              </Properties>
+                            </Component>
+                          </SubComponents>
+                        </Container>
+                      </SubComponents>
+                    </Container>
+                    <Container class="org.jdesktop.swingx.JXPanel" name="jXPanel19">
+                      <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="ff" green="ff" id="white" palette="1" red="ff" type="palette"/>
+                        </Property>
+                        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                          <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+                            <TitledBorder/>
+                          </Border>
+                        </Property>
+                      </Properties>
+
+                      <Layout>
+                        <DimensionLayout dim="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="jXLabel15" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+                                          <Component id="cbxProcessusQualite" max="32767" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="jXLabel16" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" max="-2" attributes="0"/>
+                                          <Component id="cbxPointFocalAQ" max="32767" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="474" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                        </DimensionLayout>
+                        <DimensionLayout dim="1">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jXLabel15" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="cbxProcessusQualite" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jXLabel16" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="cbxPointFocalAQ" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                        </DimensionLayout>
+                      </Layout>
+                      <SubComponents>
+                        <Component class="org.jdesktop.swingx.JXLabel" name="jXLabel16">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="4. Existe-t-il un point focal responsable des activit&#xe9;s AQ ?"/>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Tahoma" size="15" style="1"/>
+                            </Property>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JComboBox" name="cbxProcessusQualite">
+                          <Properties>
+                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                              <StringArray count="2">
+                                <StringItem index="0" value="Oui"/>
+                                <StringItem index="1" value="Non"/>
+                              </StringArray>
+                            </Property>
+                            <Property name="selectedIndex" type="int" value="-1"/>
+                            <Property name="focusable" type="boolean" value="false"/>
+                          </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                          </AuxValues>
+                        </Component>
+                        <Component class="javax.swing.JComboBox" name="cbxPointFocalAQ">
+                          <Properties>
+                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                              <StringArray count="2">
+                                <StringItem index="0" value="Oui"/>
+                                <StringItem index="1" value="Non"/>
+                              </StringArray>
+                            </Property>
+                            <Property name="selectedIndex" type="int" value="-1"/>
+                            <Property name="focusable" type="boolean" value="false"/>
+                          </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                          </AuxValues>
+                        </Component>
+                        <Component class="org.jdesktop.swingx.JXLabel" name="jXLabel15">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="3. Existe-t-il une d&#xe9;marche ou un processus qualit&#xe9; ?"/>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Tahoma" size="15" style="1"/>
+                            </Property>
                           </Properties>
                         </Component>
                       </SubComponents>
@@ -2263,6 +2487,50 @@
                 </Container>
               </SubComponents>
             </Container>
+          </SubComponents>
+        </Container>
+        <Container class="org.jdesktop.swingx.JXPanel" name="jXPanel14">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" id="white" palette="1" red="ff" type="palette"/>
+            </Property>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+                <TitledBorder title="Op&#xe9;rations"/>
+              </Border>
+            </Property>
+          </Properties>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="btnSave" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="btnSave" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="org.jdesktop.swingx.JXButton" name="btnSave">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/com/icap/pvvih/res/icons8-save-24.png"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Sauvegarder"/>
+                <Property name="focusable" type="boolean" value="false"/>
+              </Properties>
+            </Component>
           </SubComponents>
         </Container>
       </SubComponents>
