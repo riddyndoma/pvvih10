@@ -148,13 +148,22 @@
             <Component class="javax.swing.JComboBox" name="cbxNomSite">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="4">
-                    <StringItem index="0" value="Item 1"/>
-                    <StringItem index="1" value="Item 2"/>
-                    <StringItem index="2" value="Item 3"/>
-                    <StringItem index="3" value="Item 4"/>
+                  <StringArray count="12">
+                    <StringItem index="0" value="Katuba HGR"/>
+                    <StringItem index="1" value="Betty HGR"/>
+                    <StringItem index="2" value="St Charles CS"/>
+                    <StringItem index="3" value="Mama Wa Huruma"/>
+                    <StringItem index="4" value="St Francois D&apos;assise"/>
+                    <StringItem index="5" value="SNCC - Lubumbashi HGR"/>
+                    <StringItem index="6" value="Mfinda"/>
+                    <StringItem index="7" value="St Christophe"/>
+                    <StringItem index="8" value="Kimbanguiste HGR"/>
+                    <StringItem index="9" value="Bolingo-Masina 1"/>
+                    <StringItem index="10" value="Etonga"/>
+                    <StringItem index="11" value=" "/>
                   </StringArray>
                 </Property>
+                <Property name="selectedIndex" type="int" value="-1"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -538,7 +547,7 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="cbxStructurePublique" min="-2" max="-2" attributes="0"/>
+                                  <Component id="chxStructurePublique" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="chxStructurePrivee" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -552,7 +561,7 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="cbxStructurePublique" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="chxStructurePublique" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="chxStructurePrivee" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="chxStructureConfesionnelle" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
@@ -562,7 +571,7 @@
                         </DimensionLayout>
                       </Layout>
                       <SubComponents>
-                        <Component class="javax.swing.JCheckBox" name="cbxStructurePublique">
+                        <Component class="javax.swing.JCheckBox" name="chxStructurePublique">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="ff" green="ff" id="white" palette="1" red="ff" type="palette"/>
@@ -621,7 +630,7 @@
                                           <Group type="102" alignment="0" attributes="0">
                                               <Component id="jXLabel13" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                              <Component id="jXTextField1" max="32767" attributes="0"/>
+                                              <Component id="txtAutresServicePEC" max="32767" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
                                               <Component id="chxPairEdu" min="-2" max="-2" attributes="0"/>
@@ -631,7 +640,7 @@
                                               <Group type="103" groupAlignment="0" attributes="0">
                                                   <Component id="chxDCIP" min="-2" max="-2" attributes="0"/>
                                                   <Group type="102" attributes="0">
-                                                      <Component id="chxSuiviCommuPE" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="chxSuiviCommuVisitPE" min="-2" max="-2" attributes="0"/>
                                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                                       <Component id="chxSuiviCommPODI" min="-2" max="-2" attributes="0"/>
                                                   </Group>
@@ -667,13 +676,13 @@
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="chxPairEdu" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="chxSuiviTBVIH" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="chxSuiviCommuPE" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="chxSuiviCommuVisitPE" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="chxSuiviCommPODI" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jXLabel13" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jXTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="txtAutresServicePEC" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="32767" attributes="0"/>
                               </Group>
@@ -743,7 +752,7 @@
                             <Property name="text" type="java.lang.String" value="SUIVI Co-INF TB -VIH"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JCheckBox" name="chxSuiviCommuPE">
+                        <Component class="javax.swing.JCheckBox" name="chxSuiviCommuVisitPE">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="ff" green="ff" id="white" palette="1" red="ff" type="palette"/>
@@ -764,7 +773,7 @@
                             <Property name="text" type="java.lang.String" value="Autres, precisez"/>
                           </Properties>
                         </Component>
-                        <Component class="org.jdesktop.swingx.JXTextField" name="jXTextField1">
+                        <Component class="org.jdesktop.swingx.JXTextField" name="txtAutresServicePEC">
                         </Component>
                       </SubComponents>
                     </Container>
@@ -1468,6 +1477,7 @@
                               </StringArray>
                             </Property>
                             <Property name="selectedIndex" type="int" value="-1"/>
+                            <Property name="enabled" type="boolean" value="false"/>
                             <Property name="focusable" type="boolean" value="false"/>
                           </Properties>
                           <AuxValues>
@@ -1567,6 +1577,7 @@
                               </StringArray>
                             </Property>
                             <Property name="selectedIndex" type="int" value="-1"/>
+                            <Property name="enabled" type="boolean" value="false"/>
                             <Property name="focusable" type="boolean" value="false"/>
                           </Properties>
                           <AuxValues>
@@ -2231,6 +2242,9 @@
                           </Properties>
                         </Component>
                         <Component class="org.jdesktop.swingx.JXTextField" name="txtPatientActivARV1An">
+                          <Events>
+                            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtPatientActivARV1AnKeyTyped"/>
+                          </Events>
                         </Component>
                         <Component class="javax.swing.JComboBox" name="cbxPersFormeesTechCollect">
                           <Properties>
@@ -2530,6 +2544,9 @@
                 <Property name="text" type="java.lang.String" value="Sauvegarder"/>
                 <Property name="focusable" type="boolean" value="false"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSaveActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>

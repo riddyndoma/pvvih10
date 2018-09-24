@@ -202,9 +202,9 @@ public class Survey implements Serializable {
     @Column(name = "prop_pers_formees_tech_aq")
     private Long propPersFormeesTechAq;
     @Column(name = "pers_formees_tech_collect")
-    private Long persFormeesTechCollect;
+    private String persFormeesTechCollect;
     @Column(name = "pers_notion_algo_cv_pnls")
-    private Long persNotionAlgoCvPnls;
+    private String persNotionAlgoCvPnls;
     @Column(name = "strategie_fosa")
     private String strategieFosa;
 
@@ -655,19 +655,19 @@ public class Survey implements Serializable {
         this.propPersFormeesTechAq = propPersFormeesTechAq;
     }
 
-    public Long getPersFormeesTechCollect() {
+    public String getPersFormeesTechCollect() {
         return persFormeesTechCollect;
     }
 
-    public void setPersFormeesTechCollect(Long persFormeesTechCollect) {
+    public void setPersFormeesTechCollect(String persFormeesTechCollect) {
         this.persFormeesTechCollect = persFormeesTechCollect;
     }
 
-    public Long getPersNotionAlgoCvPnls() {
+    public String getPersNotionAlgoCvPnls() {
         return persNotionAlgoCvPnls;
     }
 
-    public void setPersNotionAlgoCvPnls(Long persNotionAlgoCvPnls) {
+    public void setPersNotionAlgoCvPnls(String persNotionAlgoCvPnls) {
         this.persNotionAlgoCvPnls = persNotionAlgoCvPnls;
     }
 

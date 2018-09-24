@@ -35,6 +35,7 @@ public class PVVIH extends javax.swing.JFrame {
      * @param connectedUser
      */
     public PVVIH(Users connectedUser) {
+        currentUser=connectedUser;
         doPreConfig();
         initComponents();
         doDefaultConfig(connectedUser);
@@ -76,14 +77,14 @@ public class PVVIH extends javax.swing.JFrame {
         lblDE.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-              scrollManager.setViewportView(new Survey());  
+              scrollManager.setViewportView(new PSurvey(currentUser));  
             }
         });
         
         lblUser.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-             scrollManager.setViewportView(new UserMan());   
+             scrollManager.setViewportView(new PUserMan());   
             }
         });
         
@@ -279,4 +280,5 @@ public class PVVIH extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 EntityManager em;
 EntityManagerFactory emf;
+Users currentUser;
 }

@@ -5,17 +5,35 @@
  */
 package com.icap.pvvih.view;
 
+import com.icap.pvvih.model.Survey;
+import com.icap.pvvih.model.Users;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.net.InetAddress;
+import java.net.NetworkInterface;
+import java.net.SocketException;
+import java.net.UnknownHostException;
+import java.util.Date;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import javax.swing.Timer;
+
 /**
  *
  * @author DELL
  */
-public class Survey extends javax.swing.JPanel {
+public class PSurvey extends javax.swing.JPanel {
 
     /**
      * Creates new form Survey
+     *
+     * @param _user
      */
-    public Survey() {
+    public PSurvey(Users _user) {
+        this.currentUser = _user;
         initComponents();
+        doBasicConfig();
     }
 
     /**
@@ -62,7 +80,7 @@ public class Survey extends javax.swing.JPanel {
         chxCliniquesUniversitaires = new javax.swing.JCheckBox();
         chxCliniquesSpecialisees = new javax.swing.JCheckBox();
         jXPanel6 = new org.jdesktop.swingx.JXPanel();
-        cbxStructurePublique = new javax.swing.JCheckBox();
+        chxStructurePublique = new javax.swing.JCheckBox();
         chxStructurePrivee = new javax.swing.JCheckBox();
         chxStructureConfesionnelle = new javax.swing.JCheckBox();
         jXPanel7 = new org.jdesktop.swingx.JXPanel();
@@ -73,10 +91,10 @@ public class Survey extends javax.swing.JPanel {
         chxLabo = new javax.swing.JCheckBox();
         chxPairEdu = new javax.swing.JCheckBox();
         chxSuiviTBVIH = new javax.swing.JCheckBox();
-        chxSuiviCommuPE = new javax.swing.JCheckBox();
+        chxSuiviCommuVisitPE = new javax.swing.JCheckBox();
         chxSuiviCommPODI = new javax.swing.JCheckBox();
         jXLabel13 = new org.jdesktop.swingx.JXLabel();
-        jXTextField1 = new org.jdesktop.swingx.JXTextField();
+        txtAutresServicePEC = new org.jdesktop.swingx.JXTextField();
         jXPanel8 = new org.jdesktop.swingx.JXPanel();
         jXLabel14 = new org.jdesktop.swingx.JXLabel();
         cbxEAQFonctionne = new javax.swing.JComboBox<>();
@@ -191,7 +209,8 @@ public class Survey extends javax.swing.JPanel {
 
         jXLabel2.setText("Nom de site");
 
-        cbxNomSite.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbxNomSite.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Katuba HGR", "Betty HGR", "St Charles CS", "Mama Wa Huruma", "St Francois D'assise", "SNCC - Lubumbashi HGR", "Mfinda", "St Christophe", "Kimbanguiste HGR", "Bolingo-Masina 1", "Etonga", " " }));
+        cbxNomSite.setSelectedIndex(-1);
 
         jXLabel3.setText("Nom des enqueteurs");
 
@@ -290,9 +309,9 @@ public class Survey extends javax.swing.JPanel {
         jXPanel6.setBackground(java.awt.Color.white);
         jXPanel6.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "1.2. Catégorie du site", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 14))); // NOI18N
 
-        cbxStructurePublique.setBackground(java.awt.Color.white);
-        btnCategorieSite.add(cbxStructurePublique);
-        cbxStructurePublique.setText("Structure publique");
+        chxStructurePublique.setBackground(java.awt.Color.white);
+        btnCategorieSite.add(chxStructurePublique);
+        chxStructurePublique.setText("Structure publique");
 
         chxStructurePrivee.setBackground(java.awt.Color.white);
         btnCategorieSite.add(chxStructurePrivee);
@@ -308,7 +327,7 @@ public class Survey extends javax.swing.JPanel {
             jXPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jXPanel6Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(cbxStructurePublique)
+                .addComponent(chxStructurePublique)
                 .addGap(18, 18, 18)
                 .addComponent(chxStructurePrivee)
                 .addGap(18, 18, 18)
@@ -320,7 +339,7 @@ public class Survey extends javax.swing.JPanel {
             .addGroup(jXPanel6Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jXPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cbxStructurePublique)
+                    .addComponent(chxStructurePublique)
                     .addComponent(chxStructurePrivee)
                     .addComponent(chxStructureConfesionnelle))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -360,8 +379,8 @@ public class Survey extends javax.swing.JPanel {
         chxSuiviTBVIH.setBackground(java.awt.Color.white);
         chxSuiviTBVIH.setText("SUIVI Co-INF TB -VIH");
 
-        chxSuiviCommuPE.setBackground(java.awt.Color.white);
-        chxSuiviCommuPE.setText("SUIVI COMMUNAUTAIRE (visite à domicile par PE ou autres)");
+        chxSuiviCommuVisitPE.setBackground(java.awt.Color.white);
+        chxSuiviCommuVisitPE.setText("SUIVI COMMUNAUTAIRE (visite à domicile par PE ou autres)");
 
         chxSuiviCommPODI.setBackground(java.awt.Color.white);
         chxSuiviCommPODI.setText("SUIVI COMMUNAUTAIRE (au PODI) ");
@@ -379,7 +398,7 @@ public class Survey extends javax.swing.JPanel {
                         .addGroup(jXPanel7Layout.createSequentialGroup()
                             .addComponent(jXLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(jXTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(txtAutresServicePEC, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGroup(jXPanel7Layout.createSequentialGroup()
                             .addComponent(chxPairEdu)
                             .addGap(18, 18, 18)
@@ -388,7 +407,7 @@ public class Survey extends javax.swing.JPanel {
                             .addGroup(jXPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(chxDCIP)
                                 .addGroup(jXPanel7Layout.createSequentialGroup()
-                                    .addComponent(chxSuiviCommuPE)
+                                    .addComponent(chxSuiviCommuVisitPE)
                                     .addGap(18, 18, 18)
                                     .addComponent(chxSuiviCommPODI)))))
                     .addGroup(jXPanel7Layout.createSequentialGroup()
@@ -415,12 +434,12 @@ public class Survey extends javax.swing.JPanel {
                 .addGroup(jXPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(chxPairEdu)
                     .addComponent(chxSuiviTBVIH)
-                    .addComponent(chxSuiviCommuPE)
+                    .addComponent(chxSuiviCommuVisitPE)
                     .addComponent(chxSuiviCommPODI))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jXPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jXLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jXTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtAutresServicePEC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -755,6 +774,7 @@ public class Survey extends javax.swing.JPanel {
 
         cbxProcessRenforDocumente.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Oui", "Non" }));
         cbxProcessRenforDocumente.setSelectedIndex(-1);
+        cbxProcessRenforDocumente.setEnabled(false);
         cbxProcessRenforDocumente.setFocusable(false);
 
         javax.swing.GroupLayout jXPanel12Layout = new javax.swing.GroupLayout(jXPanel12);
@@ -805,6 +825,7 @@ public class Survey extends javax.swing.JPanel {
 
         cbxSystemeGroupSoutienDocumente.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Oui", "Non" }));
         cbxSystemeGroupSoutienDocumente.setSelectedIndex(-1);
+        cbxSystemeGroupSoutienDocumente.setEnabled(false);
         cbxSystemeGroupSoutienDocumente.setFocusable(false);
 
         javax.swing.GroupLayout jXPanel13Layout = new javax.swing.GroupLayout(jXPanel13);
@@ -1090,6 +1111,12 @@ public class Survey extends javax.swing.JPanel {
 
         jXLabel57.setText("<html>28. Dans une FOSA de collecte et de référence de l’échantillon ; les personnels sont-ils formés<br> sur les techniques de collecte ? </html>");
         jXLabel57.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
+
+        txtPatientActivARV1An.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtPatientActivARV1AnKeyTyped(evt);
+            }
+        });
 
         cbxPersFormeesTechCollect.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Oui", "Non" }));
         cbxPersFormeesTechCollect.setSelectedIndex(-1);
@@ -1469,6 +1496,11 @@ public class Survey extends javax.swing.JPanel {
         btnSave.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/icap/pvvih/res/icons8-save-24.png"))); // NOI18N
         btnSave.setText("Sauvegarder");
         btnSave.setFocusable(false);
+        btnSave.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSaveActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jXPanel14Layout = new javax.swing.GroupLayout(jXPanel14);
         jXPanel14.setLayout(jXPanel14Layout);
@@ -1629,6 +1661,239 @@ public class Survey extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_cbxPersFormeesTechAQActionPerformed
 
+    private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
+        doSave();
+    }//GEN-LAST:event_btnSaveActionPerformed
+
+    private void txtPatientActivARV1AnKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPatientActivARV1AnKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPatientActivARV1AnKeyTyped
+
+    private void doBasicConfig() {
+
+        Timer timer = new Timer(1000, (ActionEvent evt) -> {
+            if (cbxDateEvaluation.getDate() == null) {
+                btnSave.setEnabled(false);
+            } else {
+                btnSave.setEnabled(true);
+            }
+        });
+        timer.start();
+    }
+
+    private void doSave() {
+        Survey survey = new Survey();
+        String id = "" + currentUser.getUsername() + this.getMacAdress() + new Date().getTime();
+        System.out.println("ID " + id);
+        survey.setSurveyid(id);
+        survey.setDateEval(cbxDateEvaluation.getDate());
+        survey.setNomEnqueteurs(txtNomEnqueteurs.getText());
+        survey.setNomTitreEnqute1(txtNomEnquete1.getText() + " - " + txtTitreEnquete1.getText());
+        survey.setNomTitreEnqute2(txtNomEnquete2.getText() + " - " + txtTitreEnquete2.getText());
+        survey.setNomTitreEnqute3(txtNomEnquete3.getText() + " - " + txtTitreEnquete3.getText());
+        String categSitePyram = "";
+        if (chxCentreSante.isSelected()) {
+            categSitePyram = chxCentreSante.getText();
+        } else if (chxHGR.isSelected()) {
+            categSitePyram = chxHGR.getText();
+        } else if (chxHGP.isSelected()) {
+            categSitePyram = chxHGP.getText();
+        } else if (chxCliniquesSpecialisees.isSelected()) {
+            categSitePyram = chxCliniquesSpecialisees.getText();
+        } else if (chxCliniquesUniversitaires.isSelected()) {
+            categSitePyram = chxCliniquesUniversitaires.getText();
+        }
+        survey.setCategSitePyramide(categSitePyram);
+        String categSite = "";
+        if (chxStructurePrivee.isSelected()) {
+            categSite = chxStructurePrivee.getText();
+        } else if (chxStructureConfesionnelle.isSelected()) {
+            categSite = chxStructureConfesionnelle.getText();
+        } else if (chxStructurePublique.isSelected()) {
+            categSite = chxStructurePublique.getText();
+        }
+        survey.setCategSite(categSite);
+        if (chxCDV.isSelected()) {
+            survey.setServiceCdv("Oui");
+        } else {
+            survey.setServiceCdv("Non");
+        }
+        if (chxDCIP.isSelected()) {
+            survey.setServiceDcip("Oui");
+        } else {
+            survey.setServiceDcip("Non");
+        }
+        if (chxPTME.isSelected()) {
+            survey.setServicePtme("Oui");
+        } else {
+            survey.setServicePtme("Non");
+        }
+        if (chxTARV.isSelected()) {
+            survey.setServiceTarv("Oui");
+        } else {
+            survey.setServiceTarv("Non");
+        }
+        if (chxLabo.isSelected()) {
+            survey.setServiceLabo("Oui");
+        } else {
+            survey.setServiceLabo("Non");
+        }
+        if (chxPairEdu.isSelected()) {
+            survey.setServicePairEduc("Oui");
+        } else {
+            survey.setServicePairEduc("Non");
+        }
+        if (chxSuiviTBVIH.isSelected()) {
+            survey.setServiceInfTbVih("Oui");
+        } else {
+            survey.setServiceInfTbVih("Non");
+        }
+        if (chxSuiviCommuVisitPE.isSelected()) {
+            survey.setServiceComVisit("Oui");
+        } else {
+            survey.setServiceComVisit("Non");
+        }
+        if (chxSuiviCommPODI.isSelected()) {
+            survey.setServiceComPodi("Oui");
+        } else {
+            survey.setServiceComPodi("Non");
+        }
+        survey.setServiceAutres(txtAutresServicePEC.getText());
+        survey.setProcessQualite(cbxProcessusQualite.getSelectedItem().toString());
+        survey.setPointFocalAq(cbxPointFocalAQ.getSelectedItem().toString());
+
+        if (cbxEAQFonctionne.getSelectedItem().toString().equals("Oui")) {
+            survey.setEaqFonctionne(cbxEAQFonctionne.getSelectedItem().toString());
+            survey.setPlaningReunion(cbxPlanningReunion.getSelectedItem().toString());
+            survey.setPlanActionAq(cbxPlanActionAQ.getSelectedItem().toString());
+            survey.setPvReunion(cbxPVReunions.getSelectedItem().toString());
+            survey.setDocInitiativeAq(cbxDocInitiativeAQ.getSelectedItem().toString());
+            survey.setImplicationZs(cbxImplicationZS.getSelectedItem().toString());
+            survey.setImplicationFosa(cbxImplicationFOSA.getSelectedItem().toString());
+        } else {
+            survey.setEaqFonctionne(cbxEAQFonctionne.getSelectedItem().toString());
+            survey.setPlaningReunion("");
+            survey.setPlanActionAq("");
+            survey.setPvReunion("");
+            survey.setDocInitiativeAq("");
+            survey.setImplicationZs("");
+            survey.setImplicationFosa("");
+        }
+        if (cbxFOSAChargeVirale.getSelectedItem().toString().equals("Oui")) {
+            survey.setFosaChargeViral(cbxFOSAChargeVirale.getSelectedItem().toString());
+            survey.setRefPatient(CbxRefPatientFOSACV.getSelectedItem().toString());
+            survey.setCollecterRefEchant(cbxCollecterRefEchantFOSACV.getSelectedItem().toString());
+        } else {
+            survey.setFosaChargeViral(cbxFOSAChargeVirale.getSelectedItem().toString());
+            survey.setRefPatient("");
+            survey.setCollecterRefEchant("");
+
+        }
+
+        survey.setFosaSystemePoc(cbxSysFOSAPOC.getSelectedItem().toString());
+        survey.setRefrigControlTemp(cbxRefrigControlTemp.getSelectedItem().toString());
+        survey.setTransportEchantFroid(cbxTransportEchantFroid.getSelectedItem().toString());
+        survey.setPointFocalUpec(cbxPointFocalUPEC.getSelectedItem().toString());
+
+        if (cbxTriageNotifPatientARV.getSelectedItem().toString().equals("Oui")) {
+            survey.setTriageNotifPatientArv(cbxTriageNotifPatientARV.getSelectedItem().toString());
+            survey.setTriageDocumenteRegis(cbxTriageDocumenteRegis.getSelectedItem().toString());
+        } else {
+            survey.setTriageNotifPatientArv(cbxTriageNotifPatientARV.getSelectedItem().toString());
+            survey.setTriageDocumenteRegis("");
+        }
+
+        if (cbxRegisResuDatePrelev.getSelectedItem().toString().equals("Oui")) {
+            survey.setRegisResuDatePrelev(cbxRegisResuDatePrelev.getSelectedItem().toString());
+            survey.setDatePrelevEnregis(cbxDatePrelevEnregis.getSelectedItem().toString());
+        } else {
+            survey.setRegisResuDatePrelev(cbxRegisResuDatePrelev.getSelectedItem().toString());
+            survey.setDatePrelevEnregis("");
+        }
+
+        if (cbxRegisResuDateRetour.getSelectedItem().toString().equals("Oui")) {
+            survey.setRegisResuDateRetour(cbxRegisResuDateRetour.getSelectedItem().toString());
+            survey.setDateRetourEnregis(cbxDateRetourEnregis.getSelectedItem().toString());
+        } else {
+            survey.setRegisResuDateRetour(cbxRegisResuDateRetour.getSelectedItem().toString());
+            survey.setDateRetourEnregis("");
+        }
+
+        survey.setPourcentResuDocumentes(Long.parseLong(txtPourcentResuDocumentes.getText()));
+        survey.setRegisResuCv1000(cbxRegisResuCV1000.getSelectedItem().toString());
+        if (chxMoinsDe1mois.isSelected()) {
+            survey.setTempsEstimeRetourResu(chxMoinsDe1mois.getText());
+        } else if (chxDans1Mois.isSelected()) {
+            survey.setTempsEstimeRetourResu(chxDans1Mois.getText());
+        } else if (chxEntre1A3Mois.isSelected()) {
+            survey.setTempsEstimeRetourResu(chxEntre1A3Mois.getText());
+        } else if (chxPlusDe3Mois.isSelected()) {
+            survey.setTempsEstimeRetourResu(chxPlusDe3Mois.getText());
+        }
+        survey.setProcessSuiviResu(cbxProcessSuiviResu.getSelectedItem().toString());
+
+        if (cbxProcessRenforCounseling.getSelectedItem().toString().equals("Oui")) {
+            survey.setProcessRenforCounseling(cbxProcessRenforCounseling.getSelectedItem().toString());
+            survey.setProcessRenforDocumente(cbxProcessRenforDocumente.getSelectedItem().toString());
+        } else {
+            survey.setProcessRenforCounseling(cbxProcessRenforCounseling.getSelectedItem().toString());
+            survey.setProcessRenforDocumente("");
+        }
+
+        if (cbxSystemeGroupSoutien.getSelectedItem().toString().equals("Oui")) {
+            survey.setSystemeGroupSoutien(cbxSystemeGroupSoutien.getSelectedItem().toString());
+            survey.setSystemeGroupSoutienDocumente(cbxSystemeGroupSoutienDocumente.getSelectedItem().toString());
+        } else {
+            survey.setSystemeGroupSoutien(cbxSystemeGroupSoutien.getSelectedItem().toString());
+            survey.setSystemeGroupSoutienDocumente("");
+        }
+
+        survey.setPatientActivArv1an(Long.parseLong(txtPatientActivARV1An.getText()));
+        survey.setPatientArv12moisPrelevCv(Long.parseLong(txtPatientARV12moisPrelevCV.getText()));
+        survey.setPatientArv12moisPrelevCv12mois(Long.parseLong(txtPatientARV12moisPrelevCV12mois.getText()));
+        survey.setPatientCvNonDetectable(Long.parseLong(txtPatientCVNonDetectable.getText()));
+        survey.setPersPecPvvihStructure(Long.parseLong(txtPersPecPVVIHStructure.getText()));
+        survey.setPersFormeesTechAq(Long.parseLong(txtPersFormeesTechAQ.getText()));
+        survey.setPropPersFormeesTechAq(Long.parseLong(txtPropPersFormeesTechAQ.getText()));
+        survey.setPersFormeesTechCollect(cbxPersFormeesTechCollect.getSelectedItem().toString());
+        survey.setPersNotionAlgoCvPnls(cbxPersNotionAlgoCVPNLS.getSelectedItem().toString());
+        survey.setStrategieFosa(txtStrategieFOSA.getText());
+
+        emf = Persistence.createEntityManagerFactory("pvvih10PU");
+        em = emf.createEntityManager();
+        em.getTransaction().begin();
+        if (!em.contains(survey)) {
+            em.persist(survey);
+            em.flush();
+        }
+        em.getTransaction().commit();
+        em.close();
+
+    }
+
+    private String getMacAdress() {
+        InetAddress ip;
+        StringBuilder sb = null;
+        try {
+
+            ip = InetAddress.getLocalHost();
+            System.out.println("Current IP address : " + ip.getHostAddress());
+
+            NetworkInterface network = NetworkInterface.getByInetAddress(ip);
+
+            byte[] mac = network.getHardwareAddress();
+
+            System.out.print("Current MAC address : ");
+
+            sb = new StringBuilder();
+            for (int i = 0; i < mac.length; i++) {
+                sb.append(String.format("%02X%s", mac[i], (i < mac.length - 1) ? "-" : ""));
+            }
+
+        } catch (UnknownHostException | SocketException e) {
+        }
+        return sb.toString();
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> CbxRefPatientFOSACV;
@@ -1662,7 +1927,6 @@ public class Survey extends javax.swing.JPanel {
     private javax.swing.JComboBox<String> cbxRegisResuCV1000;
     private javax.swing.JComboBox<String> cbxRegisResuDatePrelev;
     private javax.swing.JComboBox<String> cbxRegisResuDateRetour;
-    private javax.swing.JCheckBox cbxStructurePublique;
     private javax.swing.JComboBox<String> cbxSysFOSAPOC;
     private javax.swing.JComboBox<String> cbxSystemeGroupSoutien;
     private javax.swing.JComboBox<String> cbxSystemeGroupSoutienDocumente;
@@ -1685,12 +1949,12 @@ public class Survey extends javax.swing.JPanel {
     private javax.swing.JCheckBox chxPlusDe3Mois;
     private javax.swing.JCheckBox chxStructureConfesionnelle;
     private javax.swing.JCheckBox chxStructurePrivee;
+    private javax.swing.JCheckBox chxStructurePublique;
     private javax.swing.JCheckBox chxSuiviCommPODI;
-    private javax.swing.JCheckBox chxSuiviCommuPE;
+    private javax.swing.JCheckBox chxSuiviCommuVisitPE;
     private javax.swing.JCheckBox chxSuiviTBVIH;
     private javax.swing.JCheckBox chxTARV;
     private org.jdesktop.swingx.JXHyperlink hyplTop;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private org.jdesktop.swingx.JXLabel jXLabel1;
     private org.jdesktop.swingx.JXLabel jXLabel10;
@@ -1769,7 +2033,7 @@ public class Survey extends javax.swing.JPanel {
     private org.jdesktop.swingx.JXPanel jXPanel7;
     private org.jdesktop.swingx.JXPanel jXPanel8;
     private org.jdesktop.swingx.JXPanel jXPanel9;
-    private org.jdesktop.swingx.JXTextField jXTextField1;
+    private org.jdesktop.swingx.JXTextField txtAutresServicePEC;
     private org.jdesktop.swingx.JXTextField txtNomEnquete1;
     private org.jdesktop.swingx.JXTextField txtNomEnquete2;
     private org.jdesktop.swingx.JXTextField txtNomEnquete3;
@@ -1787,4 +2051,7 @@ public class Survey extends javax.swing.JPanel {
     private org.jdesktop.swingx.JXTextField txtTitreEnquete2;
     private org.jdesktop.swingx.JXTextField txtTitreEnquete3;
     // End of variables declaration//GEN-END:variables
+EntityManager em;
+    EntityManagerFactory emf;
+    Users currentUser;
 }

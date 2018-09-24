@@ -14,12 +14,12 @@ import javax.persistence.Persistence;
  *
  * @author DELL
  */
-public class UserMan extends javax.swing.JPanel {
+public class PUserMan extends javax.swing.JPanel {
 
     /**
      * Creates new form UserMan
      */
-    public UserMan() {
+    public PUserMan() {
         initComponents();
         doBaseConfig();
     }
@@ -196,14 +196,13 @@ public class UserMan extends javax.swing.JPanel {
                 && !txtLastName.getText().equals("")
                 && !txtUsername.getText().equals("")
                 && !txtPassword.getPassword().equals("")
-                && !cbxRole.getSelectedItem().toString().equals("")
-                ) {
-           doSave(); 
-        }else{
-            lblMessage.setText("No field must be void !"); 
-            lblMessage.setVisible(true); 
+                && !cbxRole.getSelectedItem().toString().equals("")) {
+            doSave();
+        } else {
+            lblMessage.setText("No field must be void !");
+            lblMessage.setVisible(true);
         }
-        
+
     }//GEN-LAST:event_btnSaveActionPerformed
 
     private void doBaseConfig() {
@@ -213,7 +212,7 @@ public class UserMan extends javax.swing.JPanel {
     private void doSave() {
         Users user = new Users();
         boolean status = false;
-        user.setUserid(null); 
+        user.setUserid(null);
         user.setPrenom(txtFirstName.getText().toUpperCase());
         user.setNom(txtLastName.getText().toUpperCase());
         user.setUsername(txtUsername.getText());
