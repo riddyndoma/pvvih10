@@ -8,7 +8,6 @@ package com.icap.pvvih.view;
 import com.icap.pvvih.model.Survey;
 import com.icap.pvvih.model.Users;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.net.InetAddress;
 import java.net.NetworkInterface;
 import java.net.SocketException;
@@ -124,6 +123,7 @@ public class PSurvey extends javax.swing.JPanel {
         jXLabel39 = new org.jdesktop.swingx.JXLabel();
         jXLabel41 = new org.jdesktop.swingx.JXLabel();
         txtPourcentResuDocumentes = new org.jdesktop.swingx.JXTextField();
+        lblPourcentResuDocumentes = new org.jdesktop.swingx.JXLabel();
         jXPanel11 = new org.jdesktop.swingx.JXPanel();
         chxMoinsDe1mois = new javax.swing.JCheckBox();
         chxDans1Mois = new javax.swing.JCheckBox();
@@ -192,6 +192,13 @@ public class PSurvey extends javax.swing.JPanel {
         jXLabel58 = new org.jdesktop.swingx.JXLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         txtStrategieFOSA = new org.jdesktop.swingx.JXTextArea();
+        lblPatientActivARV1An = new org.jdesktop.swingx.JXLabel();
+        lblPatientARV12moisPrelevCV = new org.jdesktop.swingx.JXLabel();
+        lblPatientARV12moisPrelevCV12mois = new javax.swing.JLabel();
+        lblPropPersFormeesTechAQ = new javax.swing.JLabel();
+        lblPatientCVNonDetectable = new javax.swing.JLabel();
+        lblPersPecPVVIHStructure = new javax.swing.JLabel();
+        lblPersFormeesTechAQ = new javax.swing.JLabel();
         jXPanel19 = new org.jdesktop.swingx.JXPanel();
         jXLabel16 = new org.jdesktop.swingx.JXLabel();
         cbxProcessusQualite = new javax.swing.JComboBox<>();
@@ -199,6 +206,7 @@ public class PSurvey extends javax.swing.JPanel {
         jXLabel15 = new org.jdesktop.swingx.JXLabel();
         jXPanel14 = new org.jdesktop.swingx.JXPanel();
         btnSave = new org.jdesktop.swingx.JXButton();
+        lblShowSaveMessage = new org.jdesktop.swingx.JXLabel();
 
         jXPanel1.setBackground(java.awt.Color.white);
 
@@ -394,31 +402,29 @@ public class PSurvey extends javax.swing.JPanel {
             .addGroup(jXPanel7Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jXPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jXPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(jXPanel7Layout.createSequentialGroup()
-                            .addComponent(jXLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(txtAutresServicePEC, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGroup(jXPanel7Layout.createSequentialGroup()
-                            .addComponent(chxPairEdu)
-                            .addGap(18, 18, 18)
-                            .addComponent(chxSuiviTBVIH)
-                            .addGap(18, 18, 18)
-                            .addGroup(jXPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(chxDCIP)
-                                .addGroup(jXPanel7Layout.createSequentialGroup()
-                                    .addComponent(chxSuiviCommuVisitPE)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(chxSuiviCommPODI)))))
+                    .addGroup(jXPanel7Layout.createSequentialGroup()
+                        .addComponent(chxSuiviCommuVisitPE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(chxSuiviCommPODI))
+                    .addGroup(jXPanel7Layout.createSequentialGroup()
+                        .addComponent(jXLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txtAutresServicePEC, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jXPanel7Layout.createSequentialGroup()
+                        .addComponent(chxPairEdu)
+                        .addGap(18, 18, 18)
+                        .addComponent(chxSuiviTBVIH)
+                        .addGap(18, 18, 18)
+                        .addGroup(jXPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(chxDCIP)
+                            .addComponent(chxLabo)))
                     .addGroup(jXPanel7Layout.createSequentialGroup()
                         .addComponent(chxCDV)
                         .addGap(138, 138, 138)
                         .addComponent(chxPTME)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(chxTARV)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(chxLabo)))
-                .addContainerGap(118, Short.MAX_VALUE))
+                        .addComponent(chxTARV)))
+                .addContainerGap())
         );
         jXPanel7Layout.setVerticalGroup(
             jXPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -428,19 +434,21 @@ public class PSurvey extends javax.swing.JPanel {
                     .addComponent(chxCDV)
                     .addComponent(chxDCIP)
                     .addComponent(chxPTME)
-                    .addComponent(chxTARV)
-                    .addComponent(chxLabo))
+                    .addComponent(chxTARV))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jXPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(chxPairEdu)
                     .addComponent(chxSuiviTBVIH)
+                    .addComponent(chxLabo))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jXPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(chxSuiviCommuVisitPE)
                     .addComponent(chxSuiviCommPODI))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
                 .addGroup(jXPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jXLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtAutresServicePEC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         jXPanel8.setBackground(java.awt.Color.white);
@@ -509,40 +517,42 @@ public class PSurvey extends javax.swing.JPanel {
             jXPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jXPanel8Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jXPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jXLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jXPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(jXPanel8Layout.createSequentialGroup()
-                            .addComponent(jXLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(423, 423, 423)
-                            .addComponent(cbxPlanActionAQ, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGroup(jXPanel8Layout.createSequentialGroup()
-                            .addComponent(jXLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(435, 435, 435)
-                            .addComponent(cbxPVReunions, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGroup(jXPanel8Layout.createSequentialGroup()
-                            .addComponent(jXLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(cbxDocInitiativeAQ, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGroup(jXPanel8Layout.createSequentialGroup()
-                            .addComponent(jXLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(339, 339, 339)
-                            .addComponent(cbxImplicationZS, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGroup(jXPanel8Layout.createSequentialGroup()
-                            .addComponent(jXLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(328, 328, 328)
-                            .addComponent(cbxImplicationFOSA, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGroup(jXPanel8Layout.createSequentialGroup()
-                            .addGroup(jXPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jXLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jXLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGap(10, 10, 10)
-                            .addGroup(jXPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jXPanel8Layout.createSequentialGroup()
-                                    .addGap(281, 281, 281)
-                                    .addComponent(cbxPlanningReunion, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addComponent(cbxEAQFonctionne, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
-                .addGap(380, 380, 380))
+                .addGroup(jXPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jXPanel8Layout.createSequentialGroup()
+                        .addComponent(jXLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jXPanel8Layout.createSequentialGroup()
+                        .addComponent(jXLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(379, 379, 379)
+                        .addComponent(cbxImplicationFOSA, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jXPanel8Layout.createSequentialGroup()
+                        .addComponent(jXLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(474, 474, 474)
+                        .addComponent(cbxPlanActionAQ, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jXPanel8Layout.createSequentialGroup()
+                        .addComponent(jXLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(390, 390, 390)
+                        .addComponent(cbxImplicationZS, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jXPanel8Layout.createSequentialGroup()
+                        .addComponent(jXLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(56, 56, 56)
+                        .addComponent(cbxDocInitiativeAQ, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jXPanel8Layout.createSequentialGroup()
+                        .addComponent(jXLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(486, 486, 486)
+                        .addComponent(cbxPVReunions, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jXPanel8Layout.createSequentialGroup()
+                        .addGroup(jXPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jXLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jXLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jXPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jXPanel8Layout.createSequentialGroup()
+                                .addGap(342, 342, 342)
+                                .addComponent(cbxPlanningReunion, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(jXPanel8Layout.createSequentialGroup()
+                                .addGap(196, 196, 196)
+                                .addComponent(cbxEAQFonctionne, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                .addContainerGap())
         );
         jXPanel8Layout.setVerticalGroup(
             jXPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -569,7 +579,7 @@ public class PSurvey extends javax.swing.JPanel {
                         .addComponent(jXLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jXPanel8Layout.createSequentialGroup()
                         .addComponent(cbxPlanningReunion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(cbxPlanActionAQ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(cbxPVReunions, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -628,11 +638,11 @@ public class PSurvey extends javax.swing.JPanel {
                             .addComponent(jXLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jXLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(49, 49, 49)
-                        .addGroup(jXPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(CbxRefPatientFOSACV, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(cbxFOSAChargeVirale, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(cbxCollecterRefEchantFOSACV, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addGap(380, 380, 380))
+                        .addGroup(jXPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(CbxRefPatientFOSACV, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(cbxCollecterRefEchantFOSACV, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(cbxFOSAChargeVirale, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addContainerGap())
         );
         jXPanel9Layout.setVerticalGroup(
             jXPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -669,6 +679,13 @@ public class PSurvey extends javax.swing.JPanel {
         jXLabel41.setText("Quel pourcentage des résultats sont documentées  dans les dossiers des  malades  ?");
 
         txtPourcentResuDocumentes.setEnabled(false);
+        txtPourcentResuDocumentes.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtPourcentResuDocumentesKeyTyped(evt);
+            }
+        });
+
+        lblPourcentResuDocumentes.setForeground(new java.awt.Color(255, 51, 51));
 
         javax.swing.GroupLayout jXPanel10Layout = new javax.swing.GroupLayout(jXPanel10);
         jXPanel10.setLayout(jXPanel10Layout);
@@ -677,15 +694,16 @@ public class PSurvey extends javax.swing.JPanel {
             .addGroup(jXPanel10Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jXPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jXLabel38, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jXLabel39, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jXPanel10Layout.createSequentialGroup()
                         .addComponent(jXLabel41, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(254, 254, 254)
-                        .addComponent(txtPourcentResuDocumentes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jXPanel10Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jXPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jXLabel38, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jXLabel39, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                            .addGroup(jXPanel10Layout.createSequentialGroup()
+                                .addComponent(lblPourcentResuDocumentes, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 40, Short.MAX_VALUE))
+                            .addComponent(txtPourcentResuDocumentes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
         );
         jXPanel10Layout.setVerticalGroup(
@@ -697,13 +715,15 @@ public class PSurvey extends javax.swing.JPanel {
                 .addGroup(jXPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jXLabel41, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtPourcentResuDocumentes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(8, 8, 8)
+                .addComponent(lblPourcentResuDocumentes, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jXLabel39, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jXPanel11.setBackground(java.awt.Color.white);
-        jXPanel11.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "16. Quel est le temps estimé de retour des résultats, que ce soit par référence du patient ou par collecte et référence de l’échantillon", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 14))); // NOI18N
+        jXPanel11.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "<html>16. Quel est le temps estimé de retour des résultats, que ce soit par référence du patient ou par collecte<br> et référence de l’échantillon</html>", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 14))); // NOI18N
 
         chxMoinsDe1mois.setBackground(java.awt.Color.white);
         btnGroupTempsEstimeResultats.add(chxMoinsDe1mois);
@@ -767,7 +787,7 @@ public class PSurvey extends javax.swing.JPanel {
             }
         });
 
-        jXLabel44.setText("18. Existe-t-il un processus de renforcement du counseling aux patients avec une CV élevée ≥ 1,000 copies/ml ?  ");
+        jXLabel44.setText("<html>18. Existe-t-il un processus de renforcement du counseling aux patients avec<br> une CV élevée ≥ 1,000 copies/ml ?</html>");
         jXLabel44.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
 
         jXLabel45.setText("Si Oui, est-il documenté dans le registre ou dossier patient ? (Il faut voir)");
@@ -776,6 +796,11 @@ public class PSurvey extends javax.swing.JPanel {
         cbxProcessRenforDocumente.setSelectedIndex(-1);
         cbxProcessRenforDocumente.setEnabled(false);
         cbxProcessRenforDocumente.setFocusable(false);
+        cbxProcessRenforDocumente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbxProcessRenforDocumenteActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jXPanel12Layout = new javax.swing.GroupLayout(jXPanel12);
         jXPanel12.setLayout(jXPanel12Layout);
@@ -784,9 +809,9 @@ public class PSurvey extends javax.swing.JPanel {
             .addGroup(jXPanel12Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jXPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jXLabel44, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jXLabel45, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(jXLabel45, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jXLabel44, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(71, 71, 71)
                 .addGroup(jXPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(cbxProcessRenforCounseling, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(cbxProcessRenforDocumente, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -837,7 +862,7 @@ public class PSurvey extends javax.swing.JPanel {
                 .addGroup(jXPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jXLabel48, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jXLabel47, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(158, 158, 158)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jXPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(cbxSystemeGroupSoutien, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(cbxSystemeGroupSoutienDocumente, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -892,7 +917,7 @@ public class PSurvey extends javax.swing.JPanel {
 
         jXLabel33.setText("Si Oui, est-il documenté dans un registre ou dossier malade (il faut voir)");
 
-        jXLabel34.setText("12. Existe-t-il un registre qui documente la date de prélèvement de la CV faite aux patients ?");
+        jXLabel34.setText("<html>12. Existe-t-il un registre qui documente la date de prélèvement<br> de la CV faite aux patients ?<html>");
         jXLabel34.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
 
         cbxDatePrelevEnregis.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Oui", "Non" }));
@@ -900,13 +925,13 @@ public class PSurvey extends javax.swing.JPanel {
         cbxDatePrelevEnregis.setEnabled(false);
         cbxDatePrelevEnregis.setFocusable(false);
 
-        jXLabel30.setText("<html>9. Si la FOSA collecte et réfère les échantillons collectés ; le système de transport des échantillons est-il soutenu<br> par une chaine de froid avec monitoring de température ?</html>");
+        jXLabel30.setText("<html>9. Si la FOSA collecte et réfère les échantillons collectés ; le système de transport des<br> échantillons est-il soutenu par une chaine de froid avec monitoring de température ?</html>");
         jXLabel30.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
 
-        jXLabel32.setText("<html>11. Existe-t-il un processus de triage et de notification des patients sous ARV qui sont éligibles<br> à faire un test de CV mensuellement ?</html>");
+        jXLabel32.setText("<html>11. Existe-t-il un processus de triage et de notification des patients sous ARV<br> qui sont éligibles à faire un test de CV mensuellement ?</html>");
         jXLabel32.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
 
-        jXLabel36.setText("13. Existe-t-il un registre qui documente les résultats et la date de retour des CV fait aux patients ?");
+        jXLabel36.setText("<html>13. Existe-t-il un registre qui documente les résultats et la date<br> de retour des CV fait aux patients ?</html>");
         jXLabel36.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
 
         cbxRefrigControlTemp.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Oui", "Non" }));
@@ -927,7 +952,7 @@ public class PSurvey extends javax.swing.JPanel {
             }
         });
 
-        jXLabel31.setText("10. Existe-il un point focal a l’UPEC (Unité ou Cellule de PEC des PVVIH) responsable des activités relatives à la CV ?");
+        jXLabel31.setText("<html>10. Existe-il un point focal a l’UPEC (Unité ou Cellule de PEC des PVVIH)<br> responsable des activités relatives à la CV ?</html>");
         jXLabel31.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
 
         cbxRegisResuDateRetour.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Oui", "Non" }));
@@ -947,10 +972,10 @@ public class PSurvey extends javax.swing.JPanel {
         cbxSysFOSAPOC.setSelectedIndex(-1);
         cbxSysFOSAPOC.setFocusable(false);
 
-        jXLabel29.setText("<html>8. Si la FOSA collecte et réfère les échantillons collectés ; existe-t-il un réfrigérateur avec charte de contrôle<br> de température pour le stockage des échantillons.</html> ");
+        jXLabel29.setText("<html>8. Si la FOSA collecte et réfère les échantillons collectés ; existe-t-il un réfrigérateur<br> avec charte de contrôle de température pour le stockage des échantillons.</html> ");
         jXLabel29.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
 
-        jXLabel28.setText("7. La FOSA fonction t’elle en collaboration avec un système POC (point of care) sous contrat ? (ex. labo Dream, MSF)");
+        jXLabel28.setText("<html>7. La FOSA fonction t’elle en collaboration avec un système<br> POC (point of care) sous contrat ? (ex. labo Dream, MSF)</html>");
         jXLabel28.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
 
         jXLabel37.setText("Si Oui, la date est-elle enregistrée ?");
@@ -964,38 +989,32 @@ public class PSurvey extends javax.swing.JPanel {
                 .addGroup(jXPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jXPanel15Layout.createSequentialGroup()
                         .addGroup(jXPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jXLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jXLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jXLabel32, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(jXLabel32, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jXLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jXPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(cbxPointFocalUPEC, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(cbxTriageNotifPatientARV, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(jXPanel15Layout.createSequentialGroup()
-                        .addGroup(jXPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jXLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jXLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jXPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(cbxRefrigControlTemp, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(cbxSysFOSAPOC, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(jXPanel15Layout.createSequentialGroup()
-                        .addComponent(jXLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(31, 31, 31)
-                        .addComponent(cbxTransportEchantFroid, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jXPanel15Layout.createSequentialGroup()
-                        .addGroup(jXPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jXLabel36, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jXLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jXLabel35, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jXLabel34, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jXLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jXPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(cbxTriageDocumenteRegis, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(cbxRegisResuDatePrelev, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(cbxTriageDocumenteRegis, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(cbxTriageNotifPatientARV, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(cbxPointFocalUPEC, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(cbxTransportEchantFroid, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(cbxDatePrelevEnregis, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(cbxDateRetourEnregis, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(cbxRegisResuDateRetour, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(cbxRegisResuDateRetour, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(cbxDateRetourEnregis, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(jXLabel36, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jXLabel35, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jXLabel34, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jXLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jXPanel15Layout.createSequentialGroup()
+                        .addGroup(jXPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jXLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jXLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jXPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(cbxSysFOSAPOC, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(cbxRefrigControlTemp, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
         );
         jXPanel15Layout.setVerticalGroup(
@@ -1044,6 +1063,8 @@ public class PSurvey extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
+        jXPanel15Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {cbxDatePrelevEnregis, cbxDateRetourEnregis, cbxPointFocalUPEC, cbxRefrigControlTemp, cbxRegisResuDatePrelev, cbxRegisResuDateRetour, cbxSysFOSAPOC, cbxTransportEchantFroid, cbxTriageDocumenteRegis, cbxTriageNotifPatientARV});
+
         jXPanel16.setBackground(java.awt.Color.white);
         jXPanel16.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
 
@@ -1061,7 +1082,7 @@ public class PSurvey extends javax.swing.JPanel {
             .addGroup(jXPanel16Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jXLabel40, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(86, 86, 86)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(cbxRegisResuCV1000, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
@@ -1092,7 +1113,7 @@ public class PSurvey extends javax.swing.JPanel {
             .addGroup(jXPanel17Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jXLabel42, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(125, 125, 125)
+                .addGap(18, 18, 18)
                 .addComponent(cbxProcessSuiviResu, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
@@ -1108,6 +1129,12 @@ public class PSurvey extends javax.swing.JPanel {
 
         jXPanel18.setBackground(java.awt.Color.white);
         jXPanel18.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+
+        txtPatientARV12moisPrelevCV12mois.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtPatientARV12moisPrelevCV12moisKeyTyped(evt);
+            }
+        });
 
         jXLabel57.setText("<html>28. Dans une FOSA de collecte et de référence de l’échantillon ; les personnels sont-ils formés<br> sur les techniques de collecte ? </html>");
         jXLabel57.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
@@ -1125,7 +1152,13 @@ public class PSurvey extends javax.swing.JPanel {
         jXLabel50.setText("25. Au cours de 12 derniers mois, les personnels ont-ils été formés sur les techniques d’AQ ? ");
         jXLabel50.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
 
-        jXLabel59.setText("<html>30. Nous souhaitons maximiser les procédures pour une meilleure PEC de la CV : Selon vous quelles sont les stratégies <br>que l’on peut utiliser pour aboutir à cela au sein de la FOSA </html>");
+        txtPropPersFormeesTechAQ.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtPropPersFormeesTechAQKeyTyped(evt);
+            }
+        });
+
+        jXLabel59.setText("<html>30. Nous souhaitons maximiser les procédures pour une meilleure PEC de la CV : Selon vous quelles sont<br> les stratégies que l’on peut utiliser pour aboutir à cela au sein de la FOSA </html>");
         jXLabel59.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
 
         jXLabel54.setText("24. Quel est le nombre de Personnels s’occupant de la PEC des PVVIH au niveau de la structure ?");
@@ -1134,8 +1167,26 @@ public class PSurvey extends javax.swing.JPanel {
         jXLabel49.setText("20. Combien des patients sont activement sous traitement ARV depuis 1 an ?");
         jXLabel49.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
 
+        txtPatientARV12moisPrelevCV.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtPatientARV12moisPrelevCVKeyTyped(evt);
+            }
+        });
+
+        txtPersFormeesTechAQ.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtPersFormeesTechAQKeyTyped(evt);
+            }
+        });
+
         jXLabel56.setText("27. Quelle est la proportion de Personnels formés sur les techniques d’AQ ?");
         jXLabel56.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
+
+        txtPersPecPVVIHStructure.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtPersPecPVVIHStructureKeyTyped(evt);
+            }
+        });
 
         cbxPersNotionAlgoCVPNLS.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Oui", "Non" }));
         cbxPersNotionAlgoCVPNLS.setSelectedIndex(-1);
@@ -1150,7 +1201,13 @@ public class PSurvey extends javax.swing.JPanel {
         jXLabel55.setText("26. Quel est le nombre de Personnels formés sur les techniques d’AQ ?");
         jXLabel55.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
 
-        jXLabel52.setText("<html>22. Combien des patients activement sous traitement ARV depuis 12mois ont effectué au moins 1 prélèvement<br> CV dans 12 mois avec résultats retournées et/ou disponibles ?</html>");
+        txtPatientCVNonDetectable.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtPatientCVNonDetectableKeyTyped(evt);
+            }
+        });
+
+        jXLabel52.setText("<html>22. Combien des patients activement sous traitement ARV depuis 12mois ont effectué au <br>moins 1 prélèvement CV dans 12 mois avec résultats retournées et/ou disponibles ?</html>");
         jXLabel52.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
 
         cbxPersFormeesTechAQ.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Oui", "Non" }));
@@ -1168,6 +1225,25 @@ public class PSurvey extends javax.swing.JPanel {
         txtStrategieFOSA.setRows(5);
         jScrollPane2.setViewportView(txtStrategieFOSA);
 
+        lblPatientActivARV1An.setForeground(new java.awt.Color(255, 51, 51));
+
+        lblPatientARV12moisPrelevCV.setForeground(new java.awt.Color(255, 51, 51));
+
+        lblPatientARV12moisPrelevCV12mois.setBackground(java.awt.Color.white);
+        lblPatientARV12moisPrelevCV12mois.setForeground(new java.awt.Color(255, 51, 51));
+
+        lblPropPersFormeesTechAQ.setBackground(java.awt.Color.white);
+        lblPropPersFormeesTechAQ.setForeground(new java.awt.Color(255, 51, 51));
+
+        lblPatientCVNonDetectable.setBackground(java.awt.Color.white);
+        lblPatientCVNonDetectable.setForeground(new java.awt.Color(255, 51, 51));
+
+        lblPersPecPVVIHStructure.setBackground(java.awt.Color.white);
+        lblPersPecPVVIHStructure.setForeground(new java.awt.Color(255, 51, 51));
+
+        lblPersFormeesTechAQ.setBackground(java.awt.Color.white);
+        lblPersFormeesTechAQ.setForeground(new java.awt.Color(255, 51, 51));
+
         javax.swing.GroupLayout jXPanel18Layout = new javax.swing.GroupLayout(jXPanel18);
         jXPanel18.setLayout(jXPanel18Layout);
         jXPanel18Layout.setHorizontalGroup(
@@ -1176,14 +1252,45 @@ public class PSurvey extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(jXPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jXPanel18Layout.createSequentialGroup()
-                        .addComponent(jXLabel51, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(69, 69, 69)
-                        .addComponent(txtPatientARV12moisPrelevCV, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jXPanel18Layout.createSequentialGroup()
-                        .addComponent(jXLabel52, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jXLabel53, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtPatientARV12moisPrelevCV12mois, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(jXPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtPatientCVNonDetectable, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lblPatientCVNonDetectable, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(jScrollPane2)
+                    .addComponent(jXLabel52, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jXLabel59, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jXPanel18Layout.createSequentialGroup()
+                        .addGroup(jXPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jXLabel57, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jXLabel58, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jXPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(cbxPersFormeesTechCollect, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(cbxPersNotionAlgoCVPNLS, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(jXPanel18Layout.createSequentialGroup()
+                        .addComponent(jXLabel56, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jXPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblPropPersFormeesTechAQ, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lblPersFormeesTechAQ, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtPropPersFormeesTechAQ, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtPersFormeesTechAQ, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(jXPanel18Layout.createSequentialGroup()
+                        .addComponent(jXLabel51, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jXPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblPatientARV12moisPrelevCV12mois, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblPatientARV12moisPrelevCV, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtPatientARV12moisPrelevCV12mois, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtPatientARV12moisPrelevCV, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jXPanel18Layout.createSequentialGroup()
+                        .addComponent(jXLabel49, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(97, 97, 97)
+                        .addGroup(jXPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblPatientActivARV1An, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtPatientActivARV1An, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jXPanel18Layout.createSequentialGroup()
                         .addComponent(jXLabel54, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(txtPersPecPVVIHStructure, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -1191,35 +1298,11 @@ public class PSurvey extends javax.swing.JPanel {
                         .addGroup(jXPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jXLabel50, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jXLabel55, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(37, 37, 37)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jXPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtPersFormeesTechAQ, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(cbxPersFormeesTechAQ, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(jXPanel18Layout.createSequentialGroup()
-                        .addGroup(jXPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jXLabel56, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jXLabel57, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(30, 30, 30)
-                        .addGroup(jXPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(cbxPersFormeesTechCollect, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(txtPropPersFormeesTechAQ, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(jXPanel18Layout.createSequentialGroup()
-                        .addComponent(jXLabel53, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(78, 78, 78)
-                        .addComponent(txtPatientCVNonDetectable, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jXPanel18Layout.createSequentialGroup()
-                        .addComponent(jXLabel58, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(78, 78, 78)
-                        .addComponent(cbxPersNotionAlgoCVPNLS, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jXPanel18Layout.createSequentialGroup()
-                        .addComponent(jXLabel49, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(159, 159, 159)
-                        .addComponent(txtPatientActivARV1An, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jXPanel18Layout.createSequentialGroup()
-                        .addComponent(jXLabel59, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jScrollPane2))
-                .addContainerGap())
+                            .addComponent(lblPersPecPVVIHStructure, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(cbxPersFormeesTechAQ, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addGap(168, 168, 168))
         );
         jXPanel18Layout.setVerticalGroup(
             jXPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1228,35 +1311,49 @@ public class PSurvey extends javax.swing.JPanel {
                 .addGroup(jXPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jXLabel49, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtPatientActivARV1An, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jXPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGap(2, 2, 2)
+                .addComponent(lblPatientActivARV1An, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jXPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jXLabel51, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtPatientARV12moisPrelevCV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblPatientARV12moisPrelevCV, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jXPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jXLabel52, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtPatientARV12moisPrelevCV12mois, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(4, 4, 4)
+                .addComponent(lblPatientARV12moisPrelevCV12mois, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jXPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jXLabel53, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtPatientCVNonDetectable, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(1, 1, 1)
+                .addComponent(lblPatientCVNonDetectable, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jXPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jXLabel54, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtPersPecPVVIHStructure, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblPersPecPVVIHStructure, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(14, 14, 14)
                 .addGroup(jXPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jXLabel50, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cbxPersFormeesTechAQ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jXPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jXPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jXLabel55, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtPersFormeesTechAQ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblPersFormeesTechAQ, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(8, 8, 8)
                 .addGroup(jXPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jXLabel56, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtPropPersFormeesTechAQ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblPropPersFormeesTechAQ, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(8, 8, 8)
                 .addGroup(jXPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jXLabel57, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cbxPersFormeesTechCollect, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -1295,15 +1392,13 @@ public class PSurvey extends javax.swing.JPanel {
             .addGroup(jXPanel19Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jXPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jXPanel19Layout.createSequentialGroup()
-                        .addComponent(jXLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(43, 43, 43)
-                        .addComponent(cbxProcessusQualite, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jXPanel19Layout.createSequentialGroup()
-                        .addComponent(jXLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cbxPointFocalAQ, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addGap(474, 474, 474))
+                    .addComponent(jXLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jXLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jXPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(cbxPointFocalAQ, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(cbxProcessusQualite, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         jXPanel19Layout.setVerticalGroup(
             jXPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1326,23 +1421,26 @@ public class PSurvey extends javax.swing.JPanel {
             .addGroup(jXPanel4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jXPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(hyplTop, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jXPanel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jXPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jXPanel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jXPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jXPanel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jXPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jXPanel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jXPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jXPanel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jXPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jXPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jXPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jXPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jXPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jXPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jXPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jXPanel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jXPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jXPanel4Layout.createSequentialGroup()
-                        .addComponent(jXPanel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(5, 5, 5))
-                    .addComponent(jXPanel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jXPanel18, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jXPanel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jXPanel8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jXPanel18, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jXPanel4Layout.createSequentialGroup()
+                        .addGap(1, 1, 1)
+                        .addGroup(jXPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jXPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jXPanel4Layout.createSequentialGroup()
+                                .addComponent(hyplTop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(336, 336, 336)))))
                 .addGap(14, 14, 14))
         );
         jXPanel4Layout.setVerticalGroup(
@@ -1375,10 +1473,10 @@ public class PSurvey extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jXPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(14, 14, 14)
-                .addComponent(jXPanel18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jXPanel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(hyplTop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         jXPanel8.getAccessibleContext().setAccessibleName("5. L’EAQ est-elle fonctionnelle ?");
@@ -1417,7 +1515,7 @@ public class PSurvey extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jXPanel3Layout.createSequentialGroup()
                 .addComponent(jXPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(13, 13, 13))
+                .addGap(12, 12, 12))
         );
         jXPanel3Layout.setVerticalGroup(
             jXPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1465,7 +1563,7 @@ public class PSurvey extends javax.swing.JPanel {
                         .addGap(18, 18, 18)
                         .addComponent(txtNomEnqueteurs, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addComponent(jXPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                .addGap(24, 24, 24))
         );
 
         jXPanel2Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {cbxDateEvaluation, cbxNomSite, txtNomEnqueteurs});
@@ -1486,8 +1584,8 @@ public class PSurvey extends javax.swing.JPanel {
                     .addComponent(jXLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtNomEnqueteurs, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jXPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jXPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         jXPanel14.setBackground(java.awt.Color.white);
@@ -1502,13 +1600,18 @@ public class PSurvey extends javax.swing.JPanel {
             }
         });
 
+        lblShowSaveMessage.setForeground(new java.awt.Color(255, 51, 102));
+        lblShowSaveMessage.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
+
         javax.swing.GroupLayout jXPanel14Layout = new javax.swing.GroupLayout(jXPanel14);
         jXPanel14.setLayout(jXPanel14Layout);
         jXPanel14Layout.setHorizontalGroup(
             jXPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jXPanel14Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btnSave, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jXPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnSave, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblShowSaveMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 385, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jXPanel14Layout.setVerticalGroup(
@@ -1516,7 +1619,8 @@ public class PSurvey extends javax.swing.JPanel {
             .addGroup(jXPanel14Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(btnSave, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblShowSaveMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         javax.swing.GroupLayout jXPanel1Layout = new javax.swing.GroupLayout(jXPanel1);
@@ -1666,16 +1770,169 @@ public class PSurvey extends javax.swing.JPanel {
     }//GEN-LAST:event_btnSaveActionPerformed
 
     private void txtPatientActivARV1AnKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPatientActivARV1AnKeyTyped
-        // TODO add your handling code here:
+        try {
+            if (txtPatientActivARV1An.getText().equals("")) {
+                lblPatientActivARV1An.setText("");
+                lblPatientActivARV1An.setVisible(false);
+            } else {
+                int i = Integer.parseInt(txtPatientActivARV1An.getText());
+                lblPatientActivARV1An.setText("");
+                lblPatientActivARV1An.setVisible(false);
+            }
+        } catch (NumberFormatException e) {
+            lblPatientActivARV1An.setText("Valeur incorrecte!");
+            lblPatientActivARV1An.setVisible(true);
+        }
     }//GEN-LAST:event_txtPatientActivARV1AnKeyTyped
 
+    private void txtPatientARV12moisPrelevCVKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPatientARV12moisPrelevCVKeyTyped
+        try {
+            if (txtPatientARV12moisPrelevCV.getText().equals("")) {
+                lblPatientARV12moisPrelevCV.setText("");
+                lblPatientARV12moisPrelevCV.setVisible(false);
+            } else {
+                int i = Integer.parseInt(txtPatientARV12moisPrelevCV.getText());
+                lblPatientARV12moisPrelevCV.setText("");
+                lblPatientARV12moisPrelevCV.setVisible(false);
+            }
+        } catch (NumberFormatException e) {
+            lblPatientARV12moisPrelevCV.setText("Valeur incorrecte!");
+            lblPatientARV12moisPrelevCV.setVisible(true);
+        }
+    }//GEN-LAST:event_txtPatientARV12moisPrelevCVKeyTyped
+
+    private void txtPatientARV12moisPrelevCV12moisKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPatientARV12moisPrelevCV12moisKeyTyped
+        try {
+            if (txtPatientARV12moisPrelevCV12mois.getText().equals("")) {
+                lblPatientARV12moisPrelevCV12mois.setText("");
+                lblPatientARV12moisPrelevCV12mois.setVisible(false);
+            } else {
+                int i = Integer.parseInt(txtPatientARV12moisPrelevCV12mois.getText());
+                lblPatientARV12moisPrelevCV12mois.setText("");
+                lblPatientARV12moisPrelevCV12mois.setVisible(false);
+            }
+        } catch (NumberFormatException e) {
+            lblPatientARV12moisPrelevCV12mois.setText("Valeur incorrecte!");
+            lblPatientARV12moisPrelevCV12mois.setVisible(true);
+        }
+    }//GEN-LAST:event_txtPatientARV12moisPrelevCV12moisKeyTyped
+
+    private void txtPatientCVNonDetectableKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPatientCVNonDetectableKeyTyped
+        try {
+            if (txtPatientCVNonDetectable.getText().equals("")) {
+                lblPatientCVNonDetectable.setText("");
+                lblPatientCVNonDetectable.setVisible(false);
+            } else {
+                int i = Integer.parseInt(txtPatientCVNonDetectable.getText());
+                lblPatientCVNonDetectable.setText("");
+                lblPatientCVNonDetectable.setVisible(false);
+            }
+        } catch (NumberFormatException e) {
+            lblPatientCVNonDetectable.setText("Valeur incorrecte!");
+            lblPatientCVNonDetectable.setVisible(true);
+        }
+    }//GEN-LAST:event_txtPatientCVNonDetectableKeyTyped
+
+    private void txtPersPecPVVIHStructureKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPersPecPVVIHStructureKeyTyped
+        try {
+            if (txtPersPecPVVIHStructure.getText().equals("")) {
+                lblPersPecPVVIHStructure.setText("");
+                lblPersPecPVVIHStructure.setVisible(false);
+                persPECPVVIH = false;
+            } else {
+                int i = Integer.parseInt(txtPersPecPVVIHStructure.getText());
+                lblPersPecPVVIHStructure.setText("");
+                lblPersPecPVVIHStructure.setVisible(false);
+                persPECPVVIH = true;
+            }
+        } catch (NumberFormatException e) {
+            lblPersPecPVVIHStructure.setText("Valeur incorrecte!");
+            lblPersPecPVVIHStructure.setVisible(true);
+            persPECPVVIH = false;
+        }
+        System.out.println(">>> PVVIH "+persPECPVVIH);
+    }//GEN-LAST:event_txtPersPecPVVIHStructureKeyTyped
+
+    private void txtPersFormeesTechAQKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPersFormeesTechAQKeyTyped
+        try {
+            if (txtPersFormeesTechAQ.getText().equals("")) {
+                lblPersFormeesTechAQ.setText("");
+                lblPersFormeesTechAQ.setVisible(false);
+                persFormeesAQ = false;
+            } else {
+                int i = Integer.parseInt(txtPersFormeesTechAQ.getText());
+                lblPersFormeesTechAQ.setText("");
+                lblPersFormeesTechAQ.setVisible(false);
+                persFormeesAQ = true;
+            }
+        } catch (NumberFormatException e) {
+            lblPersFormeesTechAQ.setText("Valeur incorrecte!");
+            lblPersFormeesTechAQ.setVisible(true);
+            persFormeesAQ = false;
+        }
+        System.out.println(">>> Formées "+persFormeesAQ);
+    }//GEN-LAST:event_txtPersFormeesTechAQKeyTyped
+
+    private void txtPropPersFormeesTechAQKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPropPersFormeesTechAQKeyTyped
+        try {
+            if (txtPropPersFormeesTechAQ.getText().equals("")) {
+                lblPropPersFormeesTechAQ.setText("");
+                lblPropPersFormeesTechAQ.setVisible(false);
+            } else {
+                double i = Double.parseDouble(txtPropPersFormeesTechAQ.getText());
+                lblPropPersFormeesTechAQ.setText("");
+                lblPropPersFormeesTechAQ.setVisible(false);
+            }
+        } catch (NumberFormatException e) {
+            lblPropPersFormeesTechAQ.setText("Valeur incorrecte!");
+            lblPropPersFormeesTechAQ.setVisible(true);
+        }
+    }//GEN-LAST:event_txtPropPersFormeesTechAQKeyTyped
+
+    private void txtPourcentResuDocumentesKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPourcentResuDocumentesKeyTyped
+        try {
+            if (txtPourcentResuDocumentes.getText().equals("")) {
+                lblPourcentResuDocumentes.setText("");
+                lblPourcentResuDocumentes.setVisible(false);
+            } else {
+                double i = Double.parseDouble(txtPourcentResuDocumentes.getText());
+                lblPourcentResuDocumentes.setText("");
+                lblPourcentResuDocumentes.setVisible(false);
+            }
+        } catch (NumberFormatException e) {
+            lblPourcentResuDocumentes.setText("Valeur incorrecte!");
+            lblPourcentResuDocumentes.setVisible(true);
+        }
+
+    }//GEN-LAST:event_txtPourcentResuDocumentesKeyTyped
+
+    private void cbxProcessRenforDocumenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxProcessRenforDocumenteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbxProcessRenforDocumenteActionPerformed
+
     private void doBasicConfig() {
+        lblPropPersFormeesTechAQ.setVisible(false);
+        lblPersFormeesTechAQ.setVisible(false);
+        lblPersPecPVVIHStructure.setVisible(false);
+        lblPatientCVNonDetectable.setVisible(false);
+        lblPatientARV12moisPrelevCV12mois.setVisible(false);
+        lblPatientARV12moisPrelevCV.setVisible(false);
+        lblPatientActivARV1An.setVisible(false);
+        lblPatientActivARV1An.setVisible(false);
+        lblPourcentResuDocumentes.setVisible(false);
+        btnSave.setEnabled(false);
+        lblShowSaveMessage.setVisible(false);
 
         Timer timer = new Timer(1000, (ActionEvent evt) -> {
             if (cbxDateEvaluation.getDate() == null) {
                 btnSave.setEnabled(false);
             } else {
                 btnSave.setEnabled(true);
+            }
+            //propotion
+            if (persFormeesAQ && persPECPVVIH) {
+                double v = (Integer.parseInt(txtPersFormeesTechAQ.getText()) / Integer.parseInt(txtPersPecPVVIHStructure.getText())) * 100;
+                txtPropPersFormeesTechAQ.setText(v + "");
             }
         });
         timer.start();
@@ -1781,13 +2038,20 @@ public class PSurvey extends javax.swing.JPanel {
         }
         if (cbxFOSAChargeVirale.getSelectedItem().toString().equals("Oui")) {
             survey.setFosaChargeViral(cbxFOSAChargeVirale.getSelectedItem().toString());
-            survey.setRefPatient(CbxRefPatientFOSACV.getSelectedItem().toString());
-            survey.setCollecterRefEchant(cbxCollecterRefEchantFOSACV.getSelectedItem().toString());
+            if (CbxRefPatientFOSACV.getSelectedItem().toString().equals("")) {
+                survey.setRefPatient("");
+            } else {
+                survey.setRefPatient(CbxRefPatientFOSACV.getSelectedItem().toString());
+            }
+            if (cbxCollecterRefEchantFOSACV.getSelectedItem().toString().equals("")) {
+                survey.setCollecterRefEchant("");
+            } else {
+                survey.setCollecterRefEchant(cbxCollecterRefEchantFOSACV.getSelectedItem().toString());
+            }
         } else {
             survey.setFosaChargeViral(cbxFOSAChargeVirale.getSelectedItem().toString());
             survey.setRefPatient("");
             survey.setCollecterRefEchant("");
-
         }
 
         survey.setFosaSystemePoc(cbxSysFOSAPOC.getSelectedItem().toString());
@@ -1819,7 +2083,7 @@ public class PSurvey extends javax.swing.JPanel {
             survey.setDateRetourEnregis("");
         }
 
-        survey.setPourcentResuDocumentes(Long.parseLong(txtPourcentResuDocumentes.getText()));
+        survey.setPourcentResuDocumentes(Double.parseDouble(txtPourcentResuDocumentes.getText()));
         survey.setRegisResuCv1000(cbxRegisResuCV1000.getSelectedItem().toString());
         if (chxMoinsDe1mois.isSelected()) {
             survey.setTempsEstimeRetourResu(chxMoinsDe1mois.getText());
@@ -1854,7 +2118,7 @@ public class PSurvey extends javax.swing.JPanel {
         survey.setPatientCvNonDetectable(Long.parseLong(txtPatientCVNonDetectable.getText()));
         survey.setPersPecPvvihStructure(Long.parseLong(txtPersPecPVVIHStructure.getText()));
         survey.setPersFormeesTechAq(Long.parseLong(txtPersFormeesTechAQ.getText()));
-        survey.setPropPersFormeesTechAq(Long.parseLong(txtPropPersFormeesTechAQ.getText()));
+        survey.setPropPersFormeesTechAq(Double.parseDouble(txtPropPersFormeesTechAQ.getText()));
         survey.setPersFormeesTechCollect(cbxPersFormeesTechCollect.getSelectedItem().toString());
         survey.setPersNotionAlgoCvPnls(cbxPersNotionAlgoCVPNLS.getSelectedItem().toString());
         survey.setStrategieFosa(txtStrategieFOSA.getText());
@@ -1865,10 +2129,22 @@ public class PSurvey extends javax.swing.JPanel {
         if (!em.contains(survey)) {
             em.persist(survey);
             em.flush();
+            lblShowSaveMessage.setVisible(true);
+            lblShowSaveMessage.setText("Survey saved successfully !");
+            doShowSavedSuccessfullyMessage();
         }
         em.getTransaction().commit();
         em.close();
 
+    }
+
+    private void doShowSavedSuccessfullyMessage() {
+        timerShowSaveMessage = new Timer(2000, (ActionEvent evt) -> {
+            lblShowSaveMessage.setVisible(false);
+            lblShowSaveMessage.setText("");
+            timerShowSaveMessage.stop();
+        });
+        timerShowSaveMessage.start();
     }
 
     private String getMacAdress() {
@@ -1877,8 +2153,6 @@ public class PSurvey extends javax.swing.JPanel {
         try {
 
             ip = InetAddress.getLocalHost();
-            System.out.println("Current IP address : " + ip.getHostAddress());
-
             NetworkInterface network = NetworkInterface.getByInetAddress(ip);
 
             byte[] mac = network.getHardwareAddress();
@@ -2033,6 +2307,15 @@ public class PSurvey extends javax.swing.JPanel {
     private org.jdesktop.swingx.JXPanel jXPanel7;
     private org.jdesktop.swingx.JXPanel jXPanel8;
     private org.jdesktop.swingx.JXPanel jXPanel9;
+    private org.jdesktop.swingx.JXLabel lblPatientARV12moisPrelevCV;
+    private javax.swing.JLabel lblPatientARV12moisPrelevCV12mois;
+    private org.jdesktop.swingx.JXLabel lblPatientActivARV1An;
+    private javax.swing.JLabel lblPatientCVNonDetectable;
+    private javax.swing.JLabel lblPersFormeesTechAQ;
+    private javax.swing.JLabel lblPersPecPVVIHStructure;
+    private org.jdesktop.swingx.JXLabel lblPourcentResuDocumentes;
+    private javax.swing.JLabel lblPropPersFormeesTechAQ;
+    private org.jdesktop.swingx.JXLabel lblShowSaveMessage;
     private org.jdesktop.swingx.JXTextField txtAutresServicePEC;
     private org.jdesktop.swingx.JXTextField txtNomEnquete1;
     private org.jdesktop.swingx.JXTextField txtNomEnquete2;
@@ -2054,4 +2337,8 @@ public class PSurvey extends javax.swing.JPanel {
 EntityManager em;
     EntityManagerFactory emf;
     Users currentUser;
+    Timer timerShowSaveMessage;
+    boolean persPECPVVIH = false;//Variable pour générer la proportion automatiquement
+    boolean persFormeesAQ = false;//Variable pour générer la proportion automatiquement
+
 }

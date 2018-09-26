@@ -171,8 +171,9 @@ public class Survey implements Serializable {
     private String regisResuDateRetour;
     @Column(name = "date_retour_enregis")
     private String dateRetourEnregis;
+    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
     @Column(name = "pourcent_resu_documentes")
-    private Long pourcentResuDocumentes;
+    private Double pourcentResuDocumentes;
     @Column(name = "regis_resu_cv1000")
     private String regisResuCv1000;
     @Column(name = "temps_estime_retour_resu")
@@ -200,7 +201,7 @@ public class Survey implements Serializable {
     @Column(name = "pers_formees_tech_aq")
     private Long persFormeesTechAq;
     @Column(name = "prop_pers_formees_tech_aq")
-    private Long propPersFormeesTechAq;
+    private Double propPersFormeesTechAq;
     @Column(name = "pers_formees_tech_collect")
     private String persFormeesTechCollect;
     @Column(name = "pers_notion_algo_cv_pnls")
@@ -535,11 +536,11 @@ public class Survey implements Serializable {
         this.dateRetourEnregis = dateRetourEnregis;
     }
 
-    public Long getPourcentResuDocumentes() {
+    public Double getPourcentResuDocumentes() {
         return pourcentResuDocumentes;
     }
 
-    public void setPourcentResuDocumentes(Long pourcentResuDocumentes) {
+    public void setPourcentResuDocumentes(Double pourcentResuDocumentes) {
         this.pourcentResuDocumentes = pourcentResuDocumentes;
     }
 
@@ -647,11 +648,11 @@ public class Survey implements Serializable {
         this.persFormeesTechAq = persFormeesTechAq;
     }
 
-    public Long getPropPersFormeesTechAq() {
+    public Double getPropPersFormeesTechAq() {
         return propPersFormeesTechAq;
     }
 
-    public void setPropPersFormeesTechAq(Long propPersFormeesTechAq) {
+    public void setPropPersFormeesTechAq(Double propPersFormeesTechAq) {
         this.propPersFormeesTechAq = propPersFormeesTechAq;
     }
 
