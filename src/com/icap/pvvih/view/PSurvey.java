@@ -1774,6 +1774,8 @@ public class PSurvey extends javax.swing.JPanel {
         if (cbxPersFormeesTechAQ.getSelectedItem().toString().equals("Non")) {
             txtPersFormeesTechAQ.setEnabled(false);
             txtPropPersFormeesTechAQ.setEnabled(false);
+            txtPersFormeesTechAQ.setText("");
+            txtPropPersFormeesTechAQ.setText("");
         } else {
             txtPersFormeesTechAQ.setEnabled(true);
             txtPropPersFormeesTechAQ.setEnabled(true);
@@ -1853,19 +1855,15 @@ public class PSurvey extends javax.swing.JPanel {
             if (txtPersPecPVVIHStructure.getText().equals("")) {
                 lblPersPecPVVIHStructure.setText("");
                 lblPersPecPVVIHStructure.setVisible(false);
-                persPECPVVIH = false;
             } else {
                 int i = Integer.parseInt(txtPersPecPVVIHStructure.getText());
                 lblPersPecPVVIHStructure.setText("");
                 lblPersPecPVVIHStructure.setVisible(false);
-                persPECPVVIH = true;
             }
         } catch (NumberFormatException e) {
             lblPersPecPVVIHStructure.setText("Valeur incorrecte!");
             lblPersPecPVVIHStructure.setVisible(true);
-            persPECPVVIH = false;
         }
-        System.out.println(">>> PVVIH " + persPECPVVIH);
     }//GEN-LAST:event_txtPersPecPVVIHStructureKeyTyped
 
     private void txtPersFormeesTechAQKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPersFormeesTechAQKeyTyped
@@ -1873,19 +1871,15 @@ public class PSurvey extends javax.swing.JPanel {
             if (txtPersFormeesTechAQ.getText().equals("")) {
                 lblPersFormeesTechAQ.setText("");
                 lblPersFormeesTechAQ.setVisible(false);
-                persFormeesAQ = false;
             } else {
                 int i = Integer.parseInt(txtPersFormeesTechAQ.getText());
                 lblPersFormeesTechAQ.setText("");
                 lblPersFormeesTechAQ.setVisible(false);
-                persFormeesAQ = true;
             }
         } catch (NumberFormatException e) {
             lblPersFormeesTechAQ.setText("Valeur incorrecte!");
             lblPersFormeesTechAQ.setVisible(true);
-            persFormeesAQ = false;
         }
-        System.out.println(">>> Formées " + persFormeesAQ);
     }//GEN-LAST:event_txtPersFormeesTechAQKeyTyped
 
     private void txtPropPersFormeesTechAQKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPropPersFormeesTechAQKeyTyped
@@ -1927,10 +1921,10 @@ public class PSurvey extends javax.swing.JPanel {
 
     private void hyplHideTaskPaneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hyplHideTaskPaneActionPerformed
         if (hyplHideTaskPane.getText().equals("Cacher panneau gauche")) {
-             PVVIH.taskPaneCentral.setVisible(false);
-             hyplHideTaskPane.setText("Afficher panneau gauche");
-        }else{
-            PVVIH.taskPaneCentral.setVisible(true); 
+            PVVIH.taskPaneCentral.setVisible(false);
+            hyplHideTaskPane.setText("Afficher panneau gauche");
+        } else {
+            PVVIH.taskPaneCentral.setVisible(true);
             hyplHideTaskPane.setText("Cacher panneau gauche");
         }
     }//GEN-LAST:event_hyplHideTaskPaneActionPerformed
@@ -1950,15 +1944,12 @@ public class PSurvey extends javax.swing.JPanel {
         lblShowSaveMessage.setVisible(false);
 
         Timer timer = new Timer(1000, (ActionEvent evt) -> {
-            if (cbxDateEvaluation.getDate() == null || cbxNomSite.getSelectedItem()==null) {
+            if (cbxDateEvaluation.getDate() == null
+                    || cbxNomSite.getSelectedItem() == null
+                    || txtNomEnqueteurs.getText().equals("")) {
                 btnSave.setEnabled(false);
             } else {
                 btnSave.setEnabled(true);
-            }
-            //propotion
-            if (persFormeesAQ && persPECPVVIH) {
-                double v = (Integer.parseInt(txtPersFormeesTechAQ.getText()) / Integer.parseInt(txtPersPecPVVIHStructure.getText())) * 100;
-                txtPropPersFormeesTechAQ.setText(v + "");
             }
         });
         timer.start();
@@ -2060,75 +2051,117 @@ public class PSurvey extends javax.swing.JPanel {
             survey.setServiceComPodi("Non");
         }
         survey.setServiceAutres(txtAutresServicePEC.getText());
-        survey.setProcessQualite(cbxProcessusQualite.getSelectedItem().toString());
-        survey.setPointFocalAq(cbxPointFocalAQ.getSelectedItem().toString());
 
-        if (cbxEAQFonctionne.getSelectedItem().toString().equals("Oui")) {
-            survey.setEaqFonctionne(cbxEAQFonctionne.getSelectedItem().toString());
-            survey.setPlaningReunion(cbxPlanningReunion.getSelectedItem().toString());
-            survey.setPlanActionAq(cbxPlanActionAQ.getSelectedItem().toString());
-            survey.setPvReunion(cbxPVReunions.getSelectedItem().toString());
-            survey.setDocInitiativeAq(cbxDocInitiativeAQ.getSelectedItem().toString());
-            survey.setImplicationZs(cbxImplicationZS.getSelectedItem().toString());
-            survey.setImplicationFosa(cbxImplicationFOSA.getSelectedItem().toString());
-        } else {
-            survey.setEaqFonctionne(cbxEAQFonctionne.getSelectedItem().toString());
-            survey.setPlaningReunion("");
-            survey.setPlanActionAq("");
-            survey.setPvReunion("");
-            survey.setDocInitiativeAq("");
-            survey.setImplicationZs("");
-            survey.setImplicationFosa("");
+        if (cbxProcessusQualite.getSelectedItem() != null) {
+            survey.setProcessQualite(cbxProcessusQualite.getSelectedItem().toString());
         }
-        if (cbxFOSAChargeVirale.getSelectedItem().toString().equals("Oui")) {
-            survey.setFosaChargeViral(cbxFOSAChargeVirale.getSelectedItem().toString());
-            if (CbxRefPatientFOSACV.getSelectedItem().toString().equals("")) {
+
+        if (cbxPointFocalAQ.getSelectedItem() != null) {
+            survey.setPointFocalAq(cbxPointFocalAQ.getSelectedItem().toString());
+        }
+
+        if (cbxEAQFonctionne.getSelectedItem() != null) {
+            if (cbxEAQFonctionne.getSelectedItem().toString().equals("Oui")) {
+                survey.setEaqFonctionne(cbxEAQFonctionne.getSelectedItem().toString());
+                survey.setPlaningReunion(cbxPlanningReunion.getSelectedItem().toString());
+                survey.setPlanActionAq(cbxPlanActionAQ.getSelectedItem().toString());
+                survey.setPvReunion(cbxPVReunions.getSelectedItem().toString());
+                survey.setDocInitiativeAq(cbxDocInitiativeAQ.getSelectedItem().toString());
+                survey.setImplicationZs(cbxImplicationZS.getSelectedItem().toString());
+                survey.setImplicationFosa(cbxImplicationFOSA.getSelectedItem().toString());
+            } else {
+                survey.setEaqFonctionne(cbxEAQFonctionne.getSelectedItem().toString());
+                survey.setPlaningReunion("");
+                survey.setPlanActionAq("");
+                survey.setPvReunion("");
+                survey.setDocInitiativeAq("");
+                survey.setImplicationZs("");
+                survey.setImplicationFosa("");
+            }
+        }
+
+        if (cbxFOSAChargeVirale.getSelectedItem() != null) {
+            if (cbxFOSAChargeVirale.getSelectedItem().toString().equals("Oui")) {
+                survey.setFosaChargeViral(cbxFOSAChargeVirale.getSelectedItem().toString());
+                if (CbxRefPatientFOSACV.getSelectedItem() != null) {
+                    survey.setRefPatient(CbxRefPatientFOSACV.getSelectedItem().toString());
+                } else {
+                    survey.setRefPatient("");
+                }
+                if (cbxCollecterRefEchantFOSACV.getSelectedItem() != null) {
+                    survey.setCollecterRefEchant(cbxCollecterRefEchantFOSACV.getSelectedItem().toString());
+
+                } else {
+                    survey.setCollecterRefEchant("");
+                }
+            } else {
+                survey.setFosaChargeViral(cbxFOSAChargeVirale.getSelectedItem().toString());
                 survey.setRefPatient("");
-            } else {
-                survey.setRefPatient(CbxRefPatientFOSACV.getSelectedItem().toString());
-            }
-            if (cbxCollecterRefEchantFOSACV.getSelectedItem().toString().equals("")) {
                 survey.setCollecterRefEchant("");
-            } else {
-                survey.setCollecterRefEchant(cbxCollecterRefEchantFOSACV.getSelectedItem().toString());
             }
-        } else {
-            survey.setFosaChargeViral(cbxFOSAChargeVirale.getSelectedItem().toString());
-            survey.setRefPatient("");
-            survey.setCollecterRefEchant("");
         }
 
-        survey.setFosaSystemePoc(cbxSysFOSAPOC.getSelectedItem().toString());
-        survey.setRefrigControlTemp(cbxRefrigControlTemp.getSelectedItem().toString());
-        survey.setTransportEchantFroid(cbxTransportEchantFroid.getSelectedItem().toString());
-        survey.setPointFocalUpec(cbxPointFocalUPEC.getSelectedItem().toString());
-
-        if (cbxTriageNotifPatientARV.getSelectedItem().toString().equals("Oui")) {
-            survey.setTriageNotifPatientArv(cbxTriageNotifPatientARV.getSelectedItem().toString());
-            survey.setTriageDocumenteRegis(cbxTriageDocumenteRegis.getSelectedItem().toString());
+        if (cbxSysFOSAPOC.getSelectedItem() != null) {
+            survey.setFosaSystemePoc(cbxSysFOSAPOC.getSelectedItem().toString());
         } else {
-            survey.setTriageNotifPatientArv(cbxTriageNotifPatientARV.getSelectedItem().toString());
-            survey.setTriageDocumenteRegis("");
+            survey.setFosaSystemePoc("");
         }
 
-        if (cbxRegisResuDatePrelev.getSelectedItem().toString().equals("Oui")) {
-            survey.setRegisResuDatePrelev(cbxRegisResuDatePrelev.getSelectedItem().toString());
-            survey.setDatePrelevEnregis(cbxDatePrelevEnregis.getSelectedItem().toString());
+        if (cbxRefrigControlTemp.getSelectedItem() != null) {
+            survey.setRefrigControlTemp(cbxRefrigControlTemp.getSelectedItem().toString());
         } else {
-            survey.setRegisResuDatePrelev(cbxRegisResuDatePrelev.getSelectedItem().toString());
-            survey.setDatePrelevEnregis("");
+            survey.setRefrigControlTemp("");
         }
 
-        if (cbxRegisResuDateRetour.getSelectedItem().toString().equals("Oui")) {
-            survey.setRegisResuDateRetour(cbxRegisResuDateRetour.getSelectedItem().toString());
-            survey.setDateRetourEnregis(cbxDateRetourEnregis.getSelectedItem().toString());
+        if (cbxTransportEchantFroid.getSelectedItem() != null) {
+            survey.setTransportEchantFroid(cbxTransportEchantFroid.getSelectedItem().toString());
         } else {
-            survey.setRegisResuDateRetour(cbxRegisResuDateRetour.getSelectedItem().toString());
-            survey.setDateRetourEnregis("");
+            survey.setTransportEchantFroid("");
         }
 
-        survey.setPourcentResuDocumentes(Double.parseDouble(txtPourcentResuDocumentes.getText()));
-        survey.setRegisResuCv1000(cbxRegisResuCV1000.getSelectedItem().toString());
+        if (cbxPointFocalUPEC.getSelectedItem() != null) {
+            survey.setPointFocalUpec(cbxPointFocalUPEC.getSelectedItem().toString());
+        } else {
+            survey.setPointFocalUpec("");
+        }
+
+        if (cbxTriageNotifPatientARV.getSelectedItem() != null) {
+            if (cbxTriageNotifPatientARV.getSelectedItem().toString().equals("Oui")) {
+                survey.setTriageNotifPatientArv(cbxTriageNotifPatientARV.getSelectedItem().toString());
+                survey.setTriageDocumenteRegis(cbxTriageDocumenteRegis.getSelectedItem().toString());
+            } else {
+                survey.setTriageNotifPatientArv(cbxTriageNotifPatientARV.getSelectedItem().toString());
+                survey.setTriageDocumenteRegis("");
+            }
+        }
+
+        if (cbxRegisResuDatePrelev.getSelectedItem() != null) {
+            if (cbxRegisResuDatePrelev.getSelectedItem().toString().equals("Oui")) {
+                survey.setRegisResuDatePrelev(cbxRegisResuDatePrelev.getSelectedItem().toString());
+                survey.setDatePrelevEnregis(cbxDatePrelevEnregis.getSelectedItem().toString());
+            } else {
+                survey.setRegisResuDatePrelev(cbxRegisResuDatePrelev.getSelectedItem().toString());
+                survey.setDatePrelevEnregis("");
+            }
+        }
+
+        if (cbxRegisResuDateRetour.getSelectedItem() != null) {
+            if (cbxRegisResuDateRetour.getSelectedItem().toString().equals("Oui")) {
+                survey.setRegisResuDateRetour(cbxRegisResuDateRetour.getSelectedItem().toString());
+                survey.setDateRetourEnregis(cbxDateRetourEnregis.getSelectedItem().toString());
+            } else {
+                survey.setRegisResuDateRetour(cbxRegisResuDateRetour.getSelectedItem().toString());
+                survey.setDateRetourEnregis("");
+            }
+        }
+
+        if (!txtPourcentResuDocumentes.getText().equals("")) {
+            survey.setPourcentResuDocumentes(Double.parseDouble(txtPourcentResuDocumentes.getText()));
+        }
+        if (cbxRegisResuCV1000.getSelectedItem() != null) {
+            survey.setRegisResuCv1000(cbxRegisResuCV1000.getSelectedItem().toString());
+        }
+
         if (chxMoinsDe1mois.isSelected()) {
             survey.setTempsEstimeRetourResu(chxMoinsDe1mois.getText());
         } else if (chxDans1Mois.isSelected()) {
@@ -2138,33 +2171,69 @@ public class PSurvey extends javax.swing.JPanel {
         } else if (chxPlusDe3Mois.isSelected()) {
             survey.setTempsEstimeRetourResu(chxPlusDe3Mois.getText());
         }
-        survey.setProcessSuiviResu(cbxProcessSuiviResu.getSelectedItem().toString());
 
-        if (cbxProcessRenforCounseling.getSelectedItem().toString().equals("Oui")) {
-            survey.setProcessRenforCounseling(cbxProcessRenforCounseling.getSelectedItem().toString());
-            survey.setProcessRenforDocumente(cbxProcessRenforDocumente.getSelectedItem().toString());
-        } else {
-            survey.setProcessRenforCounseling(cbxProcessRenforCounseling.getSelectedItem().toString());
-            survey.setProcessRenforDocumente("");
+        if (cbxProcessSuiviResu.getSelectedItem() != null) {
+            survey.setProcessSuiviResu(cbxProcessSuiviResu.getSelectedItem().toString());
         }
 
-        if (cbxSystemeGroupSoutien.getSelectedItem().toString().equals("Oui")) {
-            survey.setSystemeGroupSoutien(cbxSystemeGroupSoutien.getSelectedItem().toString());
-            survey.setSystemeGroupSoutienDocumente(cbxSystemeGroupSoutienDocumente.getSelectedItem().toString());
-        } else {
-            survey.setSystemeGroupSoutien(cbxSystemeGroupSoutien.getSelectedItem().toString());
-            survey.setSystemeGroupSoutienDocumente("");
+        if (cbxProcessRenforCounseling.getSelectedItem() != null) {
+            if (cbxProcessRenforCounseling.getSelectedItem().toString().equals("Oui")) {
+                survey.setProcessRenforCounseling(cbxProcessRenforCounseling.getSelectedItem().toString());
+                if (cbxProcessRenforDocumente.getSelectedItem() != null) {
+                    survey.setProcessRenforDocumente(cbxProcessRenforDocumente.getSelectedItem().toString());
+                }
+            } else {
+                survey.setProcessRenforCounseling(cbxProcessRenforCounseling.getSelectedItem().toString());
+                survey.setProcessRenforDocumente("");
+            }
         }
 
-        survey.setPatientActivArv1an(Long.parseLong(txtPatientActivARV1An.getText()));
-        survey.setPatientArv12moisPrelevCv(Long.parseLong(txtPatientARV12moisPrelevCV.getText()));
-        survey.setPatientArv12moisPrelevCv12mois(Long.parseLong(txtPatientARV12moisPrelevCV12mois.getText()));
-        survey.setPatientCvNonDetectable(Long.parseLong(txtPatientCVNonDetectable.getText()));
-        survey.setPersPecPvvihStructure(Long.parseLong(txtPersPecPVVIHStructure.getText()));
-        survey.setPersFormeesTechAq(Long.parseLong(txtPersFormeesTechAQ.getText()));
-        survey.setPropPersFormeesTechAq(Double.parseDouble(txtPropPersFormeesTechAQ.getText()));
-        survey.setPersFormeesTechCollect(cbxPersFormeesTechCollect.getSelectedItem().toString());
-        survey.setPersNotionAlgoCvPnls(cbxPersNotionAlgoCVPNLS.getSelectedItem().toString());
+        if (cbxSystemeGroupSoutien.getSelectedItem() != null) {
+            if (cbxSystemeGroupSoutien.getSelectedItem().toString().equals("Oui")) {
+                survey.setSystemeGroupSoutien(cbxSystemeGroupSoutien.getSelectedItem().toString());
+                if (cbxSystemeGroupSoutienDocumente.getSelectedItem() != null) {
+                    survey.setSystemeGroupSoutienDocumente(cbxSystemeGroupSoutienDocumente.getSelectedItem().toString());
+                }
+            } else {
+                survey.setSystemeGroupSoutien(cbxSystemeGroupSoutien.getSelectedItem().toString());
+                survey.setSystemeGroupSoutienDocumente("");
+            }
+        }
+
+        if (!txtPatientActivARV1An.getText().equals("")) {
+            survey.setPatientActivArv1an(Long.parseLong(txtPatientActivARV1An.getText()));
+        }
+
+        if (!txtPatientARV12moisPrelevCV.getText().equals("")) {
+            survey.setPatientArv12moisPrelevCv(Long.parseLong(txtPatientARV12moisPrelevCV.getText()));
+        }
+
+        if (!txtPatientARV12moisPrelevCV12mois.getText().equals("")) {
+            survey.setPatientArv12moisPrelevCv12mois(Long.parseLong(txtPatientARV12moisPrelevCV12mois.getText()));
+        }
+
+        if (!txtPatientCVNonDetectable.getText().equals("")) {
+            survey.setPatientCvNonDetectable(Long.parseLong(txtPatientCVNonDetectable.getText()));
+        }
+
+        if (!txtPersPecPVVIHStructure.getText().equals("")) {
+            survey.setPersPecPvvihStructure(Long.parseLong(txtPersPecPVVIHStructure.getText()));
+        }
+        if (cbxPersFormeesTechAQ.getSelectedItem() != null) {
+            if (cbxPersFormeesTechAQ.getSelectedItem().toString().equals("Oui")) {
+                survey.setPersFormeesTechAq(Long.parseLong(txtPersFormeesTechAQ.getText()));
+                survey.setPropPersFormeesTechAq(Double.parseDouble(txtPropPersFormeesTechAQ.getText()));
+            }
+        }
+
+        if (cbxPersFormeesTechCollect.getSelectedItem() != null) {
+            survey.setPersFormeesTechCollect(cbxPersFormeesTechCollect.getSelectedItem().toString());
+        }
+
+        if (cbxPersNotionAlgoCVPNLS.getSelectedItem() != null) {
+            survey.setPersNotionAlgoCvPnls(cbxPersNotionAlgoCVPNLS.getSelectedItem().toString());
+        }
+
         survey.setStrategieFosa(txtStrategieFOSA.getText());
 
         emf = Persistence.createEntityManagerFactory("pvvih10PU");
@@ -2176,11 +2245,10 @@ public class PSurvey extends javax.swing.JPanel {
             lblShowSaveMessage.setVisible(true);
             lblShowSaveMessage.setText("Survey saved successfully !");
             doShowSavedSuccessfullyMessage();
-            cbxNomSite.setSelectedIndex(-1);
+            doCleanFields();
         }
         em.getTransaction().commit();
         em.close();
-
     }
 
     private void doShowSavedSuccessfullyMessage() {
@@ -2190,6 +2258,28 @@ public class PSurvey extends javax.swing.JPanel {
             timerShowSaveMessage.stop();
         });
         timerShowSaveMessage.start();
+    }
+
+    private void doCleanFields() {
+        txtNomEnqueteurs.setText("");
+        cbxDateEvaluation.setDate(null);
+        cbxNomSite.setSelectedIndex(-1);
+        txtNomEnquete1.setText("");
+        txtNomEnquete2.setText("");
+        txtNomEnquete3.setText("");
+        txtStrategieFOSA.setText("");
+        txtAutresServicePEC.setText("");
+        txtPatientARV12moisPrelevCV.setText("");
+        txtPatientARV12moisPrelevCV12mois.setText("");
+        txtPatientActivARV1An.setText("");
+        txtPatientCVNonDetectable.setText("");
+        txtPersFormeesTechAQ.setText("");
+        txtPersPecPVVIHStructure.setText("");
+        txtPourcentResuDocumentes.setText("");
+        txtPropPersFormeesTechAQ.setText("");
+        txtTitreEnquete1.setText("");
+        txtTitreEnquete2.setText("");
+        txtTitreEnquete3.setText("");
     }
 
     private String getMacAdress() {
@@ -2384,8 +2474,6 @@ EntityManager em;
     EntityManagerFactory emf;
     Users currentUser;
     Timer timerShowSaveMessage;
-    boolean persPECPVVIH = false;//Variable pour générer la proportion automatiquement
-    boolean persFormeesAQ = false;//Variable pour générer la proportion automatiquement
     Map<String, Fosa> hashMap = new HashMap<>();
 
 }

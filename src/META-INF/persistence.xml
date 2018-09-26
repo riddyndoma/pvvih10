@@ -7,6 +7,9 @@
     <class>com.icap.pvvih.model.Province</class>
     <class>com.icap.pvvih.model.Fosa</class>
     <class>com.icap.pvvih.model.Zone</class>
+    <class>com.icap.pvvih.model.Zone_1</class>
+    <class>com.icap.pvvih.model.Fosa_1</class>
+    <class>com.icap.pvvih.model.Province_1</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/pvvih"/>
       <property name="javax.persistence.jdbc.user" value="postgres"/>

@@ -82,6 +82,7 @@ import javax.xml.bind.annotation.XmlRootElement;
     , @NamedQuery(name = "Survey.findByPatientArv12moisPrelevCv12mois", query = "SELECT s FROM Survey s WHERE s.patientArv12moisPrelevCv12mois = :patientArv12moisPrelevCv12mois")
     , @NamedQuery(name = "Survey.findByPatientCvNonDetectable", query = "SELECT s FROM Survey s WHERE s.patientCvNonDetectable = :patientCvNonDetectable")
     , @NamedQuery(name = "Survey.findByPersPecPvvihStructure", query = "SELECT s FROM Survey s WHERE s.persPecPvvihStructure = :persPecPvvihStructure")
+    , @NamedQuery(name = "Survey.findByPersFormees12moisTechAq", query = "SELECT s FROM Survey s WHERE s.persFormees12moisTechAq = :persFormees12moisTechAq")
     , @NamedQuery(name = "Survey.findByPersFormeesTechAq", query = "SELECT s FROM Survey s WHERE s.persFormeesTechAq = :persFormeesTechAq")
     , @NamedQuery(name = "Survey.findByPropPersFormeesTechAq", query = "SELECT s FROM Survey s WHERE s.propPersFormeesTechAq = :propPersFormeesTechAq")
     , @NamedQuery(name = "Survey.findByPersFormeesTechCollect", query = "SELECT s FROM Survey s WHERE s.persFormeesTechCollect = :persFormeesTechCollect")
@@ -200,6 +201,8 @@ public class Survey implements Serializable {
     private Long patientCvNonDetectable;
     @Column(name = "pers_pec_pvvih_structure")
     private Long persPecPvvihStructure;
+    @Column(name = "pers_formees_12mois_tech_aq")
+    private String persFormees12moisTechAq;
     @Column(name = "pers_formees_tech_aq")
     private Long persFormeesTechAq;
     @Column(name = "prop_pers_formees_tech_aq")
@@ -643,6 +646,14 @@ public class Survey implements Serializable {
 
     public void setPersPecPvvihStructure(Long persPecPvvihStructure) {
         this.persPecPvvihStructure = persPecPvvihStructure;
+    }
+
+    public String getPersFormees12moisTechAq() {
+        return persFormees12moisTechAq;
+    }
+
+    public void setPersFormees12moisTechAq(String persFormees12moisTechAq) {
+        this.persFormees12moisTechAq = persFormees12moisTechAq;
     }
 
     public Long getPersFormeesTechAq() {
