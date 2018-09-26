@@ -2280,6 +2280,33 @@ public class PSurvey extends javax.swing.JPanel {
         txtTitreEnquete1.setText("");
         txtTitreEnquete2.setText("");
         txtTitreEnquete3.setText("");
+        cbxCollecterRefEchantFOSACV.setSelectedIndex(-1);
+        cbxDatePrelevEnregis.setSelectedIndex(-1);
+        cbxDateRetourEnregis.setSelectedIndex(-1);
+        cbxDocInitiativeAQ.setSelectedIndex(-1);
+        cbxEAQFonctionne.setSelectedIndex(-1);
+        cbxFOSAChargeVirale.setSelectedIndex(-1);
+        cbxImplicationFOSA.setSelectedIndex(-1);
+        cbxImplicationZS.setSelectedIndex(-1);
+        cbxPVReunions.setSelectedIndex(-1);
+        cbxPersFormeesTechAQ.setSelectedIndex(-1);
+        cbxPersFormeesTechCollect.setSelectedIndex(-1);
+        cbxPersNotionAlgoCVPNLS.setSelectedIndex(-1);
+        cbxPlanActionAQ.setSelectedIndex(-1);
+        cbxPlanningReunion.setSelectedIndex(-1);
+        cbxPointFocalAQ.setSelectedIndex(-1);
+        cbxPointFocalUPEC.setSelectedIndex(-1);
+        cbxProcessRenforCounseling.setSelectedIndex(-1);
+        cbxProcessRenforDocumente.setSelectedIndex(-1);
+        cbxProcessSuiviResu.setSelectedIndex(-1);
+        cbxProcessusQualite.setSelectedIndex(-1);
+        cbxRefrigControlTemp.setSelectedIndex(-1);
+        cbxRegisResuCV1000.setSelectedIndex(-1);
+        cbxRegisResuDatePrelev.setSelectedIndex(-1);
+        cbxRegisResuDateRetour.setSelectedIndex(-1);
+        cbxSysFOSAPOC.setSelectedIndex(-1);
+        cbxSystemeGroupSoutien.setSelectedIndex(-1);
+        cbxSystemeGroupSoutienDocumente.setSelectedIndex(-1); 
     }
 
     private String getMacAdress() {
