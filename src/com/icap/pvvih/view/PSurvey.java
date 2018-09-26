@@ -5,6 +5,7 @@
  */
 package com.icap.pvvih.view;
 
+import com.icap.pvvih.model.Fosa;
 import com.icap.pvvih.model.Survey;
 import com.icap.pvvih.model.Users;
 import java.awt.event.ActionEvent;
@@ -13,6 +14,9 @@ import java.net.NetworkInterface;
 import java.net.SocketException;
 import java.net.UnknownHostException;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -204,6 +208,7 @@ public class PSurvey extends javax.swing.JPanel {
         cbxProcessusQualite = new javax.swing.JComboBox<>();
         cbxPointFocalAQ = new javax.swing.JComboBox<>();
         jXLabel15 = new org.jdesktop.swingx.JXLabel();
+        hyplHideTaskPane = new org.jdesktop.swingx.JXHyperlink();
         jXPanel14 = new org.jdesktop.swingx.JXPanel();
         btnSave = new org.jdesktop.swingx.JXButton();
         lblShowSaveMessage = new org.jdesktop.swingx.JXLabel();
@@ -216,9 +221,6 @@ public class PSurvey extends javax.swing.JPanel {
         jXLabel1.setText("Date d'évaluation");
 
         jXLabel2.setText("Nom de site");
-
-        cbxNomSite.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Katuba HGR", "Betty HGR", "St Charles CS", "Mama Wa Huruma", "St Francois D'assise", "SNCC - Lubumbashi HGR", "Mfinda", "St Christophe", "Kimbanguiste HGR", "Bolingo-Masina 1", "Etonga", " " }));
-        cbxNomSite.setSelectedIndex(-1);
 
         jXLabel3.setText("Nom des enqueteurs");
 
@@ -883,10 +885,8 @@ public class PSurvey extends javax.swing.JPanel {
         );
 
         hyplTop.setBackground(java.awt.Color.white);
-        hyplTop.setForeground(new java.awt.Color(255, 51, 102));
         hyplTop.setText("Retourner vers le haut de page");
         hyplTop.setClicked(true);
-        hyplTop.setClickedColor(new java.awt.Color(204, 204, 204));
         hyplTop.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 hyplTopActionPerformed(evt);
@@ -1415,6 +1415,15 @@ public class PSurvey extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
+        hyplHideTaskPane.setBackground(java.awt.Color.white);
+        hyplHideTaskPane.setText("Cacher panneau gauche");
+        hyplHideTaskPane.setClicked(true);
+        hyplHideTaskPane.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                hyplHideTaskPaneActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jXPanel4Layout = new javax.swing.GroupLayout(jXPanel4);
         jXPanel4.setLayout(jXPanel4Layout);
         jXPanel4Layout.setHorizontalGroup(
@@ -1422,27 +1431,30 @@ public class PSurvey extends javax.swing.JPanel {
             .addGroup(jXPanel4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jXPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jXPanel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jXPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jXPanel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jXPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jXPanel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jXPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jXPanel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jXPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jXPanel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jXPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jXPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jXPanel8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jXPanel18, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 876, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jXPanel4Layout.createSequentialGroup()
-                        .addGap(1, 1, 1)
-                        .addComponent(jXPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addGap(14, 14, 14))
-            .addGroup(jXPanel4Layout.createSequentialGroup()
-                .addGap(314, 314, 314)
-                .addComponent(hyplTop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jXPanel4Layout.createSequentialGroup()
+                        .addGroup(jXPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jXPanel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jXPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jXPanel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jXPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jXPanel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jXPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jXPanel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jXPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jXPanel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jXPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jXPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jXPanel8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jXPanel18, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 876, Short.MAX_VALUE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jXPanel4Layout.createSequentialGroup()
+                                .addGap(1, 1, 1)
+                                .addComponent(jXPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGap(14, 14, 14))
+                    .addGroup(jXPanel4Layout.createSequentialGroup()
+                        .addComponent(hyplHideTaskPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(123, 123, 123)
+                        .addComponent(hyplTop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jXPanel4Layout.setVerticalGroup(
             jXPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1476,8 +1488,10 @@ public class PSurvey extends javax.swing.JPanel {
                 .addGap(14, 14, 14)
                 .addComponent(jXPanel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(hyplTop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(7, 7, 7))
+                .addGroup(jXPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(hyplTop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(hyplHideTaskPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
 
         jXPanel8.getAccessibleContext().setAccessibleName("5. L’EAQ est-elle fonctionnelle ?");
@@ -1539,7 +1553,7 @@ public class PSurvey extends javax.swing.JPanel {
                     .addComponent(txtNomEnquete3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jXLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtTitreEnquete3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jXPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -1851,7 +1865,7 @@ public class PSurvey extends javax.swing.JPanel {
             lblPersPecPVVIHStructure.setVisible(true);
             persPECPVVIH = false;
         }
-        System.out.println(">>> PVVIH "+persPECPVVIH);
+        System.out.println(">>> PVVIH " + persPECPVVIH);
     }//GEN-LAST:event_txtPersPecPVVIHStructureKeyTyped
 
     private void txtPersFormeesTechAQKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPersFormeesTechAQKeyTyped
@@ -1871,7 +1885,7 @@ public class PSurvey extends javax.swing.JPanel {
             lblPersFormeesTechAQ.setVisible(true);
             persFormeesAQ = false;
         }
-        System.out.println(">>> Formées "+persFormeesAQ);
+        System.out.println(">>> Formées " + persFormeesAQ);
     }//GEN-LAST:event_txtPersFormeesTechAQKeyTyped
 
     private void txtPropPersFormeesTechAQKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPropPersFormeesTechAQKeyTyped
@@ -1911,7 +1925,18 @@ public class PSurvey extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_cbxProcessRenforDocumenteActionPerformed
 
+    private void hyplHideTaskPaneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hyplHideTaskPaneActionPerformed
+        if (hyplHideTaskPane.getText().equals("Cacher panneau gauche")) {
+             PVVIH.taskPaneCentral.setVisible(false);
+             hyplHideTaskPane.setText("Afficher panneau gauche");
+        }else{
+            PVVIH.taskPaneCentral.setVisible(true); 
+            hyplHideTaskPane.setText("Cacher panneau gauche");
+        }
+    }//GEN-LAST:event_hyplHideTaskPaneActionPerformed
+
     private void doBasicConfig() {
+        doPopulateFosaFromDB();
         lblPropPersFormeesTechAQ.setVisible(false);
         lblPersFormeesTechAQ.setVisible(false);
         lblPersPecPVVIHStructure.setVisible(false);
@@ -1925,7 +1950,7 @@ public class PSurvey extends javax.swing.JPanel {
         lblShowSaveMessage.setVisible(false);
 
         Timer timer = new Timer(1000, (ActionEvent evt) -> {
-            if (cbxDateEvaluation.getDate() == null) {
+            if (cbxDateEvaluation.getDate() == null || cbxNomSite.getSelectedItem()==null) {
                 btnSave.setEnabled(false);
             } else {
                 btnSave.setEnabled(true);
@@ -1937,14 +1962,32 @@ public class PSurvey extends javax.swing.JPanel {
             }
         });
         timer.start();
+
+    }
+
+    private void doPopulateFosaFromDB() {
+        emf = Persistence.createEntityManagerFactory("pvvih10PU");
+        em = emf.createEntityManager();
+        em.getTransaction().begin();
+        List<Fosa> fosas = em.createNamedQuery("Fosa.findAll", Fosa.class).getResultList();
+        for (Fosa fosa : fosas) {
+            String f = fosa.getNom() + " - " + fosa.getZoneid().getNom() + " - " + fosa.getZoneid().getProvinceid().getNom();
+            hashMap.put(f, fosa);
+            cbxNomSite.addItem(f);
+
+        }
+        cbxNomSite.setSelectedIndex(-1);
+
     }
 
     private void doSave() {
+        Fosa fosaKey = hashMap.get(cbxNomSite.getSelectedItem().toString());
         Survey survey = new Survey();
         String id = "" + currentUser.getUsername() + this.getMacAdress() + new Date().getTime();
         System.out.println("ID " + id);
         survey.setSurveyid(id);
         survey.setDateEval(cbxDateEvaluation.getDate());
+        survey.setFosaid(fosaKey);
         survey.setNomEnqueteurs(txtNomEnqueteurs.getText());
         survey.setNomTitreEnqute1(txtNomEnquete1.getText() + " - " + txtTitreEnquete1.getText());
         survey.setNomTitreEnqute2(txtNomEnquete2.getText() + " - " + txtTitreEnquete2.getText());
@@ -2133,6 +2176,7 @@ public class PSurvey extends javax.swing.JPanel {
             lblShowSaveMessage.setVisible(true);
             lblShowSaveMessage.setText("Survey saved successfully !");
             doShowSavedSuccessfullyMessage();
+            cbxNomSite.setSelectedIndex(-1);
         }
         em.getTransaction().commit();
         em.close();
@@ -2229,6 +2273,7 @@ public class PSurvey extends javax.swing.JPanel {
     private javax.swing.JCheckBox chxSuiviCommuVisitPE;
     private javax.swing.JCheckBox chxSuiviTBVIH;
     private javax.swing.JCheckBox chxTARV;
+    private org.jdesktop.swingx.JXHyperlink hyplHideTaskPane;
     private org.jdesktop.swingx.JXHyperlink hyplTop;
     private javax.swing.JScrollPane jScrollPane2;
     private org.jdesktop.swingx.JXLabel jXLabel1;
@@ -2341,5 +2386,6 @@ EntityManager em;
     Timer timerShowSaveMessage;
     boolean persPECPVVIH = false;//Variable pour générer la proportion automatiquement
     boolean persFormeesAQ = false;//Variable pour générer la proportion automatiquement
+    Map<String, Fosa> hashMap = new HashMap<>();
 
 }

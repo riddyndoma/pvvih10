@@ -148,22 +148,8 @@
             <Component class="javax.swing.JComboBox" name="cbxNomSite">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="12">
-                    <StringItem index="0" value="Katuba HGR"/>
-                    <StringItem index="1" value="Betty HGR"/>
-                    <StringItem index="2" value="St Charles CS"/>
-                    <StringItem index="3" value="Mama Wa Huruma"/>
-                    <StringItem index="4" value="St Francois D&apos;assise"/>
-                    <StringItem index="5" value="SNCC - Lubumbashi HGR"/>
-                    <StringItem index="6" value="Mfinda"/>
-                    <StringItem index="7" value="St Christophe"/>
-                    <StringItem index="8" value="Kimbanguiste HGR"/>
-                    <StringItem index="9" value="Bolingo-Masina 1"/>
-                    <StringItem index="10" value="Etonga"/>
-                    <StringItem index="11" value=" "/>
-                  </StringArray>
+                  <StringArray count="0"/>
                 </Property>
-                <Property name="selectedIndex" type="int" value="-1"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -254,7 +240,7 @@
                               <Component id="jXLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="txtTitreEnquete3" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="20" max="32767" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                           <Component id="jXPanel4" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -322,32 +308,37 @@
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <EmptySpace min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jXPanel13" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jXPanel12" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jXPanel17" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jXPanel11" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jXPanel16" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jXPanel10" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jXPanel15" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jXPanel9" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jXPanel19" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jXPanel5" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jXPanel6" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jXPanel8" alignment="1" max="32767" attributes="0"/>
-                                  <Component id="jXPanel18" alignment="1" pref="876" max="32767" attributes="0"/>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
-                                      <Component id="jXPanel7" max="32767" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="jXPanel13" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="jXPanel12" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="jXPanel17" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="jXPanel11" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="jXPanel16" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="jXPanel10" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="jXPanel15" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="jXPanel9" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="jXPanel19" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="jXPanel5" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="jXPanel6" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="jXPanel8" alignment="1" max="32767" attributes="0"/>
+                                          <Component id="jXPanel18" alignment="1" pref="876" max="32767" attributes="0"/>
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
+                                              <Component id="jXPanel7" max="32767" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" attributes="0">
+                                      <Component id="hyplHideTaskPane" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="123" max="-2" attributes="0"/>
+                                      <Component id="hyplTop" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="314" max="-2" attributes="0"/>
-                              <Component id="hyplTop" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -383,8 +374,11 @@
                               <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                               <Component id="jXPanel18" max="32767" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="hyplTop" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="hyplTop" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="hyplHideTaskPane" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -1614,14 +1608,8 @@
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="ff" green="ff" id="white" palette="1" red="ff" type="palette"/>
                         </Property>
-                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="66" green="33" red="ff" type="rgb"/>
-                        </Property>
                         <Property name="text" type="java.lang.String" value="Retourner vers le haut de page"/>
                         <Property name="clicked" type="boolean" value="true"/>
-                        <Property name="clickedColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="cc" green="cc" red="cc" type="rgb"/>
-                        </Property>
                       </Properties>
                       <Events>
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="hyplTopActionPerformed"/>
@@ -2615,6 +2603,18 @@
                         </Component>
                       </SubComponents>
                     </Container>
+                    <Component class="org.jdesktop.swingx.JXHyperlink" name="hyplHideTaskPane">
+                      <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="ff" green="ff" id="white" palette="1" red="ff" type="palette"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="Cacher panneau gauche"/>
+                        <Property name="clicked" type="boolean" value="true"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="hyplHideTaskPaneActionPerformed"/>
+                      </Events>
+                    </Component>
                   </SubComponents>
                 </Container>
               </SubComponents>

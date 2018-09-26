@@ -118,7 +118,7 @@ public class PVVIH extends javax.swing.JFrame {
         jXPanel1 = new org.jdesktop.swingx.JXPanel();
         lblConnectedUser = new org.jdesktop.swingx.JXLabel();
         btnSignout = new org.jdesktop.swingx.JXButton();
-        jXTaskPaneContainer1 = new org.jdesktop.swingx.JXTaskPaneContainer();
+        taskPaneCentral = new org.jdesktop.swingx.JXTaskPaneContainer();
         taskActions = new org.jdesktop.swingx.JXTaskPane();
         taskOthers = new org.jdesktop.swingx.JXTaskPane();
         panCentral = new org.jdesktop.swingx.JXPanel();
@@ -148,15 +148,15 @@ public class PVVIH extends javax.swing.JFrame {
 
         org.jdesktop.swingx.VerticalLayout verticalLayout1 = new org.jdesktop.swingx.VerticalLayout();
         verticalLayout1.setGap(14);
-        jXTaskPaneContainer1.setLayout(verticalLayout1);
+        taskPaneCentral.setLayout(verticalLayout1);
 
         taskActions.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/icap/pvvih/res/icons8-action-24.png"))); // NOI18N
         taskActions.setTitle("Actions");
-        jXTaskPaneContainer1.add(taskActions);
+        taskPaneCentral.add(taskActions);
 
         taskOthers.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/icap/pvvih/res/icons8-inactive-state-24.png"))); // NOI18N
         taskOthers.setTitle("Others");
-        jXTaskPaneContainer1.add(taskOthers);
+        taskPaneCentral.add(taskOthers);
 
         panCentral.setBackground(java.awt.Color.white);
         panCentral.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
@@ -182,7 +182,7 @@ public class PVVIH extends javax.swing.JFrame {
             jXPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jXPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jXTaskPaneContainer1, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(taskPaneCentral, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jXPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jXPanel1Layout.createSequentialGroup()
@@ -210,7 +210,7 @@ public class PVVIH extends javax.swing.JFrame {
                         .addComponent(panCentral, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jXPanel1Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jXTaskPaneContainer1, javax.swing.GroupLayout.DEFAULT_SIZE, 752, Short.MAX_VALUE)))
+                        .addComponent(taskPaneCentral, javax.swing.GroupLayout.DEFAULT_SIZE, 752, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
@@ -270,12 +270,12 @@ public class PVVIH extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private org.jdesktop.swingx.JXPanel jXPanel1;
-    private org.jdesktop.swingx.JXTaskPaneContainer jXTaskPaneContainer1;
     private org.jdesktop.swingx.JXLabel lblConnectedUser;
     private org.jdesktop.swingx.JXPanel panCentral;
     public static javax.swing.JScrollPane scrollManager;
     private org.jdesktop.swingx.JXTaskPane taskActions;
     private org.jdesktop.swingx.JXTaskPane taskOthers;
+    public static org.jdesktop.swingx.JXTaskPaneContainer taskPaneCentral;
     private org.jdesktop.swingx.JXTitledSeparator tsWelcome;
     // End of variables declaration//GEN-END:variables
 EntityManager em;

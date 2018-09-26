@@ -62,7 +62,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jXTaskPaneContainer1" min="-2" pref="329" max="-2" attributes="0"/>
+                  <Component id="taskPaneCentral" min="-2" pref="329" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
@@ -98,7 +98,7 @@
                       </Group>
                       <Group type="102" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jXTaskPaneContainer1" pref="752" max="32767" attributes="0"/>
+                          <Component id="taskPaneCentral" pref="752" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace min="-2" max="-2" attributes="0"/>
@@ -133,7 +133,10 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSignoutActionPerformed"/>
           </Events>
         </Component>
-        <Container class="org.jdesktop.swingx.JXTaskPaneContainer" name="jXTaskPaneContainer1">
+        <Container class="org.jdesktop.swingx.JXTaskPaneContainer" name="taskPaneCentral">
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+          </AuxValues>
           <SubComponents>
             <Component class="org.jdesktop.swingx.JXTaskPane" name="taskActions">
               <Properties>
@@ -180,11 +183,11 @@
               </Parameters>
             </CodeStatement>
             <CodeStatement>
-              <CodeExpression id="3_jXTaskPaneContainer1">
-                <CodeVariable name="jXTaskPaneContainer1" type="8194" declaredType="org.jdesktop.swingx.JXTaskPaneContainer"/>
+              <CodeExpression id="3_taskPaneCentral">
+                <CodeVariable name="taskPaneCentral" type="8201" declaredType="org.jdesktop.swingx.JXTaskPaneContainer"/>
                 <ExpressionOrigin>
                   <ExpressionProvider type="ComponentRef">
-                    <ComponentRef name="jXTaskPaneContainer1"/>
+                    <ComponentRef name="taskPaneCentral"/>
                   </ExpressionProvider>
                 </ExpressionOrigin>
               </CodeExpression>
@@ -196,7 +199,7 @@
               </Parameters>
             </CodeStatement>
             <CodeStatement>
-              <CodeExpression id="3_jXTaskPaneContainer1"/>
+              <CodeExpression id="3_taskPaneCentral"/>
               <StatementProvider type="CodeMethod">
                 <CodeMethod name="add" class="java.awt.Container" parameterTypes="java.awt.Component"/>
               </StatementProvider>
@@ -212,7 +215,7 @@
               </Parameters>
             </CodeStatement>
             <CodeStatement>
-              <CodeExpression id="3_jXTaskPaneContainer1"/>
+              <CodeExpression id="3_taskPaneCentral"/>
               <StatementProvider type="CodeMethod">
                 <CodeMethod name="add" class="java.awt.Container" parameterTypes="java.awt.Component"/>
               </StatementProvider>
