@@ -336,19 +336,18 @@
                                   <Component id="jXPanel5" alignment="0" max="32767" attributes="0"/>
                                   <Component id="jXPanel6" alignment="0" max="32767" attributes="0"/>
                                   <Component id="jXPanel8" alignment="1" max="32767" attributes="0"/>
-                                  <Component id="jXPanel18" alignment="1" pref="0" max="32767" attributes="0"/>
+                                  <Component id="jXPanel18" alignment="1" pref="876" max="32767" attributes="0"/>
                                   <Group type="102" alignment="1" attributes="0">
                                       <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jXPanel7" max="32767" attributes="0"/>
-                                          <Group type="102" alignment="1" attributes="0">
-                                              <Component id="hyplTop" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="336" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
+                                      <Component id="jXPanel7" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="314" max="-2" attributes="0"/>
+                              <Component id="hyplTop" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -383,9 +382,9 @@
                               <Component id="jXPanel13" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                               <Component id="jXPanel18" max="32767" attributes="0"/>
-                              <EmptySpace min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="hyplTop" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -1614,6 +1613,9 @@
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="ff" green="ff" id="white" palette="1" red="ff" type="palette"/>
+                        </Property>
+                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="66" green="33" red="ff" type="rgb"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="Retourner vers le haut de page"/>
                         <Property name="clicked" type="boolean" value="true"/>

@@ -11,6 +11,8 @@ import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
@@ -208,6 +210,9 @@ public class Survey implements Serializable {
     private String persNotionAlgoCvPnls;
     @Column(name = "strategie_fosa")
     private String strategieFosa;
+    @JoinColumn(name = "fosaid", referencedColumnName = "fosaid")
+    @ManyToOne
+    private Fosa fosaid;
 
     public Survey() {
     }
@@ -678,6 +683,14 @@ public class Survey implements Serializable {
 
     public void setStrategieFosa(String strategieFosa) {
         this.strategieFosa = strategieFosa;
+    }
+
+    public Fosa getFosaid() {
+        return fosaid;
+    }
+
+    public void setFosaid(Fosa fosaid) {
+        this.fosaid = fosaid;
     }
 
     @Override

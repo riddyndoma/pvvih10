@@ -4,6 +4,9 @@
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <class>com.icap.pvvih.model.Users</class>
     <class>com.icap.pvvih.model.Survey</class>
+    <class>com.icap.pvvih.model.Province</class>
+    <class>com.icap.pvvih.model.Fosa</class>
+    <class>com.icap.pvvih.model.Zone</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/pvvih"/>
       <property name="javax.persistence.jdbc.user" value="postgres"/>
