@@ -6,8 +6,10 @@
 package com.icap.pvvih.view;
 
 import com.icap.pvvih.model.Fosa;
+import com.icap.pvvih.model.Province;
 import com.icap.pvvih.model.Survey;
 import com.icap.pvvih.model.Users;
+import com.icap.pvvih.model.Zone;
 import java.awt.event.ActionEvent;
 import java.net.InetAddress;
 import java.net.NetworkInterface;
@@ -21,6 +23,8 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.swing.Timer;
+import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.DefaultTreeModel;
 
 /**
  *
@@ -36,6 +40,7 @@ public class PSurvey extends javax.swing.JPanel {
     public PSurvey(Users _user) {
         this.currentUser = _user;
         initComponents();
+        doPopulateOUTree();
         doBasicConfig();
     }
 
@@ -209,6 +214,8 @@ public class PSurvey extends javax.swing.JPanel {
         cbxPointFocalAQ = new javax.swing.JComboBox<>();
         jXLabel15 = new org.jdesktop.swingx.JXLabel();
         hyplHideTaskPane = new org.jdesktop.swingx.JXHyperlink();
+        spnOUTree = new javax.swing.JScrollPane();
+        treeOU = new org.jdesktop.swingx.JXTree();
         jXPanel14 = new org.jdesktop.swingx.JXPanel();
         btnSave = new org.jdesktop.swingx.JXButton();
         lblShowSaveMessage = new org.jdesktop.swingx.JXLabel();
@@ -475,12 +482,10 @@ public class PSurvey extends javax.swing.JPanel {
 
         cbxPlanningReunion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Oui", "Non" }));
         cbxPlanningReunion.setSelectedIndex(-1);
-        cbxPlanningReunion.setEnabled(false);
         cbxPlanningReunion.setFocusable(false);
 
         cbxPlanActionAQ.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Oui", "Non" }));
         cbxPlanActionAQ.setSelectedIndex(-1);
-        cbxPlanActionAQ.setEnabled(false);
         cbxPlanActionAQ.setFocusable(false);
 
         jXLabel19.setText("- Plan d’Action AQ ");
@@ -489,26 +494,22 @@ public class PSurvey extends javax.swing.JPanel {
 
         cbxPVReunions.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Oui", "Non" }));
         cbxPVReunions.setSelectedIndex(-1);
-        cbxPVReunions.setEnabled(false);
         cbxPVReunions.setFocusable(false);
 
         jXLabel21.setText("- Documentation des initiatives AQ (Graphiques, journal de documentation PIEA et données)");
 
         cbxDocInitiativeAQ.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Oui", "Non" }));
         cbxDocInitiativeAQ.setSelectedIndex(-1);
-        cbxDocInitiativeAQ.setEnabled(false);
         cbxDocInitiativeAQ.setFocusable(false);
 
         jXLabel22.setText("- Implication de la zone de sante ");
 
         cbxImplicationZS.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Oui", "Non" }));
         cbxImplicationZS.setSelectedIndex(-1);
-        cbxImplicationZS.setEnabled(false);
         cbxImplicationZS.setFocusable(false);
 
         cbxImplicationFOSA.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Oui", "Non" }));
         cbxImplicationFOSA.setSelectedIndex(-1);
-        cbxImplicationFOSA.setEnabled(false);
         cbxImplicationFOSA.setFocusable(false);
 
         jXLabel23.setText("- Implication du responsable FOSA ");
@@ -616,12 +617,10 @@ public class PSurvey extends javax.swing.JPanel {
 
         CbxRefPatientFOSACV.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Oui", "Non" }));
         CbxRefPatientFOSACV.setSelectedIndex(-1);
-        CbxRefPatientFOSACV.setEnabled(false);
         CbxRefPatientFOSACV.setFocusable(false);
 
         cbxCollecterRefEchantFOSACV.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Oui", "Non" }));
         cbxCollecterRefEchantFOSACV.setSelectedIndex(-1);
-        cbxCollecterRefEchantFOSACV.setEnabled(false);
         cbxCollecterRefEchantFOSACV.setFocusable(false);
 
         jXLabel27.setText("- Collecter et référer l’échantillon ");
@@ -704,7 +703,7 @@ public class PSurvey extends javax.swing.JPanel {
                         .addGroup(jXPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jXPanel10Layout.createSequentialGroup()
                                 .addComponent(lblPourcentResuDocumentes, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 40, Short.MAX_VALUE))
+                                .addGap(0, 0, Short.MAX_VALUE))
                             .addComponent(txtPourcentResuDocumentes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
         );
@@ -796,7 +795,6 @@ public class PSurvey extends javax.swing.JPanel {
 
         cbxProcessRenforDocumente.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Oui", "Non" }));
         cbxProcessRenforDocumente.setSelectedIndex(-1);
-        cbxProcessRenforDocumente.setEnabled(false);
         cbxProcessRenforDocumente.setFocusable(false);
         cbxProcessRenforDocumente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -852,7 +850,6 @@ public class PSurvey extends javax.swing.JPanel {
 
         cbxSystemeGroupSoutienDocumente.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Oui", "Non" }));
         cbxSystemeGroupSoutienDocumente.setSelectedIndex(-1);
-        cbxSystemeGroupSoutienDocumente.setEnabled(false);
         cbxSystemeGroupSoutienDocumente.setFocusable(false);
 
         javax.swing.GroupLayout jXPanel13Layout = new javax.swing.GroupLayout(jXPanel13);
@@ -898,7 +895,6 @@ public class PSurvey extends javax.swing.JPanel {
 
         cbxTriageDocumenteRegis.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Oui", "Non" }));
         cbxTriageDocumenteRegis.setSelectedIndex(-1);
-        cbxTriageDocumenteRegis.setEnabled(false);
         cbxTriageDocumenteRegis.setFocusable(false);
 
         cbxTriageNotifPatientARV.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Oui", "Non" }));
@@ -923,7 +919,6 @@ public class PSurvey extends javax.swing.JPanel {
 
         cbxDatePrelevEnregis.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Oui", "Non" }));
         cbxDatePrelevEnregis.setSelectedIndex(-1);
-        cbxDatePrelevEnregis.setEnabled(false);
         cbxDatePrelevEnregis.setFocusable(false);
 
         jXLabel30.setText("<html>9. Si la FOSA collecte et réfère les échantillons collectés ; le système de transport des<br> échantillons est-il soutenu par une chaine de froid avec monitoring de température ?</html>");
@@ -941,7 +936,6 @@ public class PSurvey extends javax.swing.JPanel {
 
         cbxDateRetourEnregis.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Oui", "Non" }));
         cbxDateRetourEnregis.setSelectedIndex(-1);
-        cbxDateRetourEnregis.setEnabled(false);
         cbxDateRetourEnregis.setFocusable(false);
 
         cbxRegisResuDatePrelev.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Oui", "Non" }));
@@ -1283,7 +1277,7 @@ public class PSurvey extends javax.swing.JPanel {
                         .addGroup(jXPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblPatientARV12moisPrelevCV12mois, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lblPatientARV12moisPrelevCV, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(txtPatientARV12moisPrelevCV12mois, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtPatientARV12moisPrelevCV12mois, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)
                             .addComponent(txtPatientARV12moisPrelevCV, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jXPanel18Layout.createSequentialGroup()
                         .addComponent(jXLabel49, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1445,7 +1439,7 @@ public class PSurvey extends javax.swing.JPanel {
                             .addComponent(jXPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jXPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jXPanel8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jXPanel18, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 876, Short.MAX_VALUE)
+                            .addComponent(jXPanel18, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jXPanel4Layout.createSequentialGroup()
                                 .addGap(1, 1, 1)
                                 .addComponent(jXPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
@@ -1558,27 +1552,42 @@ public class PSurvey extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
+        javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("RDC");
+        treeOU.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
+        treeOU.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                treeOUMouseClicked(evt);
+            }
+        });
+        spnOUTree.setViewportView(treeOU);
+
         javax.swing.GroupLayout jXPanel2Layout = new javax.swing.GroupLayout(jXPanel2);
         jXPanel2.setLayout(jXPanel2Layout);
         jXPanel2Layout.setHorizontalGroup(
             jXPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jXPanel2Layout.createSequentialGroup()
                 .addContainerGap()
+                .addComponent(spnOUTree, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jXPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jXPanel2Layout.createSequentialGroup()
-                        .addGroup(jXPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jXLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jXLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(37, 37, 37)
-                        .addGroup(jXPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(cbxNomSite, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cbxDateEvaluation, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jXPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jXPanel2Layout.createSequentialGroup()
-                        .addComponent(jXLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtNomEnqueteurs, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(jXPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(24, 24, 24))
+                        .addGap(17, 17, 17)
+                        .addGroup(jXPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jXPanel2Layout.createSequentialGroup()
+                                .addGroup(jXPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jXLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jXLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(37, 37, 37)
+                                .addGroup(jXPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(cbxNomSite, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(cbxDateEvaluation, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jXPanel2Layout.createSequentialGroup()
+                                .addComponent(jXLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(txtNomEnqueteurs, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jXPanel2Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {cbxDateEvaluation, cbxNomSite, txtNomEnqueteurs});
@@ -1586,21 +1595,23 @@ public class PSurvey extends javax.swing.JPanel {
         jXPanel2Layout.setVerticalGroup(
             jXPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jXPanel2Layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addGroup(jXPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jXLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cbxDateEvaluation, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jXPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jXLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cbxNomSite, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jXPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jXLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtNomEnqueteurs, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jXPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addContainerGap()
+                .addGroup(jXPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jXPanel2Layout.createSequentialGroup()
+                        .addGroup(jXPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jXLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cbxDateEvaluation, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jXPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jXLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cbxNomSite, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jXPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jXLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtNomEnqueteurs, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(31, 31, 31)
+                        .addComponent(jXPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(spnOUTree, javax.swing.GroupLayout.Alignment.TRAILING)))
         );
 
         jXPanel14.setBackground(java.awt.Color.white);
@@ -1644,10 +1655,10 @@ public class PSurvey extends javax.swing.JPanel {
             jXPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jXPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jXPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jXPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jXPanel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(22, 22, 22))
+                .addGroup(jXPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jXPanel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jXPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
         jXPanel1Layout.setVerticalGroup(
             jXPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1663,7 +1674,9 @@ public class PSurvey extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jXPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jXPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1686,39 +1699,39 @@ public class PSurvey extends javax.swing.JPanel {
     }//GEN-LAST:event_hyplTopActionPerformed
 
     private void cbxFOSAChargeViraleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxFOSAChargeViraleActionPerformed
-        if (cbxFOSAChargeVirale.getSelectedItem().toString().equals("Oui")) {
-            CbxRefPatientFOSACV.setEnabled(true);
-            cbxCollecterRefEchantFOSACV.setEnabled(true);
-        } else {
-            CbxRefPatientFOSACV.setEnabled(false);
-            CbxRefPatientFOSACV.setSelectedIndex(-1);
-            cbxCollecterRefEchantFOSACV.setEnabled(false);
-            cbxCollecterRefEchantFOSACV.setSelectedIndex(-1);
-        }
+//        if (cbxFOSAChargeVirale.getSelectedItem().toString().equals("Oui")) {
+//            CbxRefPatientFOSACV.setEnabled(true);
+//            cbxCollecterRefEchantFOSACV.setEnabled(true);
+//        } else {
+//            CbxRefPatientFOSACV.setEnabled(false);
+//            CbxRefPatientFOSACV.setSelectedIndex(-1);
+//            cbxCollecterRefEchantFOSACV.setEnabled(false);
+//            cbxCollecterRefEchantFOSACV.setSelectedIndex(-1);
+//        }
     }//GEN-LAST:event_cbxFOSAChargeViraleActionPerformed
 
     private void cbxEAQFonctionneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxEAQFonctionneActionPerformed
-        if (cbxEAQFonctionne.getSelectedItem().toString().equals("Oui")) {
-            cbxPlanningReunion.setEnabled(true);
-            cbxPlanActionAQ.setEnabled(true);
-            cbxPVReunions.setEnabled(true);
-            cbxImplicationZS.setEnabled(true);
-            cbxImplicationFOSA.setEnabled(true);
-            cbxDocInitiativeAQ.setEnabled(true);
-        } else {
-            cbxPlanningReunion.setEnabled(false);
-            cbxPlanActionAQ.setEnabled(false);
-            cbxPVReunions.setEnabled(false);
-            cbxImplicationZS.setEnabled(false);
-            cbxImplicationFOSA.setEnabled(false);
-            cbxDocInitiativeAQ.setEnabled(false);
-            cbxPlanningReunion.setSelectedIndex(-1);
-            cbxPlanActionAQ.setSelectedIndex(-1);
-            cbxPVReunions.setSelectedIndex(-1);
-            cbxImplicationZS.setSelectedIndex(-1);
-            cbxImplicationFOSA.setSelectedIndex(-1);
-            cbxDocInitiativeAQ.setSelectedIndex(-1);
-        }
+//        if (cbxEAQFonctionne.getSelectedItem().toString().equals("Oui")) {
+//            cbxPlanningReunion.setEnabled(true);
+//            cbxPlanActionAQ.setEnabled(true);
+//            cbxPVReunions.setEnabled(true);
+//            cbxImplicationZS.setEnabled(true);
+//            cbxImplicationFOSA.setEnabled(true);
+//            cbxDocInitiativeAQ.setEnabled(true);
+//        } else {
+//            cbxPlanningReunion.setEnabled(false);
+//            cbxPlanActionAQ.setEnabled(false);
+//            cbxPVReunions.setEnabled(false);
+//            cbxImplicationZS.setEnabled(false);
+//            cbxImplicationFOSA.setEnabled(false);
+//            cbxDocInitiativeAQ.setEnabled(false);
+//            cbxPlanningReunion.setSelectedIndex(-1);
+//            cbxPlanActionAQ.setSelectedIndex(-1);
+//            cbxPVReunions.setSelectedIndex(-1);
+//            cbxImplicationZS.setSelectedIndex(-1);
+//            cbxImplicationFOSA.setSelectedIndex(-1);
+//            cbxDocInitiativeAQ.setSelectedIndex(-1);
+//        }
     }//GEN-LAST:event_cbxEAQFonctionneActionPerformed
 
     private void cbxTriageNotifPatientARVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxTriageNotifPatientARVActionPerformed
@@ -1732,54 +1745,54 @@ public class PSurvey extends javax.swing.JPanel {
     }//GEN-LAST:event_cbxTriageNotifPatientARVActionPerformed
 
     private void cbxRegisResuDatePrelevActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxRegisResuDatePrelevActionPerformed
-        if (cbxRegisResuDatePrelev.getSelectedItem().toString().equals("Oui")) {
-            cbxDatePrelevEnregis.setEnabled(true);
-        } else {
-            cbxDatePrelevEnregis.setEnabled(false);
-            cbxDatePrelevEnregis.setSelectedIndex(-1);
-        }
+//        if (cbxRegisResuDatePrelev.getSelectedItem().toString().equals("Oui")) {
+//            cbxDatePrelevEnregis.setEnabled(true);
+//        } else {
+//            cbxDatePrelevEnregis.setEnabled(false);
+//            cbxDatePrelevEnregis.setSelectedIndex(-1);
+//        }
     }//GEN-LAST:event_cbxRegisResuDatePrelevActionPerformed
 
     private void cbxRegisResuDateRetourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxRegisResuDateRetourActionPerformed
-        if (cbxRegisResuDateRetour.getSelectedItem().toString().equals("Oui")) {
-            cbxDateRetourEnregis.setEnabled(true);
-            txtPourcentResuDocumentes.setEnabled(true);
-        } else {
-            cbxDateRetourEnregis.setEnabled(false);
-            cbxDateRetourEnregis.setSelectedIndex(-1);
-            txtPourcentResuDocumentes.setEnabled(false);
-            txtPourcentResuDocumentes.setText("");
-        }
+//        if (cbxRegisResuDateRetour.getSelectedItem().toString().equals("Oui")) {
+//            cbxDateRetourEnregis.setEnabled(true);
+//            txtPourcentResuDocumentes.setEnabled(true);
+//        } else {
+//            cbxDateRetourEnregis.setEnabled(false);
+//            cbxDateRetourEnregis.setSelectedIndex(-1);
+//            txtPourcentResuDocumentes.setEnabled(false);
+//            txtPourcentResuDocumentes.setText("");
+//        }
     }//GEN-LAST:event_cbxRegisResuDateRetourActionPerformed
 
     private void cbxProcessRenforCounselingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxProcessRenforCounselingActionPerformed
-        if (cbxProcessRenforCounseling.getSelectedItem().toString().equals("Oui")) {
-            cbxProcessRenforDocumente.setEnabled(true);
-        } else {
-            cbxProcessRenforDocumente.setEnabled(false);
-            cbxProcessRenforDocumente.setSelectedIndex(-1);
-        }
+//        if (cbxProcessRenforCounseling.getSelectedItem().toString().equals("Oui")) {
+//            cbxProcessRenforDocumente.setEnabled(true);
+//        } else {
+//            cbxProcessRenforDocumente.setEnabled(false);
+//            cbxProcessRenforDocumente.setSelectedIndex(-1);
+//        }
     }//GEN-LAST:event_cbxProcessRenforCounselingActionPerformed
 
     private void cbxSystemeGroupSoutienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxSystemeGroupSoutienActionPerformed
-        if (cbxSystemeGroupSoutien.getSelectedItem().toString().equals("Oui")) {
-            cbxSystemeGroupSoutienDocumente.setEnabled(true);
-        } else {
-            cbxSystemeGroupSoutienDocumente.setEnabled(false);
-            cbxSystemeGroupSoutienDocumente.setSelectedIndex(-1);
-        }
+//        if (cbxSystemeGroupSoutien.getSelectedItem().toString().equals("Oui")) {
+//            cbxSystemeGroupSoutienDocumente.setEnabled(true);
+//        } else {
+//            cbxSystemeGroupSoutienDocumente.setEnabled(false);
+//            cbxSystemeGroupSoutienDocumente.setSelectedIndex(-1);
+//        }
     }//GEN-LAST:event_cbxSystemeGroupSoutienActionPerformed
 
     private void cbxPersFormeesTechAQActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxPersFormeesTechAQActionPerformed
-        if (cbxPersFormeesTechAQ.getSelectedItem().toString().equals("Non")) {
-            txtPersFormeesTechAQ.setEnabled(false);
-            txtPropPersFormeesTechAQ.setEnabled(false);
-            txtPersFormeesTechAQ.setText("");
-            txtPropPersFormeesTechAQ.setText("");
-        } else {
-            txtPersFormeesTechAQ.setEnabled(true);
-            txtPropPersFormeesTechAQ.setEnabled(true);
-        }
+//        if (cbxPersFormeesTechAQ.getSelectedItem().toString().equals("Non")) {
+//            txtPersFormeesTechAQ.setEnabled(false);
+//            txtPropPersFormeesTechAQ.setEnabled(false);
+//            txtPersFormeesTechAQ.setText("");
+//            txtPropPersFormeesTechAQ.setText("");
+//        } else {
+//            txtPersFormeesTechAQ.setEnabled(true);
+//            txtPropPersFormeesTechAQ.setEnabled(true);
+//        }
     }//GEN-LAST:event_cbxPersFormeesTechAQActionPerformed
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
@@ -1928,6 +1941,14 @@ public class PSurvey extends javax.swing.JPanel {
             hyplHideTaskPane.setText("Cacher panneau gauche");
         }
     }//GEN-LAST:event_hyplHideTaskPaneActionPerformed
+
+    private void treeOUMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_treeOUMouseClicked
+        try {
+            DefaultMutableTreeNode selectedNode = (DefaultMutableTreeNode) treeOU.getSelectionPath().getLastPathComponent();
+            System.out.println(" >> " + selectedNode.getUserObject().toString());
+        } catch (Exception e) {
+        }
+    }//GEN-LAST:event_treeOUMouseClicked
 
     private void doBasicConfig() {
         doPopulateFosaFromDB();
@@ -2306,7 +2327,47 @@ public class PSurvey extends javax.swing.JPanel {
         cbxRegisResuDateRetour.setSelectedIndex(-1);
         cbxSysFOSAPOC.setSelectedIndex(-1);
         cbxSystemeGroupSoutien.setSelectedIndex(-1);
-        cbxSystemeGroupSoutienDocumente.setSelectedIndex(-1); 
+        cbxSystemeGroupSoutienDocumente.setSelectedIndex(-1);
+    }
+
+    private void doPopulateOUTree() {
+        try {
+            System.out.println("-- start --");
+            DefaultMutableTreeNode root = new DefaultMutableTreeNode("RDC");
+            DefaultMutableTreeNode provTree = null;
+            DefaultMutableTreeNode zsTree = null;
+            DefaultMutableTreeNode fsTree = null;
+
+            emf = Persistence.createEntityManagerFactory("pvvih10PU");
+            em = emf.createEntityManager();
+            em.getTransaction().begin();
+            List<Province> provinces = em.createNamedQuery("Province.findAll", Province.class).getResultList();
+            for (Province province : provinces) {
+                provTree = new DefaultMutableTreeNode(province.getNom());
+                List<Zone> zones = em.createNamedQuery("Zone.findAll", Zone.class).getResultList();
+                for (Zone zone : zones) {
+                    if (zone.getProvinceid() == province) {
+                        zsTree = new DefaultMutableTreeNode(zone.getNom());
+                        provTree.add(zsTree);
+                    }
+                    List<Fosa> fosas = em.createNamedQuery("Fosa.findAll", Fosa.class).getResultList();
+                    for (Fosa fosa : fosas) {
+                        if (fosa.getZoneid()== zone) {
+                            fsTree = new DefaultMutableTreeNode(fosa.getNom());
+                            zsTree.add(fsTree);
+                        }
+
+                    }
+                    
+                }
+                root.add(provTree);
+            }
+
+            DefaultTreeModel model = new DefaultTreeModel(root);
+            treeOU.setModel(model);
+        } catch (Exception e) {
+
+        }
     }
 
     private String getMacAdress() {
@@ -2479,6 +2540,8 @@ public class PSurvey extends javax.swing.JPanel {
     private org.jdesktop.swingx.JXLabel lblPourcentResuDocumentes;
     private javax.swing.JLabel lblPropPersFormeesTechAQ;
     private org.jdesktop.swingx.JXLabel lblShowSaveMessage;
+    private javax.swing.JScrollPane spnOUTree;
+    private org.jdesktop.swingx.JXTree treeOU;
     private org.jdesktop.swingx.JXTextField txtAutresServicePEC;
     private org.jdesktop.swingx.JXTextField txtNomEnquete1;
     private org.jdesktop.swingx.JXTextField txtNomEnquete2;

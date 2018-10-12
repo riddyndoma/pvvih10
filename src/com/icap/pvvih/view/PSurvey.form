@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+<Form version="1.7" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
   <NonVisualComponents>
     <Component class="javax.swing.ButtonGroup" name="btnGroupCategSitePyramide">
     </Component>
@@ -24,7 +24,10 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jXPanel1" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <Component id="jXPanel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -44,13 +47,13 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jXPanel2" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
                       <Component id="jXPanel14" max="32767" attributes="0"/>
+                      <Component id="jXPanel2" max="32767" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                  <EmptySpace pref="22" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -82,52 +85,65 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="spnOUTree" min="-2" pref="263" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jXLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jXLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="cbxNomSite" linkSize="1" min="-2" pref="276" max="-2" attributes="0"/>
-                                  <Component id="cbxDateEvaluation" linkSize="1" min="-2" pref="276" max="-2" attributes="0"/>
-                              </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jXPanel3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="jXLabel3" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="txtNomEnqueteurs" linkSize="1" max="32767" attributes="0"/>
+                              <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="jXLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jXLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="1" attributes="0">
+                                          <Component id="cbxNomSite" linkSize="1" min="-2" pref="276" max="-2" attributes="0"/>
+                                          <Component id="cbxDateEvaluation" linkSize="1" min="-2" pref="276" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jXLabel3" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="txtNomEnqueteurs" linkSize="1" max="32767" attributes="0"/>
+                                  </Group>
+                              </Group>
                           </Group>
-                          <Component id="jXPanel3" alignment="0" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jXLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="cbxDateEvaluation" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jXLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="cbxDateEvaluation" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jXLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="cbxNomSite" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jXLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtNomEnqueteurs" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                              <Component id="jXPanel3" max="32767" attributes="0"/>
+                          </Group>
+                          <Component id="spnOUTree" alignment="1" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jXLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="cbxNomSite" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jXLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtNomEnqueteurs" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
-                      <Component id="jXPanel3" max="32767" attributes="0"/>
-                      <EmptySpace min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -324,7 +340,7 @@
                                           <Component id="jXPanel5" alignment="0" max="32767" attributes="0"/>
                                           <Component id="jXPanel6" alignment="0" max="32767" attributes="0"/>
                                           <Component id="jXPanel8" alignment="1" max="32767" attributes="0"/>
-                                          <Component id="jXPanel18" alignment="1" pref="876" max="32767" attributes="0"/>
+                                          <Component id="jXPanel18" alignment="1" max="32767" attributes="0"/>
                                           <Group type="102" alignment="1" attributes="0">
                                               <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
                                               <Component id="jXPanel7" max="32767" attributes="0"/>
@@ -941,7 +957,6 @@
                               </StringArray>
                             </Property>
                             <Property name="selectedIndex" type="int" value="-1"/>
-                            <Property name="enabled" type="boolean" value="false"/>
                             <Property name="focusable" type="boolean" value="false"/>
                           </Properties>
                           <AuxValues>
@@ -957,7 +972,6 @@
                               </StringArray>
                             </Property>
                             <Property name="selectedIndex" type="int" value="-1"/>
-                            <Property name="enabled" type="boolean" value="false"/>
                             <Property name="focusable" type="boolean" value="false"/>
                           </Properties>
                           <AuxValues>
@@ -983,7 +997,6 @@
                               </StringArray>
                             </Property>
                             <Property name="selectedIndex" type="int" value="-1"/>
-                            <Property name="enabled" type="boolean" value="false"/>
                             <Property name="focusable" type="boolean" value="false"/>
                           </Properties>
                           <AuxValues>
@@ -1004,7 +1017,6 @@
                               </StringArray>
                             </Property>
                             <Property name="selectedIndex" type="int" value="-1"/>
-                            <Property name="enabled" type="boolean" value="false"/>
                             <Property name="focusable" type="boolean" value="false"/>
                           </Properties>
                           <AuxValues>
@@ -1025,7 +1037,6 @@
                               </StringArray>
                             </Property>
                             <Property name="selectedIndex" type="int" value="-1"/>
-                            <Property name="enabled" type="boolean" value="false"/>
                             <Property name="focusable" type="boolean" value="false"/>
                           </Properties>
                           <AuxValues>
@@ -1041,7 +1052,6 @@
                               </StringArray>
                             </Property>
                             <Property name="selectedIndex" type="int" value="-1"/>
-                            <Property name="enabled" type="boolean" value="false"/>
                             <Property name="focusable" type="boolean" value="false"/>
                           </Properties>
                           <AuxValues>
@@ -1172,7 +1182,6 @@
                               </StringArray>
                             </Property>
                             <Property name="selectedIndex" type="int" value="-1"/>
-                            <Property name="enabled" type="boolean" value="false"/>
                             <Property name="focusable" type="boolean" value="false"/>
                           </Properties>
                           <AuxValues>
@@ -1188,7 +1197,6 @@
                               </StringArray>
                             </Property>
                             <Property name="selectedIndex" type="int" value="-1"/>
-                            <Property name="enabled" type="boolean" value="false"/>
                             <Property name="focusable" type="boolean" value="false"/>
                           </Properties>
                           <AuxValues>
@@ -1228,7 +1236,7 @@
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Group type="102" attributes="0">
                                                   <Component id="lblPourcentResuDocumentes" min="-2" pref="315" max="-2" attributes="0"/>
-                                                  <EmptySpace min="0" pref="40" max="32767" attributes="0"/>
+                                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                               </Group>
                                               <Component id="txtPourcentResuDocumentes" max="32767" attributes="0"/>
                                           </Group>
@@ -1491,7 +1499,6 @@
                               </StringArray>
                             </Property>
                             <Property name="selectedIndex" type="int" value="-1"/>
-                            <Property name="enabled" type="boolean" value="false"/>
                             <Property name="focusable" type="boolean" value="false"/>
                           </Properties>
                           <Events>
@@ -1594,7 +1601,6 @@
                               </StringArray>
                             </Property>
                             <Property name="selectedIndex" type="int" value="-1"/>
-                            <Property name="enabled" type="boolean" value="false"/>
                             <Property name="focusable" type="boolean" value="false"/>
                           </Properties>
                           <AuxValues>
@@ -1740,7 +1746,6 @@
                               </StringArray>
                             </Property>
                             <Property name="selectedIndex" type="int" value="-1"/>
-                            <Property name="enabled" type="boolean" value="false"/>
                             <Property name="focusable" type="boolean" value="false"/>
                           </Properties>
                           <AuxValues>
@@ -1807,7 +1812,6 @@
                               </StringArray>
                             </Property>
                             <Property name="selectedIndex" type="int" value="-1"/>
-                            <Property name="enabled" type="boolean" value="false"/>
                             <Property name="focusable" type="boolean" value="false"/>
                           </Properties>
                           <AuxValues>
@@ -1862,7 +1866,6 @@
                               </StringArray>
                             </Property>
                             <Property name="selectedIndex" type="int" value="-1"/>
-                            <Property name="enabled" type="boolean" value="false"/>
                             <Property name="focusable" type="boolean" value="false"/>
                           </Properties>
                           <AuxValues>
@@ -2148,7 +2151,7 @@
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Component id="lblPatientARV12moisPrelevCV12mois" alignment="0" min="-2" pref="180" max="-2" attributes="0"/>
                                               <Component id="lblPatientARV12moisPrelevCV" alignment="1" max="32767" attributes="0"/>
-                                              <Component id="txtPatientARV12moisPrelevCV12mois" alignment="1" max="32767" attributes="0"/>
+                                              <Component id="txtPatientARV12moisPrelevCV12mois" alignment="1" pref="220" max="32767" attributes="0"/>
                                               <Component id="txtPatientARV12moisPrelevCV" alignment="1" max="32767" attributes="0"/>
                                           </Group>
                                       </Group>
@@ -2617,6 +2620,22 @@
                     </Component>
                   </SubComponents>
                 </Container>
+              </SubComponents>
+            </Container>
+            <Container class="javax.swing.JScrollPane" name="spnOUTree">
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="org.jdesktop.swingx.JXTree" name="treeOU">
+                  <Properties>
+                    <Property name="model" type="javax.swing.tree.TreeModel" editor="org.netbeans.modules.form.editors2.TreeModelEditor">
+                      <TreeModel code="RDC&#xa; "/>
+                    </Property>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="treeOUMouseClicked"/>
+                  </Events>
+                </Component>
               </SubComponents>
             </Container>
           </SubComponents>

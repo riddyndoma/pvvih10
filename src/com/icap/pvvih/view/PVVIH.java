@@ -54,6 +54,8 @@ public class PVVIH extends javax.swing.JFrame {
         lblHome.setText("Home");
         final JXHyperlink lblDE = new JXHyperlink();
         lblDE.setText("Data Entry");
+         final JXHyperlink lblSearch = new JXHyperlink();
+        lblSearch.setText("Research");
         final JXHyperlink lblSignout = new JXHyperlink();
         lblSignout.setText("Sign out");
         final JXHyperlink lblUser = new JXHyperlink();
@@ -61,6 +63,7 @@ public class PVVIH extends javax.swing.JFrame {
         
         taskActions.add(lblHome);
         taskActions.add(lblDE);
+         taskActions.add(lblSearch);
         taskOthers.add(lblUser);
         taskOthers.add(lblSignout);
         if (!"Admin".equals(currentUser.getRole())) {
@@ -78,6 +81,13 @@ public class PVVIH extends javax.swing.JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
               scrollManager.setViewportView(new PSurvey(currentUser));  
+            }
+        });
+        
+         lblSearch.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+              scrollManager.setViewportView(new PSearch());  
             }
         });
         

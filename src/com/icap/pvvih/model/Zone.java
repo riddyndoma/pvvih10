@@ -113,5 +113,5 @@ public class Zone implements Serializable {
     public String toString() {
         return "com.icap.pvvih.model.Zone[ zoneid=" + zoneid + " ]";
     }
-    
+
 }
